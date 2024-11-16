@@ -1,4 +1,5 @@
 import '@/styles/globals.css'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { Metadata } from 'next'
 import { Zen_Maru_Gothic } from 'next/font/google'
 
@@ -12,6 +13,8 @@ const zenMaruGothic = Zen_Maru_Gothic({
   variable: '--font-zenmaru',
 })
 
+const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || ''
+
 export const metadata: Metadata = SEO_DEFAULT
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -20,6 +23,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <body className='palt bg-primary font-zenmaru text-[16px] text-black'>
         <ClientLayout>{children}</ClientLayout>
       </body>
+      <GoogleAnalytics gaId={gaId} />
     </html>
   )
 }
