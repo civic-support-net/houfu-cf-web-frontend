@@ -40,7 +40,7 @@ function SquareBulletList({ items, bgColor }: { items: string[]; bgColor: string
 
 export default function AboutNotes() {
   return (
-    <div className='space-y-8 bg-white p-[88px]'>
+    <div className='space-y-8 bg-white p-8 md:p-16'>
       {notes.map((note, index) => (
         <div key={index} className=''>
           <FlagHeadline headline={note.headline} bgColor='bg-primary' textColor='text-black' />
