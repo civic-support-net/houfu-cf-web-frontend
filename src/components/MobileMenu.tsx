@@ -23,23 +23,8 @@ export default function MobileMenu() {
           <ul className='items-center gap-4'>
             {menus.map((menu, index) => (
               <li key={index} className='my-4 flex items-start justify-center'>
-                <div className='relative mr-4 mt-1 size-8 rotate-90'>
-                  <div className='absolute bottom-[6px] right-[9px] size-0 -scale-y-100 border-x-[15px] border-b-[28px] border-solid border-black border-x-transparent'></div>
-                  <div className='absolute -bottom-[1px] left-[2px] size-0 -scale-y-100 border-x-[6px] border-t-[12px] border-black border-x-transparent'></div>
-                  <div
-                    className={cn(
-                      'absolute bottom-2 right-3 size-0 -scale-y-100 border-x-[12px] border-b-[24px] border-solid border-x-transparent',
-                      menu.bo_color,
-                    )}
-                  ></div>
-                  <div
-                    className={cn(
-                      'absolute bottom-0 left-1 size-0 -scale-y-100 border-x-4 border-t-8 border-x-transparent',
-                      menu.bo_color,
-                    )}
-                  ></div>
-                </div>
-                <Link href={menu.href} className=''>
+                <Image src={menu.mg_href} alt='image' width={24} height={24} />
+                <Link href={menu.href} className='ml-4'>
                   {menu.label}
                 </Link>
               </li>
