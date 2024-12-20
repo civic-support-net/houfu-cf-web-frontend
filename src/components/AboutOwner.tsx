@@ -4,7 +4,7 @@ import FlagHeadline from '@/components/FlagHeadline'
 
 export default function AboutOwner() {
   return (
-    <div className='bg-white p-[88px]'>
+    <div className='bg-white p-8 md:p-16'>
       <FlagHeadline
         headline='防府コミュニティフリッジを運営している団体'
         bgColor='bg-primary'
