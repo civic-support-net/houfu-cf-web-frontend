@@ -6,7 +6,12 @@ import Section from '@/components/Section'
 const ProviderPage = () => {
   return (
     <>
-      <Headline headline='食料品や日用品を提供する' />
+      <Headline
+        headline='食料品や日用品を'
+        headlineColor='おくる'
+        color='text-my-red'
+        bgImage='bg-heroillust2'
+      />
       <Section>
         <ProviderFlow />
       </Section>

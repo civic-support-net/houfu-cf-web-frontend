@@ -2,10 +2,10 @@ import FlagHeadline from '@/components/FlagHeadline'
 
 export default function ProviderFlow() {
   return (
-    <div className='h-[800px] bg-white p-[88px]'>
+    <div className='h-[800px] bg-white p-[48px] md:p-[88px]'>
       <FlagHeadline
-        headline='フードプレゼンターとして応援！'
-        bgColor='bg-provider'
+        headline='食べなくなった「ベビーフード」をおくってみませんか？'
+        bgColor='bg-my-red'
         textColor='text-white'
       />
     </div>

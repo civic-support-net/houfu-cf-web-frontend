@@ -7,19 +7,22 @@ import { cn } from '@/lib/utils'
 
 const Header = () => {
   return (
-    <header className='h-[80px] bg-white'>
+    <header className='h-[72px] bg-white'>
       <div className='mx-auto flex max-w-[1200px] items-start justify-between'>
-        <div className='size-40 rounded-full bg-white p-6'>
+        <div className='size-[144px] rounded-full bg-white p-[22px]'>
           <Link
             href='/'
-            className='relative block size-full overflow-hidden rounded-full bg-primary'
+            className='relative block size-full overflow-hidden rounded-full bg-my-yellow'
           >
             <Image src='/img/logo.png' fill alt='logo' className='' />
           </Link>
         </div>
-        <ul className='flex h-[80px] items-center gap-4'>
+        <ul className='flex h-[72px] items-center gap-[12px]'>
           {menus.map((menu) => (
-            <li key={menu.href} className={cn('rounded-full border-2 px-4 py-2', menu.bo_color)}>
+            <li
+              key={menu.href}
+              className={cn('rounded-full border-2 px-[18px] py-[6px]', menu.bo_color)}
+            >
               <Link href={menu.href} className={menu.tx_color}>
                 {menu.label}
               </Link>

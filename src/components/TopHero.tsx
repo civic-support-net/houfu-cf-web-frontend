@@ -4,7 +4,7 @@ import { Message } from '@/types/Message'
 
 export default function TopHero({ messages }: { messages: Message[] }) {
   return (
-    <div className='flex flex-col items-center justify-center bg-primary'>
+    <div className='flex flex-col items-center justify-center bg-my-yellow'>
       <p className='text-hb flex flex-col items-center py-36'>
         「お互いさまのきもち」を応援
         <br />

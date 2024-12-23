@@ -8,7 +8,12 @@ const AboutPage = () => {
   return (
     <>
       <>
-        <Headline headline='このサイトについて' />
+        <Headline
+          headline='このサイトについて'
+          headlineColor='ついて'
+          color='text-my-dark'
+          bgImage='bg-heroillust3'
+        />
         <Section>
           <AboutOwner />
         </Section>

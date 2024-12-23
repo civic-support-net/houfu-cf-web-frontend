@@ -7,7 +7,7 @@ export default function AboutOwner() {
     <div className='bg-white p-8 md:p-16'>
       <FlagHeadline
         headline='防府コミュニティフリッジを運営している団体'
-        bgColor='bg-primary'
+        bgColor='bg-my-yellow'
         textColor='text-black'
       />
       <div className='flex flex-col items-center gap-10 md:flex-row'>

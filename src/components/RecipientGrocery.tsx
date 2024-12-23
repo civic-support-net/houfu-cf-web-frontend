@@ -5,7 +5,7 @@ export default function RecipientGrocery() {
     <div className='h-[500px] bg-green-100 p-[88px]'>
       <FlagHeadline
         headline='受け取れる食料品や日用品は毎日かわります！'
-        bgColor='bg-grocery'
+        bgColor='bg-my-green'
         textColor='text-white'
       />
     </div>

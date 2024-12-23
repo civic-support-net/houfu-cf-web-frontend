@@ -6,13 +6,13 @@ export default function ProviderMethod() {
       <div>
         <FlagHeadline
           headline='インターネットから応援！'
-          bgColor='bg-provider'
+          bgColor='bg-my-red'
           textColor='text-white'
         />
         あああ
       </div>
       <div>
-        <FlagHeadline headline='寄付金での応援！' bgColor='bg-provider' textColor='text-white' />
+        <FlagHeadline headline='寄付金での応援！' bgColor='bg-my-red' textColor='text-white' />
         いいい
       </div>
     </div>

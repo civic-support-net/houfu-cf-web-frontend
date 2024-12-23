@@ -26,7 +26,7 @@ export default function AboutOrganizations() {
       <div className=' mb-6 space-y-6 p-6 text-left'>
         <FlagHeadline
           headline='このサイトに関わっている団体'
-          bgColor='bg-primary'
+          bgColor='bg-my-yellow'
           textColor='text-black'
         />
         <p>
@@ -35,10 +35,10 @@ export default function AboutOrganizations() {
         </p>
       </div>
 
-      <ul className='flex flex-col space-y-4 rounded-lg p-5 md:flex-row'>
+      <ul className='flex flex-col space-y-4 rounded-sp p-5 md:flex-row md:rounded-pc'>
         {organizations.map((organizations, index) => (
           <li key={index}>
-            <div className='h-40 items-center justify-center rounded-lg border-2 border-gray-300 bg-gray-200'>
+            <div className='h-40 items-center justify-center rounded-sp border-2 border-gray-300 bg-gray-200 md:rounded-pc'>
               <p className='text-gray-500'>画像がここに入ります</p>
             </div>
             <p>{organizations.organizationText}</p>
@@ -47,7 +47,7 @@ export default function AboutOrganizations() {
       </ul>
 
       <div className='flex items-center justify-center p-2'>
-        <div className='w-3/4 rounded-xl border-2  border-black p-6'>
+        <div className='w-3/4 rounded-sp border-2 border-black  p-6 md:rounded-pc'>
           <p>OSSの案内</p>
         </div>
       </div>

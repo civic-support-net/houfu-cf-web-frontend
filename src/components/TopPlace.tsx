@@ -5,7 +5,7 @@ export default function TopPlace() {
     <div className='h-[600px] bg-gray-200 p-[88px]'>
       <FlagHeadline
         headline='防府コミュニティフリッジはルルサス防府に設置中'
-        bgColor='bg-primary'
+        bgColor='bg-my-yellow'
         textColor='text-black'
       />
     </div>

@@ -43,7 +43,7 @@ export default function AboutNotes() {
     <div className='space-y-8 bg-white p-8 md:p-16'>
       {notes.map((note, index) => (
         <div key={index} className=''>
-          <FlagHeadline headline={note.headline} bgColor='bg-primary' textColor='text-black' />
+          <FlagHeadline headline={note.headline} bgColor='bg-my-yellow' textColor='text-black' />
           <SquareBulletList items={note.listItems} bgColor='bg-orange-300' />
         </div>
       ))}
