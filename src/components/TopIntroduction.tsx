@@ -10,38 +10,14 @@ export default function TopIntroduction() {
       {renderIllustIntro()}
       <div className='relative pb-[24px] md:pb-[44px]'>
         {renderRoleIntro({
-          labelHead: '食料品や日用品をおくる',
-          labelImage1: '/img/hcf_giving.png',
-          labelImage2: '/img/hcf_food.png',
-          textColor: 'text-my-red',
-          bgColor: 'bg-my-red',
-          bgPaleColor: 'bg-my-palered',
-          borderColor: 'border-my-red',
+          side: 'provider',
           text: 'ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。',
-          linkText: 'おくる方法を見る',
-          linkHref: '/#',
-          illustImage: '/img/hcf_topokuru.png',
-          topRightImage: '/img/hcf_okuruillust_1.png',
-          bottomLeftImage: '/img/hcf_okuruillust_2.png',
-          isBackgroundFitLeft: true,
         })}
       </div>
       <div className='relative pb-[44px]'>
         {renderRoleIntro({
-          labelHead: '食料品や日用品をうけとる',
-          labelImage1: '/img/hcf_taking.png',
-          labelImage2: '/img/hcf_food.png',
-          textColor: 'text-my-green',
-          bgColor: 'bg-my-green',
-          bgPaleColor: 'bg-my-palegreen',
-          borderColor: 'border-my-green',
+          side: 'recipient',
           text: 'ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。',
-          linkText: 'うけとる方法を見る',
-          linkHref: '/#',
-          illustImage: '/img/hcf_topuketoru.png',
-          topRightImage: '/img/hcf_uketoruillust_1.png',
-          bottomLeftImage: '/img/hcf_kyoutsuillust_green.png',
-          isBackgroundFitLeft: false,
         })}
       </div>
     </div>
@@ -91,37 +67,24 @@ const renderIllustIntro = () => {
 {
   /*２つの立場のイラストと導入文章 */
 }
-const renderRoleIntro = ({
-  labelHead,
-  labelImage1,
-  labelImage2,
-  textColor,
-  bgColor,
-  bgPaleColor,
-  borderColor,
-  text,
-  linkText,
-  linkHref,
-  illustImage,
-  topRightImage,
-  bottomLeftImage,
-  isBackgroundFitLeft,
-}: {
-  labelHead: string
-  labelImage1: string
-  labelImage2: string
-  textColor: string
-  bgColor: string
-  bgPaleColor: string
-  borderColor: string
-  text: string
-  linkText: string
-  linkHref: string
-  illustImage: string
-  topRightImage: string
-  bottomLeftImage: string
-  isBackgroundFitLeft: boolean // 背景の左右寄せフラグ
-}) => {
+const renderRoleIntro = ({ side, text }: { side: 'provider' | 'recipient'; text: string }) => {
+  // sideによって、色や画像を切り分ける
+  const labelHead = side === 'provider' ? '食料品や日用品をおくる' : '食料品や日用品をうけとる'
+  const labelImage1 = side === 'provider' ? '/img/hcf_giving.png' : '/img/hcf_taking.png'
+  const labelImage2 = '/img/hcf_food.png'
+  const textColor = side === 'provider' ? 'text-my-red' : 'text-my-green'
+  const bgColor = side === 'provider' ? 'bg-my-red' : 'bg-my-green'
+  const bgPaleColor = side === 'provider' ? 'bg-my-palered' : 'bg-my-palegreen'
+  const borderColor = side === 'provider' ? 'border-my-red' : 'border-my-green'
+  const linkText = side === 'provider' ? 'おくる方法を見る' : 'うけとる方法を見る'
+  const linkHref = side === 'provider' ? '/#provider' : '/#recipient'
+  const illustImage = side === 'provider' ? '/img/hcf_topokuru.png' : '/img/hcf_topuketoru.png'
+  const topRightImage =
+    side === 'provider' ? '/img/hcf_okuruillust_1.png' : '/img/hcf_uketoruillust_1.png'
+  const bottomLeftImage =
+    side === 'provider' ? '/img/hcf_okuruillust_2.png' : '/img/hcf_kyoutsuillust_green.png'
+  const isBackgroundFitLeft = side === 'provider'
+
   return (
     <div className='relative'>
       <div

@@ -1,6 +1,6 @@
 import Headline from '@/components/Headline'
 import ProviderFlow from '@/components/ProviderFlow'
-import ProviderMethod from '@/components/ProviderMethod'
+import ProviderWays from '@/components/ProviderWays'
 import Section from '@/components/Section'
 
 const ProviderPage = () => {
@@ -16,7 +16,7 @@ const ProviderPage = () => {
         <ProviderFlow />
       </Section>
       <Section>
-        <ProviderMethod />
+        <ProviderWays />
       </Section>
     </>
   )

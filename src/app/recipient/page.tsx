@@ -1,6 +1,6 @@
 import Headline from '@/components/Headline'
+import RecipientCasually from '@/components/RecipientCasually'
 import RecipientFlow from '@/components/RecipientFlow'
-import RecipientGrocery from '@/components/RecipientGrocery'
 import Section from '@/components/Section'
 
 const RecipientPage = () => {
@@ -16,7 +16,7 @@ const RecipientPage = () => {
         <RecipientFlow />
       </Section>
       <Section>
-        <RecipientGrocery />
+        <RecipientCasually />
       </Section>
     </>
   )

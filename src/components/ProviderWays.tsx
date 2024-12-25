@@ -1,6 +1,6 @@
 import FlagHeadline from '@/components/FlagHeadline'
 
-export default function ProviderMethod() {
+export default function ProviderWays() {
   return (
     <div className='h-[800px] bg-my-palered p-[88px]'>
       <FlagHeadline
