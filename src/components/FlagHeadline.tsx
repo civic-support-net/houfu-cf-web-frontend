@@ -10,17 +10,22 @@ export default function FlagHeadline({
   bgColor: string
 }) {
   return (
-    <div>
-      <div className={cn('relative inline-block px-4 py-1', bgColor, textColor)}>
-        <div
-          className={cn(
-            'absolute right-0 top-0 z-10 aspect-[1/2] h-full translate-x-full',
-            bgColor,
-          )}
-          style={{ clipPath: 'polygon(0% 0%, 100% 0%, 40% 50%, 100% 100%, 0 100%)' }}
-        ></div>
-        <h2 className='text-lg font-bold'>{headline}</h2>
-      </div>
+    <div
+      className={cn(
+        'relative inline-block rounded-sp p-[12px] md:rounded-none',
+        bgColor,
+        textColor,
+      )}
+    >
+      <div
+        className={cn(
+          'absolute right-1 top-0 z-10 hidden aspect-[2/3] h-full translate-x-full bg-white md:block',
+          bgColor,
+        )}
+        // style={{ clipPath: 'polygon(100% 0%, 0% 50%, 100% 100%)' }}
+        style={{ clipPath: 'polygon(0% 0%, 100% 0%, 20% 50%, 100% 100%, 0 100%)' }}
+      ></div>
+      <h2 className='text-lg font-bold md:text-[28px]'>{headline}</h2>
     </div>
   )
 }

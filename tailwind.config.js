@@ -5,19 +5,20 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#EFD950',
-        provider: '#D7602D',
-        grocery: '#51A749',
+        'my-dark': '#3E3A39',
+        'my-yellow': '#F4D822',
+        'my-paleyellow': '#FFF3CC',
+        'my-green': '#1EAA39',
+        'my-palegreen': '#E8F6EB',
+        'my-red': '#E95513',
+        'my-palered': '#FCE2D8',
       },
       fontFamily: {
-        zenmaru: ['"Zen Maru Gothic"'],
+        sans: ['var(--font-noto-sans-jp)'],
       },
       borderRadius: {
-        common: '5vw',
-        cardoutl: '2.25vw',
-        cardouts: '5vw',
-        cardinl: '1.5vw',
-        cardins: '3vw',
+        pc: '32px',
+        sp: '20px',
       },
       maxWidth: {
         main: '1280px',
@@ -26,7 +27,11 @@ module.exports = {
         common: '3vw',
       },
     },
-    backgroundImage: {},
+    backgroundImage: {
+      heroillust1: "url('/img/hcf_heroillust_1.png')",
+      heroillust2: "url('/img/hcf_heroillust_2.png')",
+      heroillust3: "url('/img/hcf_heroillust_3.png')",
+    },
     backgroundSize: {
       auto: 'auto',
       cover: 'cover',

@@ -7,14 +7,14 @@ import { cn } from '@/lib/utils'
 export default function MobileMenu() {
   return (
     <div
-      className='absolute inset-8 overflow-auto rounded-2xl border-4 border-black bg-white shadow-lg'
+      className='absolute inset-8 overflow-auto rounded-sp border-4 border-black bg-white shadow-lg md:rounded-pc'
       onClick={(e) => e.stopPropagation()}
     >
       <nav className='flex flex-col items-center p-4'>
-        <div className='bg-orange-white mt-4 size-40 rounded-full p-4'>
+        <div className='mt-4 size-40 rounded-full p-4'>
           <Link
             href='/'
-            className='relative block size-full overflow-hidden rounded-full bg-primary'
+            className='relative block size-full overflow-hidden rounded-full bg-my-yellow'
           >
             <Image src='/img/logo.png' fill alt='logo' className='' />
           </Link>

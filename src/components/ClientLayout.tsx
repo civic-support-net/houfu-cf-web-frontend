@@ -48,7 +48,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       {/* Content */}
       <div className='flex h-lvh'>
         <main className='h-screen flex-1 overflow-y-auto'>
-          <div className='px-4 pt-32'>{children}</div>
+          <div className='mx-auto max-w-[1200px] px-[16px] xl:px-0'>{children}</div>
           <Footer />
         </main>
       </div>
