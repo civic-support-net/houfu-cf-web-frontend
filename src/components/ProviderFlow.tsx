@@ -28,7 +28,7 @@ export default function ProviderFlow() {
           <div className='mr-[-88px] h-1/2 w-full bg-my-palered'></div>
         </div>
         <div className='relative z-10'>
-          <GoodsExample />
+          <GoodsExample side='provider' />
         </div>
       </div>
 

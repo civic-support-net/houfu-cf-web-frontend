@@ -28,7 +28,7 @@ export default function RecipientFlow() {
           <div className='mr-[-88px] h-1/2 w-full bg-my-palegreen'></div>
         </div>
         <div className='relative z-10'>
-          <GoodsExample />
+          <GoodsExample side='recipient' />
         </div>
       </div>
 
