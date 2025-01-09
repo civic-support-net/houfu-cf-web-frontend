@@ -15,13 +15,13 @@ function CircleContents({
   bgPaleColor: string
 }) {
   return (
-    <div className=''>
+    <div className='space-y-[16px]'>
       <div className={cn('mr-2 mt-2 inline-block size-4 shrink-0', bgColor)} />
       {headline}
-      <ul className='grid grid-cols-2 md:grid-cols-4'>
+      <ul className='grid grid-cols-2 gap-4 lg:grid-cols-4'>
         {listItems.map((item, index) => (
-          <li key={index} className='my-3 flex flex-col items-center'>
-            <div className='size-28 rounded-full'>
+          <li key={index} className='flex flex-col items-center'>
+            <div className='size-32 rounded-full lg:size-36'>
               <div
                 className={cn(
                   'relative flex size-full items-center justify-center overflow-hidden rounded-full',
@@ -41,7 +41,6 @@ function CircleContents({
 }
 
 export default function GoodsExample({ side }: { side: 'provider' | 'recipient' }) {
-  //  田中くん担当（高さ指定とグレー背景は削除する）
   const firstText =
     side === 'provider'
       ? ['おくれる品物の例', 'お中元やお歳暮などの贈答品も受け付けております。']
@@ -109,13 +108,15 @@ export default function GoodsExample({ side }: { side: 'provider' | 'recipient' 
   const megahonImage =
     side === 'provider' ? '/img/hcf_megahon_okuru.png' : '/img/hcf_megahon_uketoru.png'
   return (
-    <div className='md:p-84 space-y-8 rounded-lg bg-white p-4'>
-      <div className='flex items-center justify-center gap-4'>
-        <Image src={megahonImage} alt='image' width={24} height={24}></Image>
-        {firstText[0]}
+    <div className='space-y-[84px] rounded-lg bg-white px-[28px] py-[44px] lg:p-[84px]'>
+      <div className='space-y-[16px]'>
+        <div className='flex items-center justify-center gap-4'>
+          <Image src={megahonImage} alt='image' width={24} height={24}></Image>
+          {firstText[0]}
+        </div>
+        <p>{firstText[1]}</p>
       </div>
-      <p>{firstText[1]}</p>
-      <ul>
+      <ul className='space-y-[44px] lg:space-y-[84px]'>
         {listInfo.map((note, index) => (
           <li key={index} className=''>
             <CircleContents
@@ -130,11 +131,13 @@ export default function GoodsExample({ side }: { side: 'provider' | 'recipient' 
       </ul>
 
       <div className={cn('border-t-2 border-dashed', borderColor)}></div>
-      <div className='flex items-center justify-center gap-4'>
-        <Image src={megahonImage} alt='image' width={24} height={24}></Image>
-        {secondText[0]}
+      <div className='space-y-[16px]'>
+        <div className='flex items-center justify-center gap-4'>
+          <Image src={megahonImage} alt='image' width={24} height={24}></Image>
+          {secondText[0]}
+        </div>
+        <p>{secondText[1]}</p>
       </div>
-      <p>{secondText[1]}</p>
     </div>
   )
 }
