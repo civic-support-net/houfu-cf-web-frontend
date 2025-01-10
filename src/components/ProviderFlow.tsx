@@ -23,12 +23,12 @@ export default function ProviderFlow() {
       </div>
 
       {/* 分割背景（上部だけ色あり） */}
-      <div className='relative p-[48px] md:p-[88px]'>
+      <div className='relative p-[12px] md:p-[88px]'>
         <div className='absolute inset-0 z-0'>
           <div className='mr-[-88px] h-1/2 w-full bg-my-palered'></div>
         </div>
-        <div className='relative z-10'>
-          <GoodsExample />
+        <div className='relative z-10 mx-auto max-w-[768px]'>
+          <GoodsExample side='provider' />
         </div>
       </div>
 
