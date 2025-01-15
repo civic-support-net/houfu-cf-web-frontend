@@ -1,6 +1,6 @@
-import Link from 'next/link'
 import classNames from 'classnames'
 import Image from 'next/image'
+import Link from 'next/link'
 
 interface RoundedSquareProps {
   circleText: number
@@ -8,15 +8,18 @@ interface RoundedSquareProps {
 }
 
 const RoundedSquare: React.FC<RoundedSquareProps> = ({ circleText, side }) => {
-  const color = side === 'provider' ? 'bg-[#E95513]' : 'bg-[#1EAA39]'
+  const color = side === 'provider' ? 'bg-my-red' : 'bg-my-green'
   return (
-    <div className='w-[200px] h-[200px] bg-white rounded-[20px] border-2 border-black relative'>
+    <div className='relative size-[200px] rounded-sp border-2 border-black bg-white'>
       <div
-        className={classNames('w-[32px] h-[32px] md:w-[36px] md:h-[36px] rounded-full border-2 border-black absolute top-[-8px] left-[-8px] flex items-center justify-center', color)}
-        >
-        <p className='text-white text-center text-'>{circleText}</p>
+        className={classNames(
+          'absolute left-[-8px] top-[-8px] flex h-[32px] w-[32px] items-center justify-center rounded-full border-2 border-black md:h-[36px] md:w-[36px]',
+          color,
+        )}
+      >
+        <p className='text- text-center text-white'>{circleText}</p>
       </div>
-      <p className='text-gray-400 text-center relative top-1/2 transform -translate-y-1/2 text-[22px] p-[10px]'>
+      <p className='relative top-1/2 -translate-y-1/2 p-[10px] text-center text-[22px] text-gray-400'>
         写真・イラストが入ります。
       </p>
     </div>
@@ -25,30 +28,36 @@ const RoundedSquare: React.FC<RoundedSquareProps> = ({ circleText, side }) => {
 
 type RoundedRectangleProps = {
   // link プロパティを追加
-  side : 'provider' | 'recipient'
+  side: 'provider' | 'recipient'
   texts: string[]
   link: string // link プロパティを追加
 }
 
 const RoundedRectangle: React.FC<RoundedRectangleProps> = ({ side, texts, link }) => {
-  const borderColor = side === 'provider' ? 'border-[#E95513]' : 'border-[#1EAA39]'
-  const textColor = side === 'provider' ? 'text-[#E95513]' : 'text-[#1EAA39]'
+  const borderColor = side === 'provider' ? 'border-my-red' : 'border-my-green'
+  const textColor = side === 'provider' ? 'text-my-red' : 'text-my-green'
 
   return (
-    <Link href={link} className={classNames('rounded-full border-2 bg-white px-4 py-2 lg:px-8 lg:py-4', borderColor, textColor)}>
-      <div className='flex flex-col items-center border-color text-[18px] tracking-wider md:flex-row lg:text-[24px]' >
-        <span >{texts[0]}</span>
+    <Link
+      href={link}
+      className={classNames(
+        'rounded-full border-2 bg-white px-4 py-2 lg:px-8 lg:py-4',
+        borderColor,
+        textColor,
+      )}
+    >
+      <div className='border-color flex flex-col items-center text-[18px] tracking-wider md:flex-row lg:text-[24px]'>
+        <span>{texts[0]}</span>
         <span>{texts[1]}</span>
       </div>
     </Link>
   )
 }
 export default function EntryFlow({ side }: { side: 'provider' | 'recipient' }) {
-
   const topText =
     side === 'provider'
-      ? ['フードプレゼンター','として', '品物をおくる!']
-      : ['うけとりメンバー','として', '品物をうけとる!']
+      ? ['フードプレゼンター', 'として', '品物をおくる!']
+      : ['うけとりメンバー', 'として', '品物をうけとる!']
 
   const flowContents =
     side === 'provider'
@@ -87,41 +96,64 @@ export default function EntryFlow({ side }: { side: 'provider' | 'recipient' }) 
           },
         ]
 
-  const textLine = side === 'provider' ? 'decoration-[#E95513]' : 'decoration-[#1EAA39]'
-  
-  return <div className='flex-col md:flex-row'>
-    <div className='mx-auto flex flex-col items-center justify-center gap-y-[100px] md:max-w-[768px]'>
-      <div className='mx-auto flex items-center gap-x-4'>
-        <Image src= '/img/hcf_hukidashi.png' alt = "" width = "75" height = "50"></Image>
-        <div className='flex flex-col text-center item-center mx-auto gap-y-2 text-2xl'> 
-          <div className='flex flex-col md:flex-row'>
-            <p >{topText[0]}</p>
-            <p >{topText[1]}</p>
-          </div>
-          <p >{topText[2]}</p>
-        </div>
-        <Image src= '/img/hcf_hukidashi.png' alt = "" width = "75" height = "50" className='transform scale-y-[-1] rotate-180'></Image>
-      </div>
+  const textLine = side === 'provider' ? 'decoration-my-red' : 'decoration-my-green'
 
-      <div className='flex flex-col justify-center gap-y-[28px] md:flex-row md:gap-x-[44px]'>
-        {flowContents.map(({ label, text }, index) => (
-          <div key={index} className='flex max-w-[200px] flex-col items-center gap-y-4 break-words'>
-            <RoundedSquare circleText={index + 1} side = {side}/>
-            <p className={classNames('items-center text-center text-base underline underline-offset-4',textLine)} >
-              {label}
-            </p>
-            <p className='text-left text-base'>{text}</p>
+  return (
+    <div className='flex-col md:flex-row'>
+      <div className='mx-auto flex flex-col items-center justify-center gap-y-[100px] md:max-w-screen-md'>
+        <div className='mx-auto flex items-center gap-x-4'>
+          <Image src='/img/hcf_hukidashi.png' alt='' width='75' height='50'></Image>
+          <div className='mx-auto flex flex-col items-center gap-y-2 text-center text-2xl'>
+            <div className='flex flex-col md:flex-row'>
+              <p>{topText[0]}</p>
+              <p>{topText[1]}</p>
+            </div>
+            <p>{topText[2]}</p>
           </div>
-        ))}
-      </div>
-      <div className='flex size-full justify-center'>
-        <RoundedRectangle
-          side={side}
-          texts={side === 'provider'
-            ? ['フードプレゼンター','登録をする']
-            : ['うけとりメンバー','登録の予約をする']}
-          link={side === 'provider' ? 'https://hofu.communityfridge.jp/personal-form/?fbclid=IwAR0BV0L4h1tvkVPkdDtuqYRxeUaww-m2DEc6DrYVvrac_RkAZV57HxN4Prc' : 'tel:0835-24-7744'}    />
+          <Image
+            src='/img/hcf_hukidashi.png'
+            alt=''
+            width='75'
+            height='50'
+            className='rotate-180 -scale-y-100'
+          ></Image>
+        </div>
+
+        <div className='flex flex-col justify-center gap-y-[28px] md:flex-row md:gap-x-[44px]'>
+          {flowContents.map(({ label, text }, index) => (
+            <div
+              key={index}
+              className='flex max-w-[200px] flex-col items-center gap-y-4 break-words'
+            >
+              <RoundedSquare circleText={index + 1} side={side} />
+              <p
+                className={classNames(
+                  'items-center text-center text-base underline underline-offset-4',
+                  textLine,
+                )}
+              >
+                {label}
+              </p>
+              <p className='text-left text-base'>{text}</p>
+            </div>
+          ))}
+        </div>
+        <div className='flex size-full justify-center'>
+          <RoundedRectangle
+            side={side}
+            texts={
+              side === 'provider'
+                ? ['フードプレゼンター', '登録をする']
+                : ['うけとりメンバー', '登録の予約をする']
+            }
+            link={
+              side === 'provider'
+                ? 'https://hofu.communityfridge.jp/personal-form/?fbclid=IwAR0BV0L4h1tvkVPkdDtuqYRxeUaww-m2DEc6DrYVvrac_RkAZV57HxN4Prc'
+                : 'tel:0835-24-7744'
+            }
+          />
+        </div>
       </div>
     </div>
-  </div>
+  )
 }
