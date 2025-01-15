@@ -1,52 +1,23 @@
 import Link from 'next/link'
+import classNames from 'classnames'
+import Image from 'next/image'
 
 interface RoundedSquareProps {
   circleText: number
-  color: string
+  side: 'provider' | 'recipient'
 }
 
-const RoundedSquare: React.FC<RoundedSquareProps> = ({ circleText,color }) => {
+const RoundedSquare: React.FC<RoundedSquareProps> = ({ circleText, side }) => {
+  const color = side === 'provider' ? '#E95513' : '#1EAA39'
   return (
-    <div
-      style={{
-        width: '200px',
-        height: '200px',
-        backgroundColor: 'white',
-        borderRadius: '20px',
-        border: '2px solid black',
-        position: 'relative',
-      }}
-    >
+    <div className='w-[200px] h-[200px] bg-white rounded-[20px] border-2 border-black relative'>
       <div
-        style={{
-          position: 'absolute',
-          top: '-8px',
-          left: '-8px',
-          width: '32px',
-          height: '32px',
-          borderRadius: '50%',
-          backgroundColor: color,
-          border: '2px solid black',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          color: 'white',
-          fontSize: '12px',
-        }}
+        className='w-[32px] h-[32px] md:w-[36px] md:h-[36px] rounded-full border-2 border-black absolute top-[-8px] left-[-8px] flex items-center justify-center'
+        style={{ backgroundColor: color }}
       >
-        {circleText}
+        <p className='text-white text-center text-'>{circleText}</p>
       </div>
-      <p
-        style={{
-          color: 'gray',
-          textAlign: 'center',
-          position: 'relative',
-          top: '50%',
-          transform: 'translateY(-50%)',
-          fontSize: '22px',
-          padding: '10px',
-        }}
-      >
+      <p className='text-gray-400 text-center relative top-1/2 transform -translate-y-1/2 text-[22px] p-[10px]'>
         写真・イラストが入ります。
       </p>
     </div>
@@ -55,54 +26,31 @@ const RoundedSquare: React.FC<RoundedSquareProps> = ({ circleText,color }) => {
 
 type RoundedRectangleProps = {
   // link プロパティを追加
+  side : 'provider' | 'recipient'
   color: string
-  text: string
+  texts: string[]
   link: string // link プロパティを追加
 }
 
-const RoundedRectangle: React.FC<RoundedRectangleProps> = ({ color, text, link }) => {
+const RoundedRectangle: React.FC<RoundedRectangleProps> = ({ side, texts }) => {
+  const borderColor = side === 'provider' ? 'border-[#E95513]' : 'border-[#1EAA39]'
+  const textColor = side === 'provider' ? 'text-[#E95513]' : 'text-[#1EAA39]'
+
   return (
-    <div
-      style={{
-        width: `75%`,
-        height: `75px`,
-        borderRadius: `100px`,
-        backgroundColor: `white`,
-        border: `2px solid black`,
-        borderColor: `${color}`,
-        color: `${color}`,
-        position: 'relative',
-      }}
-    >
-      <p
-        style={{
-          width: '100%',
-          height: '100%',
-          margin: 0,
-          fontSize: '18px',
-          textAlign: 'center',
-          whiteSpace: 'normal',
-          overflow: 'hidden',
-          textOverflow: 'ellipsis',
-          WebkitLineClamp: 2,
-          WebkitBoxOrient: 'vertical',
-          justifyContent: 'center',
-          alignItems: 'center',
-          display: 'flex',
-        }}
-      >
-        {text}
-      </p>
-      <Link href={link}></Link>
-    </div>
+    <Link href='/' className={classNames('rounded-full border-2 bg-white px-4 py-2 lg:px-8 lg:py-4', borderColor, textColor)}>
+      <div className='flex flex-col items-center border-color text-[18px] tracking-wider md:flex-row lg:text-[24px]' >
+        <span >{texts[0]}</span>
+        <span>{texts[1]}</span>
+      </div>
+    </Link>
   )
 }
+export default function EntryFlow({ side }: { side: 'provider' | 'recipient' }) {
 
-const renderRoleText = ({ side }: { side: 'provider' | 'recipient' }) => {
   const topText =
     side === 'provider'
-      ? 'フードプレゼンターとして品物をおくる!'
-      : 'うけとりメンバーとして品物をうけとる!'
+      ? ['フードプレゼンター','として', '品物をおくる!']
+      : ['うけとりメンバー','として', '品物をうけとる!']
 
   const flowContents =
     side === 'provider'
@@ -147,17 +95,25 @@ const renderRoleText = ({ side }: { side: 'provider' | 'recipient' }) => {
     textUnderlineOffset: '4px',
     textDecorationThickness: '3px',
   }
-
-  return (
+  
+  return <div className='flex-col md:flex-row'>
     <div className='mx-auto flex flex-col items-center justify-center gap-y-[100px] md:max-w-[768px]'>
-      <div className='mx-auto flex text-center md:text-2xl'>
-        <p className='text-center'>{topText}</p>
+      <div className='mx-auto flex items-center gap-x-4'>
+        <Image src= '/img/hcf_hukidashi.png' alt = "" width = "75" height = "50"></Image>
+        <div className='flex flex-col text-center item-center mx-auto gap-y-2 text-2xl'> 
+          <div className='flex flex-col md:flex-row'>
+            <p >{topText[0]}</p>
+            <p >{topText[1]}</p>
+          </div>
+          <p >{topText[2]}</p>
+        </div>
+        <Image src= '/img/hcf_hukidashi.png' alt = "" width = "75" height = "50" className='transform scale-y-[-1] rotate-180'></Image>
       </div>
 
       <div className='flex flex-col justify-center gap-y-[28px] md:flex-row md:gap-x-[44px]'>
         {flowContents.map(({ label, text }, index) => (
           <div key={index} className='flex max-w-[200px] flex-col items-center gap-y-4 break-words'>
-            <RoundedSquare circleText={index + 1}color={side === 'provider' ? '#E95513' : '#1EAA39'} />
+            <RoundedSquare circleText={index + 1} side = {side}/>
             <p className='items-center text-center text-base' style={styleUnderline}>
               {label}
             </p>
@@ -167,19 +123,13 @@ const renderRoleText = ({ side }: { side: 'provider' | 'recipient' }) => {
       </div>
       <div className='flex size-full justify-center'>
         <RoundedRectangle
-          color={side === 'provider' ? '#E95513' : '#1EAA39'}
-          text={
-            side === 'provider'
-              ? 'フードプレゼンター登録をする'
-              : 'うけとりメンバー登録の予約をする'
-          }
-          link={side === 'provider' ? '/provider' : '/recipient }'}
-        />
+          side={side}
+          texts={side === 'provider'
+            ? ['フードプレゼンター','登録をする']
+            : ['うけとりメンバー','登録の予約をする']}
+          link={side === 'provider' ? 'https://hofu.communityfridge.jp/personal-form/?fbclid=IwAR0BV0L4h1tvkVPkdDtuqYRxeUaww-m2DEc6DrYVvrac_RkAZV57HxN4Prc' : 'tel:0835-24-7744'} color={''}        />
       </div>
     </div>
-  )
+  </div>
 }
 
-export default function EntryFlow() {
-  return <div className='flex-col md:flex-row'>{renderRoleText({ side: 'recipient' })}</div>
-}

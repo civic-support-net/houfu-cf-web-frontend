@@ -19,7 +19,7 @@ export default function RecipientFlow() {
       </div>
 
       <div className='bg-my-palegreen p-[48px] md:p-[88px] '>
-        <EntryFlow />
+        <EntryFlow side='recipient' />
       </div>
 
       {/* 分割背景（上部だけ色あり） */}

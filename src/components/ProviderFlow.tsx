@@ -19,7 +19,7 @@ export default function ProviderFlow() {
       </div>
 
       <div className='bg-my-palered p-[48px] md:p-[88px]'>
-        <EntryFlow />
+        <EntryFlow side ='provider' />
       </div>
 
       {/* 分割背景（上部だけ色あり） */}
