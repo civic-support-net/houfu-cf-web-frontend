@@ -8,13 +8,12 @@ interface RoundedSquareProps {
 }
 
 const RoundedSquare: React.FC<RoundedSquareProps> = ({ circleText, side }) => {
-  const color = side === 'provider' ? '#E95513' : '#1EAA39'
+  const color = side === 'provider' ? 'bg-[#E95513]' : 'bg-[#1EAA39]'
   return (
     <div className='w-[200px] h-[200px] bg-white rounded-[20px] border-2 border-black relative'>
       <div
-        className='w-[32px] h-[32px] md:w-[36px] md:h-[36px] rounded-full border-2 border-black absolute top-[-8px] left-[-8px] flex items-center justify-center'
-        style={{ backgroundColor: color }}
-      >
+        className={classNames('w-[32px] h-[32px] md:w-[36px] md:h-[36px] rounded-full border-2 border-black absolute top-[-8px] left-[-8px] flex items-center justify-center', color)}
+        >
         <p className='text-white text-center text-'>{circleText}</p>
       </div>
       <p className='text-gray-400 text-center relative top-1/2 transform -translate-y-1/2 text-[22px] p-[10px]'>
@@ -27,17 +26,16 @@ const RoundedSquare: React.FC<RoundedSquareProps> = ({ circleText, side }) => {
 type RoundedRectangleProps = {
   // link プロパティを追加
   side : 'provider' | 'recipient'
-  color: string
   texts: string[]
   link: string // link プロパティを追加
 }
 
-const RoundedRectangle: React.FC<RoundedRectangleProps> = ({ side, texts }) => {
+const RoundedRectangle: React.FC<RoundedRectangleProps> = ({ side, texts, link }) => {
   const borderColor = side === 'provider' ? 'border-[#E95513]' : 'border-[#1EAA39]'
   const textColor = side === 'provider' ? 'text-[#E95513]' : 'text-[#1EAA39]'
 
   return (
-    <Link href='/' className={classNames('rounded-full border-2 bg-white px-4 py-2 lg:px-8 lg:py-4', borderColor, textColor)}>
+    <Link href={link} className={classNames('rounded-full border-2 bg-white px-4 py-2 lg:px-8 lg:py-4', borderColor, textColor)}>
       <div className='flex flex-col items-center border-color text-[18px] tracking-wider md:flex-row lg:text-[24px]' >
         <span >{texts[0]}</span>
         <span>{texts[1]}</span>
@@ -89,12 +87,7 @@ export default function EntryFlow({ side }: { side: 'provider' | 'recipient' }) 
           },
         ]
 
-  const styleUnderline: React.CSSProperties = {
-    textDecoration: 'underline',
-    textDecorationColor: side === 'provider' ? '#E95513' : '#1EAA39',
-    textUnderlineOffset: '4px',
-    textDecorationThickness: '3px',
-  }
+  const textLine = side === 'provider' ? 'decoration-[#E95513]' : 'decoration-[#1EAA39]'
   
   return <div className='flex-col md:flex-row'>
     <div className='mx-auto flex flex-col items-center justify-center gap-y-[100px] md:max-w-[768px]'>
@@ -114,7 +107,7 @@ export default function EntryFlow({ side }: { side: 'provider' | 'recipient' }) 
         {flowContents.map(({ label, text }, index) => (
           <div key={index} className='flex max-w-[200px] flex-col items-center gap-y-4 break-words'>
             <RoundedSquare circleText={index + 1} side = {side}/>
-            <p className='items-center text-center text-base' style={styleUnderline}>
+            <p className={classNames('items-center text-center text-base underline underline-offset-4',textLine)} >
               {label}
             </p>
             <p className='text-left text-base'>{text}</p>
@@ -127,9 +120,8 @@ export default function EntryFlow({ side }: { side: 'provider' | 'recipient' }) 
           texts={side === 'provider'
             ? ['フードプレゼンター','登録をする']
             : ['うけとりメンバー','登録の予約をする']}
-          link={side === 'provider' ? 'https://hofu.communityfridge.jp/personal-form/?fbclid=IwAR0BV0L4h1tvkVPkdDtuqYRxeUaww-m2DEc6DrYVvrac_RkAZV57HxN4Prc' : 'tel:0835-24-7744'} color={''}        />
+          link={side === 'provider' ? 'https://hofu.communityfridge.jp/personal-form/?fbclid=IwAR0BV0L4h1tvkVPkdDtuqYRxeUaww-m2DEc6DrYVvrac_RkAZV57HxN4Prc' : 'tel:0835-24-7744'}    />
       </div>
     </div>
   </div>
 }
-
