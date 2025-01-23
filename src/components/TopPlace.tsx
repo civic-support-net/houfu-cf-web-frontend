@@ -1,5 +1,3 @@
-import { render } from 'react-dom'
-
 import FlagHeadline from '@/components/FlagHeadline'
 import { cn } from '@/lib/utils'
 
@@ -8,7 +6,7 @@ export default function TopPlace() {
     <div className='space-y-[44px] bg-white p-[44px] md:space-y-[88px] md:p-[88px]'>
       <div className='space-y-[24px]'>
         <FlagHeadline
-          headline='防府コミュニティフリッジはルルサス防府に設置中'
+          headlines={['防府コミュニティ', 'フリッジは', 'ルルサス防府にあります']}
           bgColor='bg-my-yellow'
           textColor='text-black'
         />

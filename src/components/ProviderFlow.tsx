@@ -7,9 +7,9 @@ export default function ProviderFlow() {
   return (
     // 白地がデフォルト背景
     <div className='bg-white'>
-      <div className='p-[48px] md:p-[88px]'>
+      <div className='space-y-4 p-[48px] md:p-[88px]'>
         <FlagHeadline
-          headline='食べなくなった「ベビーフード」をおくってみませんか？'
+          headlines={['キモチを', 'かたちにしておくる']}
           bgColor='bg-my-red'
           textColor='text-white'
         />
@@ -19,7 +19,7 @@ export default function ProviderFlow() {
       </div>
 
       <div className='bg-my-palered p-[48px] md:p-[88px]'>
-        <EntryFlow side ='provider' />
+        <EntryFlow side='provider' />
       </div>
 
       {/* 分割背景（上部だけ色あり） */}
@@ -27,7 +27,7 @@ export default function ProviderFlow() {
         <div className='absolute inset-0 z-0'>
           <div className='mr-[-88px] h-1/2 w-full bg-my-palered'></div>
         </div>
-        <div className='relative z-10 mx-auto max-w-[768px]'>
+        <div className='relative z-10 mx-auto max-w-screen-md'>
           <GoodsExample side='provider' />
         </div>
       </div>

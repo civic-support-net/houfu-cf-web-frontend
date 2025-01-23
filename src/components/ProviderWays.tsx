@@ -1,6 +1,7 @@
-import FlagHeadline from '@/components/FlagHeadline'
 import Image from 'next/image'
 import Link from 'next/link'
+
+import FlagHeadline from '@/components/FlagHeadline'
 
 type RoundedRectangleProps = {
   texts: string
@@ -13,7 +14,7 @@ const RoundedRectangle: React.FC<RoundedRectangleProps> = ({ texts, link }) => {
       href={link}
       className='rounded-full border-2 border-my-red bg-white px-4 py-2 text-my-red lg:px-8 lg:py-4'
     >
-      <div className='border-color flex flex-col items-center text-[18px] tracking-wider md:flex-row lg:text-[24px]'>
+      <div className='flex flex-col items-center text-[18px] tracking-wider md:flex-row lg:text-[24px]'>
         <span>{texts}</span>
       </div>
     </Link>
@@ -50,11 +51,11 @@ const Donate = () => {
         コミュニティフリッジは、できるだけ費用をおさえての運営を目指していますが、設備費・システム費などの維持費はかかっており、みなさまからの寄付によって支えられています。
       </p>
       <div className='flex flex-col space-y-4 md:flex-row md:space-y-0'>
-        <div className=''>
+        <div className='flex-1'>
           <div className='mr-2 mt-1 inline-block size-4 shrink-0 bg-my-red' />
           <span>クレジットカードで寄付</span>
         </div>
-        <div className='flex flex-col md:ml-28'>
+        <div className='flex flex-1 flex-col'>
           <span>※congrantというサービスを利用します。</span>
         </div>
       </div>
@@ -63,11 +64,11 @@ const Donate = () => {
       </div>
       <div className='border-t-2 border-dashed border-my-red' />
       <div className='flex flex-col space-y-4 md:flex-row md:space-y-0'>
-        <div className=''>
+        <div className='flex-1'>
           <div className='mr-2 mt-1 inline-block size-4 shrink-0 bg-my-red' />
           <span>銀行振込で寄付</span>
         </div>
-        <div className='flex flex-col md:ml-40'>
+        <div className='flex flex-1 flex-col'>
           <span>もみじ銀行 防府市店</span>
           <span>普通　1542374</span>
           <span>トクヒ）シミンカツドウサポートネット</span>
@@ -97,7 +98,7 @@ export default function ProviderWays() {
       <div className='space-y-4 p-4'>
         <div className='flex w-full flex-col items-center space-y-[32px] md:w-3/5 md:items-start md:space-y-[40px]'>
           <FlagHeadline
-            headline='キモチのおくりかたはさまざまです'
+            headlines={['キモチの', 'おくりかたは', 'さまざまです']}
             bgColor='bg-my-red'
             textColor='text-white'
           />
@@ -108,7 +109,7 @@ export default function ProviderWays() {
         </p>
       </div>
 
-      <div className='relative z-10 mx-auto max-w-[768px] space-y-4'>
+      <div className='relative z-10 mx-auto max-w-screen-md space-y-4'>
         <Internet />
         <Donate />
         <Volunteer />
