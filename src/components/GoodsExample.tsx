@@ -1,4 +1,6 @@
 import Image from 'next/image'
+
+import MegaphoneHeadline from '@/components/MegaphoneHeadline'
 import { cn } from '@/lib/utils'
 
 function CircleContents({
@@ -105,15 +107,10 @@ export default function GoodsExample({ side }: { side: 'provider' | 'recipient' 
   const bgColor = side === 'provider' ? 'bg-my-red' : 'bg-my-green'
   const bgPaleColor = side === 'provider' ? 'bg-my-palered' : 'bg-my-palegreen'
   const borderColor = side === 'provider' ? 'border-my-red' : 'border-my-green'
-  const megahonImage =
-    side === 'provider' ? '/img/hcf_megahon_okuru.png' : '/img/hcf_megahon_uketoru.png'
   return (
     <div className='space-y-[84px] rounded-lg bg-white px-[28px] py-[44px] lg:p-[84px]'>
       <div className='space-y-[16px]'>
-        <div className='flex items-center justify-center gap-4'>
-          <Image src={megahonImage} alt='image' width={24} height={24}></Image>
-          {firstText[0]}
-        </div>
+        <MegaphoneHeadline side={side} headlines={[firstText[0]]} />
         <p>{firstText[1]}</p>
       </div>
       <ul className='space-y-[44px] lg:space-y-[84px]'>
@@ -132,10 +129,7 @@ export default function GoodsExample({ side }: { side: 'provider' | 'recipient' 
 
       <div className={cn('border-t-2 border-dashed', borderColor)}></div>
       <div className='space-y-[16px]'>
-        <div className='flex items-center justify-center gap-4'>
-          <Image src={megahonImage} alt='image' width={24} height={24}></Image>
-          {secondText[0]}
-        </div>
+        <MegaphoneHeadline side={side} headlines={[secondText[0]]} />
         <p>{secondText[1]}</p>
       </div>
     </div>
