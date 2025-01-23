@@ -69,7 +69,8 @@ const renderIllustIntro = () => {
 }
 const renderRoleIntro = ({ side, text }: { side: 'provider' | 'recipient'; text: string }) => {
   // sideによって、色や画像を切り分ける
-  const labelHead = side === 'provider' ? '食料品や日用品をおくる' : '食料品や日用品をうけとる'
+  const labelHeads =
+    side === 'provider' ? ['食料品や日用品を', 'おくる'] : ['食料品や日用品を', 'うけとる']
   const labelImage1 = side === 'provider' ? '/img/hcf_giving.png' : '/img/hcf_taking.png'
   const labelImage2 = '/img/hcf_food.png'
   const textColor = side === 'provider' ? 'text-my-red' : 'text-my-green'
@@ -103,7 +104,7 @@ const renderRoleIntro = ({ side, text }: { side: 'provider' | 'recipient'; text:
         </div>
 
         <div className='flex w-full flex-col items-center space-y-[32px] md:w-3/5 md:items-start md:space-y-[40px]'>
-          <FlagHeadline headline={labelHead} bgColor={bgColor} textColor='text-white' />
+          <FlagHeadline headlines={labelHeads} bgColor={bgColor} textColor='text-white' />
           <div className='relative flex flex-col items-center gap-[24px] md:flex-row'>
             <Image
               src={labelImage1}

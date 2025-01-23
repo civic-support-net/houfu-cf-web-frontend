@@ -9,7 +9,7 @@ export default function RecipientFlow() {
     <div className='bg-white'>
       <div className='p-[48px] md:p-[88px]'>
         <FlagHeadline
-          headline='「今日の晩ごはん」のもう１品をうけとってみませんか？'
+          headlines={['届いた品物を', 'いつでも自由に', 'うけとる']}
           bgColor='bg-my-green'
           textColor='text-white'
         />
@@ -27,7 +27,7 @@ export default function RecipientFlow() {
         <div className='absolute inset-0 z-0'>
           <div className='mr-[-88px] h-1/2 w-full bg-my-palegreen'></div>
         </div>
-        <div className='relative z-10 mx-auto max-w-[768px]'>
+        <div className='relative z-10 mx-auto max-w-screen-md'>
           <GoodsExample side='recipient' />
         </div>
       </div>

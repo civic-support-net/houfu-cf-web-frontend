@@ -25,7 +25,7 @@ export default function AboutOrganizations() {
     <div className='flex flex-col justify-start bg-gray-200 p-8 md:p-16'>
       <div className=' mb-6 space-y-6 p-6 text-left'>
         <FlagHeadline
-          headline='このサイトに関わっている団体'
+          headlines={['このサイトに', '関わっている団体']}
           bgColor='bg-my-yellow'
           textColor='text-black'
         />
