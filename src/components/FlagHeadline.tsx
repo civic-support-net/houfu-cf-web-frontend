@@ -1,18 +1,18 @@
 import { cn } from '@/lib/utils'
 
 export default function FlagHeadline({
-  headline,
+  headlines,
   textColor,
   bgColor,
 }: {
-  headline: string
+  headlines: string[]
   textColor: string
   bgColor: string
 }) {
   return (
     <div
       className={cn(
-        'relative inline-block rounded-sp p-[12px] md:rounded-none',
+        'relative mx-auto inline-block w-full rounded-sp p-[12px] md:rounded-none',
         bgColor,
         textColor,
       )}
@@ -25,7 +25,11 @@ export default function FlagHeadline({
         // style={{ clipPath: 'polygon(100% 0%, 0% 50%, 100% 100%)' }}
         style={{ clipPath: 'polygon(0% 0%, 100% 0%, 20% 50%, 100% 100%, 0 100%)' }}
       ></div>
-      <h2 className='text-lg font-bold md:text-[28px]'>{headline}</h2>
+      <h2 className='flex flex-col text-center text-lg font-bold md:flex-row md:text-[28px]'>
+        {headlines.map((h, idx) => (
+          <span key={idx}>{h}</span>
+        ))}
+      </h2>
     </div>
   )
 }
