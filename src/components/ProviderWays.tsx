@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import FlagHeadline from '@/components/FlagHeadline'
+import MegaphoneHeadline from '@/components/MegaphoneHeadline'
 
 type RoundedRectangleProps = {
   texts: string
@@ -24,10 +25,7 @@ const RoundedRectangle: React.FC<RoundedRectangleProps> = ({ texts, link }) => {
 const Internet = () => {
   return (
     <div className='space-y-4 rounded-lg bg-white p-8 md:p-[84px]'>
-      <div className='flex items-center justify-center gap-4'>
-        <Image src='/img/hcf_megahon_okuru.png' alt='image' width={24} height={24}></Image>
-        インターネットから品物をおくる
-      </div>
+      <MegaphoneHeadline side='provider' headlines={['インターネットから', '品物をおくる']} />
       <p>
         インターネット上でお買い物した商品をおくる「スマートサプライ」も受け付けています。Amazonの欲しいものリストに登録されている品物を購入していただくと、コミュニティフリッジへおくることができます。
       </p>
@@ -43,10 +41,7 @@ const Internet = () => {
 const Donate = () => {
   return (
     <div className='space-y-4 rounded-lg bg-white p-8 md:p-[84px]'>
-      <div className='flex items-center justify-center gap-4'>
-        <Image src='/img/hcf_megahon_okuru.png' alt='image' width={24} height={24}></Image>
-        寄付金をおくる
-      </div>
+      <MegaphoneHeadline side='provider' headlines={['寄付金をおくる']} />
       <p>
         コミュニティフリッジは、できるだけ費用をおさえての運営を目指していますが、設備費・システム費などの維持費はかかっており、みなさまからの寄付によって支えられています。
       </p>
@@ -81,10 +76,7 @@ const Donate = () => {
 const Volunteer = () => {
   return (
     <div className='space-y-4 rounded-lg bg-white p-8 md:p-[84px]'>
-      <div className='flex items-center justify-center gap-4'>
-        <Image src='/img/hcf_megahon_okuru.png' alt='image' width={24} height={24}></Image>
-        ボランティアとしてキモチをおくる
-      </div>
+      <MegaphoneHeadline side='provider' headlines={['ボランティアとして', 'キモチをおくる']} />
       <p>
         フードポストの回収・受け入れた品物の整理等の作業や広報など、食品や日用品、寄付金をおくるのではなくボランティアとしてご協力してくださる方も募集しています。
       </p>
