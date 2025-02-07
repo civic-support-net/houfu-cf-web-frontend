@@ -5,12 +5,13 @@ import { db } from './firestore'
 import { messageStatus } from '@/consts/constants'
 import { Message } from '@/types/Message'
 
-export const GetMessages = async () => {
+export const GetMessagesByPosition = async (position: string) => {
   let message: Message[] = []
   ;(
     await db
       .collection('messages')
       .where('status', '==', messageStatus.APPROVED)
+      .where('position', '==', position)
       .orderBy('approvedAt', 'desc')
       .withConverter<Message>(messageConverter)
       .get()
