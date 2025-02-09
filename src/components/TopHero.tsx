@@ -1,13 +1,7 @@
 import Image from 'next/image'
 
-import { cn } from '@/lib/utils'
+import Carousel, { Flag } from '@/components/Carousel'
 import { Message } from '@/types/Message'
-
-type Flag = {
-  imageUrl: string
-  bgColor: string
-  isInvert: boolean
-}
 
 export default function TopHero({
   recipientMessages,
@@ -21,51 +15,52 @@ export default function TopHero({
   const lowerFlags = upperFlags.slice().reverse()
 
   return (
-    <div className='mt-[168px] flex flex-col items-center justify-center'>
-      <ul className='my-8 flex flex-wrap'>
-        {upperFlags.map((flag, idx) => (
-          <li
-            key={idx}
-            className={cn('clip-wavy relative bg-my-red p-[28px] sm:w-1/2 lg:w-1/4', flag.bgColor)}
-          >
-            <div className='relative aspect-[5/3] w-full'>
-              <Image src={flag.imageUrl} fill alt='' className={cn(flag.isInvert && 'invert')} />
-            </div>
-            <div className='h-[28px]' />
-          </li>
-        ))}
-      </ul>
-
-      <div>
-        <p className='text-hb flex flex-col items-center'>
-          「お互いさまのきもち」を応援
-          <br />
-          みんなの冷蔵庫
-          <br />
-        </p>
-        <h1 className=''>防府コミュニティフリッジ</h1>
+    <div className='mt-[80px] flex flex-col items-center justify-center space-y-8 lg:mt-[128px]'>
+      <div className='w-[120%] rotate-[-8deg] overflow-hidden'>
+        <Carousel
+          flags={upperFlags}
+          options={{ loop: true, direction: 'ltr' }}
+          plugins={{ speed: -1 }}
+        />
       </div>
-
-      <ul className='my-8 flex flex-wrap'>
-        {lowerFlags.map((flag, idx) => (
-          <li
-            key={idx}
-            className={cn('clip-wavy relative bg-my-red p-[28px] sm:w-1/2 lg:w-1/4', flag.bgColor)}
-          >
-            <div className='relative aspect-[5/3] w-full'>
-              <Image src={flag.imageUrl} fill alt='' className={cn(flag.isInvert && 'invert')} />
-            </div>
-            <div className='h-[28px]' />
-          </li>
-        ))}
-      </ul>
+      <div className='flex w-full rotate-[-8deg] flex-col items-center gap-4'>
+        <div className='flex items-center gap-x-[0.4em] md:gap-x-[1em]'>
+          <Image
+            src='/img/hcf_hukidashi.png'
+            alt=''
+            width='60'
+            height='40'
+            className='aspect-[5/6] w-[40px] md:w-[60px]'
+          ></Image>
+          <p className='text-hb text-center text-[1.75rem] md:text-[2.5rem]'>
+            おたがいさまの
+            <br className='lg:hidden' />
+            キモチを応援！
+          </p>
+          <Image
+            src='/img/hcf_hukidashi.png'
+            alt=''
+            width='60'
+            height='40'
+            className='aspect-[5/6] w-[40px] -scale-x-100 md:w-[60px]'
+          ></Image>
+        </div>
+        <h1 className='text-[1.5rem]'>防府コミュニティフリッジ</h1>
+      </div>
+      <div className='w-[120%] rotate-[-8deg] overflow-hidden'>
+        <Carousel
+          flags={lowerFlags}
+          options={{ loop: true, direction: 'ltr' }}
+          plugins={{ speed: 1 }}
+        />
+      </div>
     </div>
   )
 }
 
 const recipientBgs = ['bg-my-palered', 'bg-my-red', 'bg-my-red', 'bg-my-paleyellow']
 
-const providerBgs = ['bg-my-green', 'bg-my-palegreen']
+const providerBgs = ['bg-my-palegreen', 'bg-my-green']
 
 function mixMessagesToFlags(recipientMsgs: Message[], providerMsgs: Message[]): Flag[] {
   const flags: Flag[] = []
@@ -82,7 +77,7 @@ function mixMessagesToFlags(recipientMsgs: Message[], providerMsgs: Message[]): 
       flag = {
         imageUrl: recipientMsgs[indexR].imageUrl,
         bgColor,
-        isInvert: bgColor.includes('pale') ? false : true,
+        isInvertImage: bgColor.includes('pale') ? false : true,
       }
       indexR++
     } else {
@@ -91,7 +86,7 @@ function mixMessagesToFlags(recipientMsgs: Message[], providerMsgs: Message[]): 
       flag = {
         imageUrl: providerMsgs[indexP].imageUrl,
         bgColor,
-        isInvert: bgColor.includes('pale') ? false : true,
+        isInvertImage: bgColor.includes('pale') ? false : true,
       }
       indexP++
     }

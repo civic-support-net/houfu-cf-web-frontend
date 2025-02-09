@@ -11,13 +11,19 @@ export default function TopIntroduction() {
       <div className='relative pb-[24px] md:pb-[44px]'>
         {renderRoleIntro({
           side: 'provider',
-          text: 'ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。',
+          texts: [
+            'ご家庭で使いきれない食品や日用品、規格サイズ外で出荷ができない農作物など、個人・企業関係なくだれでもコミュニティフリッジへ参加することができます。',
+            'みなさまからの「おたがいさま」のキモチをコミュニティフリッジを通じて、必要とされているご家庭にお届けします。',
+          ],
         })}
       </div>
       <div className='relative pb-[44px]'>
         {renderRoleIntro({
           side: 'recipient',
-          text: 'ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。',
+          texts: [
+            '防府市在住のひとり親家庭を対象にご利用いただいています。',
+            '家庭の事情や仕事の事情など、突然立ち止まってしまうことが誰しもあるかもしれません。そんな時「困ったときはおたがいさま」のキモチで支え合える仕組みを目指しています。',
+          ],
         })}
       </div>
     </div>
@@ -52,12 +58,10 @@ const renderIllustIntro = () => {
           みんなのえがおが集まる場所。
         </h1>
         <p className=''>
-          コミュニティブリッジとは食料品や日用品をおくったり、買いたものを
-          うけとることができるみんなのおおきな冷蔵庫です。
+          コミュニティフリッジとは、地域みんなのおおきな冷蔵庫です。食品や日用品をおくることや、届いた品物をうけとることができます。
         </p>
         <p className=''>
-          だれかが立ち止まったとき、みんなで背中を押せるように「困ったと
-          きはお互いさま」のキモチを応援しています。
+          だれかが立ち止まった時、みんなで背中を押せるよう「困ったときはおたがいさま」のキモチを応援しています。
         </p>
       </div>
     </div>
@@ -67,7 +71,7 @@ const renderIllustIntro = () => {
 {
   /*２つの立場のイラストと導入文章 */
 }
-const renderRoleIntro = ({ side, text }: { side: 'provider' | 'recipient'; text: string }) => {
+const renderRoleIntro = ({ side, texts }: { side: 'provider' | 'recipient'; texts: string[] }) => {
   // sideによって、色や画像を切り分ける
   const labelHeads =
     side === 'provider' ? ['食料品や日用品を', 'おくる'] : ['食料品や日用品を', 'うけとる']
@@ -121,7 +125,10 @@ const renderRoleIntro = ({ side, text }: { side: 'provider' | 'recipient'; text:
               className='aspect-[4/1] max-w-[65%] object-contain md:max-w-[38%]'
             />
           </div>
-          <p>{text}</p>
+
+          {texts.map((text, index) => (
+            <p key={index}>{text}</p>
+          ))}
         </div>
       </div>
       <div className='absolute bottom-[-24px] z-20 w-full md:bottom-[-42px]'>
