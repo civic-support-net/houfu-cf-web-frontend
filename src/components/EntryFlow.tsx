@@ -46,7 +46,7 @@ const RoundedRectangle: React.FC<RoundedRectangleProps> = ({ side, texts, link }
         textColor,
       )}
     >
-      <div className='border-color flex flex-col items-center text-[18px] tracking-wider md:flex-row lg:text-[24px]'>
+      <div className='flex flex-col items-center text-[18px] tracking-wider md:flex-row lg:text-[24px]'>
         <span>{texts[0]}</span>
         <span>{texts[1]}</span>
       </div>

@@ -5,18 +5,23 @@ import TopPlace from '@/components/TopPlace'
 import { GetApprovedMessages } from '@/data/messages'
 
 const HomePage = async () => {
-  const messages = await GetApprovedMessages()
+  const recipientMessages = await GetApprovedMessages('受給された方')
+  const providerMessages = await GetApprovedMessages('提供された方')
 
   return (
-    <>
-      <TopHero messages={messages} />
-      <Section>
-        <TopIntroduction />
-      </Section>
-      <Section>
-        <TopPlace />
-      </Section>
-    </>
+    <div className='relative'>
+      <div className='relative z-0'>
+        <TopHero recipientMessages={recipientMessages} providerMessages={providerMessages} />
+      </div>
+      <div className='relative z-10 mx-auto max-w-[1200px]'>
+        <Section>
+          <TopIntroduction />
+        </Section>
+        <Section>
+          <TopPlace />
+        </Section>
+      </div>
+    </div>
   )
 }
 
