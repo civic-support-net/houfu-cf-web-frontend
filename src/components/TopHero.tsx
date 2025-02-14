@@ -24,28 +24,30 @@ export default function TopHero({
         />
       </div>
       <div className='flex w-full rotate-[-8deg] flex-col items-center gap-4'>
-        <div className='flex items-center gap-x-[0.4em] md:gap-x-[1em]'>
-          <Image
-            src='/img/hcf_hukidashi.png'
-            alt=''
-            width='60'
-            height='40'
-            className='aspect-[5/6] w-[40px] md:w-[60px]'
-          ></Image>
-          <p className='text-hb text-center text-[1.75rem] md:text-[2.5rem]'>
-            おたがいさまの
-            <br className='lg:hidden' />
-            キモチを応援！
-          </p>
-          <Image
-            src='/img/hcf_hukidashi.png'
-            alt=''
-            width='60'
-            height='40'
-            className='aspect-[5/6] w-[40px] -scale-x-100 md:w-[60px]'
-          ></Image>
-        </div>
-        <h1 className='text-[1.5rem]'>防府コミュニティフリッジ</h1>
+        <h1 className='text-sp-h1 md:text-pc-h1'>
+          <div className='flex items-center gap-x-[0.4em]  md:gap-x-[1em] '>
+            <Image
+              src='/img/hcf_hukidashi.png'
+              alt=''
+              width='60'
+              height='40'
+              className='aspect-[5/6] w-[40px] md:w-[60px]'
+            ></Image>
+            <p className=''>
+              おたがいさまの
+              <br className='lg:hidden' />
+              キモチを応援！
+            </p>
+            <Image
+              src='/img/hcf_hukidashi.png'
+              alt=''
+              width='60'
+              height='40'
+              className='aspect-[5/6] w-[40px] -scale-x-100 md:w-[60px]'
+            ></Image>
+          </div>
+          防府コミュニティフリッジ
+        </h1>
       </div>
       <div className='w-[120%] rotate-[-8deg] overflow-hidden'>
         <Carousel

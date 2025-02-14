@@ -6,9 +6,9 @@ import { cn } from '@/lib/utils'
 
 export default function TopIntroduction() {
   return (
-    <div className='space-y-[44px] bg-white p-[44px] md:space-y-[88px] md:p-[88px]'>
+    <div className='space-y-sp-6 bg-white p-sp-6 md:space-y-pc-6 md:p-pc-6'>
       {renderIllustIntro()}
-      <div className='relative pb-[24px] md:pb-[44px]'>
+      <div className='relative pb-sp-5 lg:pb-pc-5'>
         {renderRoleIntro({
           side: 'provider',
           texts: [
@@ -17,7 +17,7 @@ export default function TopIntroduction() {
           ],
         })}
       </div>
-      <div className='relative pb-[44px]'>
+      <div className='relative pb-sp-5 lg:pb-pc-5'>
         {renderRoleIntro({
           side: 'recipient',
           texts: [
@@ -35,8 +35,8 @@ export default function TopIntroduction() {
 }
 const renderIllustIntro = () => {
   return (
-    <div className='flex flex-col items-center justify-center gap-[28px] md:flex-row-reverse md:gap-[44px]'>
-      <div className='w-full md:w-2/5'>
+    <div className='flex flex-col items-center justify-center gap-sp-5 lg:flex-row-reverse lg:gap-pc-5'>
+      <div className='w-full lg:w-2/5'>
         <div className='relative mx-auto aspect-[8/5]'>
           <Image
             src='/img/hcf_topillust.png'
@@ -47,22 +47,25 @@ const renderIllustIntro = () => {
         </div>
       </div>
 
-      <div className='w-full space-y-[24px] md:w-3/5'>
-        <h1 className='text-center text-3xl font-bold tracking-wider md:text-left'>
+      <div className='w-full space-y-[1em] lg:w-3/5'>
+        <h2 className='text-center text-sp-h2 font-bold tracking-wider lg:text-left lg:text-pc-h2'>
           「がんばれ!」
-          <br className='md:hidden' />
+          <br className='lg:hidden' />
           「ありがとう!」
           <br />
           防府コミュニティフリッジは
           <br />
           みんなのえがおが集まる場所。
-        </h1>
-        <p className=''>
-          コミュニティフリッジとは、地域みんなのおおきな冷蔵庫です。食品や日用品をおくることや、届いた品物をうけとることができます。
-        </p>
-        <p className=''>
-          だれかが立ち止まった時、みんなで背中を押せるよう「困ったときはおたがいさま」のキモチを応援しています。
-        </p>
+        </h2>
+
+        <div className='text-sp-p lg:text-pc-p'>
+          <p>
+            コミュニティフリッジとは、地域みんなのおおきな冷蔵庫です。食品や日用品をおくることや、届いた品物をうけとることができます。
+          </p>
+          <p>
+            だれかが立ち止まった時、みんなで背中を押せるよう「困ったときはおたがいさま」のキモチを応援しています。
+          </p>
+        </div>
       </div>
     </div>
   )
@@ -94,44 +97,48 @@ const renderRoleIntro = ({ side, texts }: { side: 'provider' | 'recipient'; text
     <div className='relative'>
       <div
         className={cn(
-          'flex flex-col items-center justify-center gap-[28px] p-[44px] md:flex-row-reverse md:gap-[44px] md:p-[88px]',
+          'flex flex-col items-center justify-center gap-sp-5 p-sp-6 lg:flex-row-reverse lg:gap-pc-5 lg:p-pc-6',
           bgPaleColor,
           isBackgroundFitLeft
-            ? '-ml-[44px] -mr-[28px] rounded-r-sp pl-[44px] md:-ml-[88px] md:rounded-r-pc'
-            : '-ml-[28px] -mr-[44px] rounded-l-sp pr-[44px] md:-mr-[88px] md:rounded-l-pc',
+            ? '-ml-[44px] -mr-[28px] rounded-r-sp pl-[44px] lg:-ml-pc-6 lg:rounded-r-pc'
+            : '-ml-[28px] -mr-[44px] rounded-l-sp pr-[44px] lg:-mr-pc-6 lg:rounded-l-pc',
         )}
       >
-        <div className='w-full md:w-2/5'>
+        <div className='w-full lg:w-2/5'>
           <div className='relative mx-auto aspect-[13/9]'>
             <Image src={illustImage} alt='' fill className='object-contain' />
           </div>
         </div>
 
-        <div className='flex w-full flex-col items-center space-y-[32px] md:w-3/5 md:items-start md:space-y-[40px]'>
-          <FlagHeadline headlines={labelHeads} bgColor={bgColor} textColor='text-white' />
-          <div className='relative flex flex-col items-center gap-[24px] md:flex-row'>
-            <Image
-              src={labelImage1}
-              alt=''
-              width={804}
-              height={120}
-              className='aspect-[4/1] max-w-[85%] object-contain md:max-w-[50%]'
-            />
-            <Image
-              src={labelImage2}
-              alt=''
-              width={546}
-              height={120}
-              className='aspect-[4/1] max-w-[65%] object-contain md:max-w-[38%]'
-            />
+        <div className='flex w-full flex-col items-center space-y-[32px] lg:w-3/5 lg:items-start lg:space-y-pc-5'>
+          <div className='space-y-sp-3 lg:space-y-pc-3'>
+            <FlagHeadline headlines={labelHeads} bgColor={bgColor} textColor='text-white' />
+            <div className='relative flex flex-col items-center gap-x-[24px] lg:flex-row'>
+              <Image
+                src={labelImage1}
+                alt=''
+                width={804}
+                height={120}
+                className='aspect-[4/1] max-w-[85%] object-contain lg:max-w-[50%]'
+              />
+              <Image
+                src={labelImage2}
+                alt=''
+                width={546}
+                height={120}
+                className='aspect-[4/1] max-w-[65%] object-contain lg:max-w-[38%]'
+              />
+            </div>
           </div>
 
-          {texts.map((text, index) => (
-            <p key={index}>{text}</p>
-          ))}
+          <div className='text-sp-p lg:text-pc-p'>
+            {texts.map((text, index) => (
+              <p key={index}>{text}</p>
+            ))}
+          </div>
         </div>
       </div>
-      <div className='absolute bottom-[-24px] z-20 w-full md:bottom-[-42px]'>
+      <div className='absolute bottom-[-24px] z-20 w-full lg:bottom-[-42px]'>
         <div className='flex justify-center'>
           <Button
             href={linkHref}
@@ -142,10 +149,10 @@ const renderRoleIntro = ({ side, texts }: { side: 'provider' | 'recipient'; text
           />
         </div>
       </div>
-      <div className='absolute right-0 top-[-22px] z-10 aspect-[10/9] w-[60px] md:right-[42px] md:top-[-42px] md:w-[80px]'>
+      <div className='absolute right-0 top-[-22px] z-10 aspect-[10/9] w-[60px] lg:right-[42px] lg:top-[-42px] lg:w-[80px]'>
         <Image src={topRightImage} fill alt='' className='' />
       </div>
-      <div className='absolute bottom-[-22px] left-0 z-10 aspect-[10/9] w-[60px] md:bottom-[-42px] md:left-[42px] md:w-[80px]'>
+      <div className='absolute bottom-[-22px] left-0 z-10 aspect-[10/9] w-[60px] lg:bottom-[-42px] lg:left-[42px] lg:w-[80px]'>
         <Image src={bottomLeftImage} fill alt='' className='' />
       </div>
     </div>
