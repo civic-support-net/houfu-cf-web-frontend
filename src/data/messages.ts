@@ -1,4 +1,4 @@
-import { sampleMessages } from './sampleMessages'
+import { getSampleMessages } from './sampleMessages'
 
 import { newFirestore } from '@/lib/firestore/firestore'
 import { GetMessagesByPosition } from '@/lib/firestore/message'
@@ -12,6 +12,6 @@ export const GetApprovedMessages = async (position: string): Promise<Message[]> 
     newFirestore()
     return GetMessagesByPosition(position)
   } else {
-    return sampleMessages
+    return getSampleMessages(position)
   }
 }
