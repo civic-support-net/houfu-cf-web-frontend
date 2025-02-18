@@ -13,7 +13,7 @@ const RoundedSquare: React.FC<RoundedSquareProps> = ({ circleText, side }) => {
     <div className='relative size-[200px] rounded-sp border-2 border-black bg-white'>
       <div
         className={classNames(
-          'absolute left-[-8px] top-[-8px] flex h-[32px] w-[32px] items-center justify-center rounded-full border-2 border-black md:h-[36px] md:w-[36px]',
+          'absolute left-[-8px] top-[-8px] flex h-[32px] w-[32px] items-center justify-center rounded-full border-2 border-black lg:h-[36px] lg:w-[36px]',
           color,
         )}
       >
@@ -46,7 +46,7 @@ const RoundedRectangle: React.FC<RoundedRectangleProps> = ({ side, texts, link }
         textColor,
       )}
     >
-      <div className='flex flex-col items-center text-[18px] tracking-wider md:flex-row lg:text-[24px]'>
+      <div className='flex flex-col items-center text-[18px] tracking-wider lg:flex-row lg:text-pc-h4'>
         <span>{texts[0]}</span>
         <span>{texts[1]}</span>
       </div>
@@ -99,12 +99,12 @@ export default function EntryFlow({ side }: { side: 'provider' | 'recipient' }) 
   const textLine = side === 'provider' ? 'decoration-my-red' : 'decoration-my-green'
 
   return (
-    <div className='flex-col md:flex-row'>
-      <div className='mx-auto flex flex-col items-center justify-center gap-y-[100px] md:max-w-screen-md'>
+    <div className='flex-col lg:flex-row'>
+      <div className='mx-auto flex flex-col items-center justify-center gap-y-[100px] lg:max-w-screen-lg'>
         <div className='mx-auto flex items-center gap-x-4'>
           <Image src='/img/hcf_hukidashi.png' alt='' width='75' height='50'></Image>
           <div className='mx-auto flex flex-col items-center gap-y-2 text-center text-2xl'>
-            <div className='flex flex-col md:flex-row'>
+            <div className='flex flex-col lg:flex-row'>
               <p>{topText[0]}</p>
               <p>{topText[1]}</p>
             </div>
@@ -119,7 +119,7 @@ export default function EntryFlow({ side }: { side: 'provider' | 'recipient' }) 
           ></Image>
         </div>
 
-        <div className='flex flex-col justify-center gap-y-[28px] md:flex-row md:gap-x-[44px]'>
+        <div className='flex flex-col justify-center gap-y-pc-5 lg:flex-row lg:gap-x-pc-5'>
           {flowContents.map(({ label, text }, index) => (
             <div
               key={index}
