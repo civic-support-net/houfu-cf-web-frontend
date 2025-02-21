@@ -25,7 +25,7 @@ export default function FlagHeadline({
         // style={{ clipPath: 'polygon(100% 0%, 0% 50%, 100% 100%)' }}
         style={{ clipPath: 'polygon(0% 0%, 100% 0%, 20% 50%, 100% 100%, 0 100%)' }}
       ></div>
-      <h2 className='flex flex-col text-center text-lg font-bold md:flex-row md:text-[28px]'>
+      <h2 className='flex flex-col text-center text-sp-h2 font-bold lg:flex-row lg:text-pc-h2'>
         {headlines.map((h, idx) => (
           <span key={idx}>{h}</span>
         ))}

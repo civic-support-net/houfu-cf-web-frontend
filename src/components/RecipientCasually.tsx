@@ -29,12 +29,12 @@ export default function RecipientCasually() {
             textColor='text-white'
           />
         </div>
-        <div className='m-auto block rounded-lg bg-my-green p-4 text-center text-[24px] text-white lg:hidden'>
+        <div className='m-auto block rounded-lg bg-my-green p-4 text-center text-sp-h2 text-white lg:hidden'>
           <p>さまざまな</p>
           <p>お届けものが</p>
           <p>あります</p>
         </div>
-        <div className='text-start text-[16px]'>
+        <div className='text-start text-sp-p lg:text-pc-p'>
           <p>
             クリスマスの時期にはクリスマスモニュメント、バレンタインの時期にはチョコなど季節を感じるものや、毎日使う食材や衛生用品など、たくさんの方から様々な品物が届いています。
           </p>
@@ -61,7 +61,7 @@ export default function RecipientCasually() {
           side='recipient'
           headlines={['お米や野菜などの', '生鮮食品もあります']}
         />
-        <p className='text-start text-[12px]'>
+        <p className='text-center text-sp-p lg:text-pc-p'>
           農家の方やお店の方からいただいたお米や野菜など、毎日のご飯に助かる生鮮食品も届いています。
         </p>
       </div>

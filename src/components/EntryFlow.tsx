@@ -17,9 +17,9 @@ const RoundedSquare: React.FC<RoundedSquareProps> = ({ circleText, side }) => {
           color,
         )}
       >
-        <p className='text- text-center text-white'>{circleText}</p>
+        <p className='text-16px text-center text-white lg:text-20px'>{circleText}</p>
       </div>
-      <p className='relative top-1/2 -translate-y-1/2 p-[10px] text-center text-[22px] text-gray-400'>
+      <p className='relative top-1/2 -translate-y-1/2 p-[10px] text-center text-sp-h4 lg:text-pc-h4 text-gray-400'>
         写真・イラストが入ります。
       </p>
     </div>
@@ -46,7 +46,7 @@ const RoundedRectangle: React.FC<RoundedRectangleProps> = ({ side, texts, link }
         textColor,
       )}
     >
-      <div className='flex flex-col items-center text-[18px] tracking-wider lg:flex-row lg:text-pc-h4'>
+      <div className='flex flex-col items-center text-sp-h4 tracking-wider lg:flex-row lg:text-pc-h4'>
         <span>{texts[0]}</span>
         <span>{texts[1]}</span>
       </div>
@@ -101,22 +101,16 @@ export default function EntryFlow({ side }: { side: 'provider' | 'recipient' }) 
   return (
     <div className='flex-col lg:flex-row'>
       <div className='mx-auto flex flex-col items-center justify-center gap-y-[100px] lg:max-w-screen-lg'>
-        <div className='mx-auto flex items-center gap-x-4'>
+        <div className='mx-auto flex items-center gap-x-[0.4em] lg:gap-x-[1em]'>
           <Image src='/img/hcf_hukidashi.png' alt='' width='75' height='50'></Image>
-          <div className='mx-auto flex flex-col items-center gap-y-2 text-center text-2xl'>
+          <div className='mx-auto flex flex-col items-center gap-y-2 text-center text-sp-h3 lg:text-pc-h2'>
             <div className='flex flex-col lg:flex-row'>
               <p>{topText[0]}</p>
               <p>{topText[1]}</p>
             </div>
             <p>{topText[2]}</p>
           </div>
-          <Image
-            src='/img/hcf_hukidashi.png'
-            alt=''
-            width='75'
-            height='50'
-            className='rotate-180 -scale-y-100'
-          ></Image>
+          <Image src='/img/hcf_hukidashi.png' alt='' width='75' height='50' className='rotate-180 -scale-y-100'></Image>
         </div>
 
         <div className='flex flex-col justify-center gap-y-pc-5 lg:flex-row lg:gap-x-pc-5'>
@@ -128,16 +122,17 @@ export default function EntryFlow({ side }: { side: 'provider' | 'recipient' }) 
               <RoundedSquare circleText={index + 1} side={side} />
               <p
                 className={classNames(
-                  'items-center text-center text-base underline underline-offset-4',
+                  'items-center text-center text-sp-h4 lg:text-pc-h4 underline underline-offset-4',
                   textLine,
                 )}
               >
                 {label}
               </p>
-              <p className='text-left text-base'>{text}</p>
+              <p className='text-left text-sp-p lg:text-pc-p '>{text}</p>
             </div>
           ))}
         </div>
+
         <div className='flex size-full justify-center'>
           <RoundedRectangle
             side={side}
