@@ -75,23 +75,23 @@ const renderIllustIntro = () => {
   /*２つの立場のイラストと導入文章 */
 }
 const renderRoleIntro = ({ side, texts }: { side: 'provider' | 'recipient'; texts: string[] }) => {
+  const isProvider = side === 'provider'
   // sideによって、色や画像を切り分ける
-  const labelHeads =
-    side === 'provider' ? ['食料品や日用品を', 'おくる'] : ['食料品や日用品を', 'うけとる']
-  const labelImage1 = side === 'provider' ? '/img/hcf_giving.png' : '/img/hcf_taking.png'
+  const labelHeads = isProvider ? ['食料品や日用品を', 'おくる'] : ['食料品や日用品を', 'うけとる']
+  const labelImage1 = isProvider ? '/img/hcf_giving.png' : '/img/hcf_taking.png'
   const labelImage2 = '/img/hcf_food.png'
-  const textColor = side === 'provider' ? 'text-my-red' : 'text-my-green'
-  const bgColor = side === 'provider' ? 'bg-my-red' : 'bg-my-green'
-  const bgPaleColor = side === 'provider' ? 'bg-my-palered' : 'bg-my-palegreen'
-  const borderColor = side === 'provider' ? 'border-my-red' : 'border-my-green'
-  const linkText = side === 'provider' ? 'おくる方法を見る' : 'うけとる方法を見る'
-  const linkHref = side === 'provider' ? '/#provider' : '/#recipient'
-  const illustImage = side === 'provider' ? '/img/hcf_topokuru.png' : '/img/hcf_topuketoru.png'
-  const topRightImage =
-    side === 'provider' ? '/img/hcf_okuruillust_1.png' : '/img/hcf_uketoruillust_1.png'
-  const bottomLeftImage =
-    side === 'provider' ? '/img/hcf_okuruillust_2.png' : '/img/hcf_kyoutsuillust_green.png'
-  const isBackgroundFitLeft = side === 'provider'
+  const textColor = isProvider ? 'text-my-red' : 'text-my-green'
+  const bgColor = isProvider ? 'bg-my-red' : 'bg-my-green'
+  const bgPaleColor = isProvider ? 'bg-my-palered' : 'bg-my-palegreen'
+  const borderColor = isProvider ? 'border-my-red' : 'border-my-green'
+  const linkText = isProvider ? 'おくる方法を見る' : 'うけとる方法を見る'
+  const linkHref = isProvider ? '/#provider' : '/#recipient'
+  const illustImage = isProvider ? '/img/hcf_topokuru.png' : '/img/hcf_topuketoru.png'
+  const topRightImage = isProvider ? '/img/hcf_okuruillust_1.png' : '/img/hcf_uketoruillust_1.png'
+  const bottomLeftImage = isProvider
+    ? '/img/hcf_okuruillust_2.png'
+    : '/img/hcf_kyoutsuillust_green.png'
+  const isBackgroundFitLeft = isProvider
 
   return (
     <div className='relative'>
@@ -99,6 +99,7 @@ const renderRoleIntro = ({ side, texts }: { side: 'provider' | 'recipient'; text
         className={cn(
           'flex flex-col items-center justify-center gap-sp-5 p-sp-6 lg:flex-row-reverse lg:gap-pc-5 lg:p-pc-6',
           bgPaleColor,
+          isProvider ? 'lg:flex-row-reverse' : 'lg:flex-row',
           isBackgroundFitLeft
             ? '-ml-[44px] -mr-[28px] rounded-r-sp pl-[44px] lg:-ml-pc-6 lg:rounded-r-pc'
             : '-ml-[28px] -mr-[44px] rounded-l-sp pr-[44px] lg:-mr-pc-6 lg:rounded-l-pc',

@@ -22,7 +22,7 @@ const organizations = [
 
 export default function AboutOrganizations() {
   return (
-    <div className='flex flex-col justify-start bg-gray-200 p-8 md:p-16'>
+    <div className='flex flex-col justify-start bg-white p-8 md:p-16'>
       <div className=' mb-6 space-y-6 p-6 text-left'>
         <FlagHeadline
           headlines={['このサイトに', '関わっている団体']}

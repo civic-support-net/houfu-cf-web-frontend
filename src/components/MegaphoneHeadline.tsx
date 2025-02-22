@@ -13,7 +13,7 @@ export default function MegaphoneHeadline({
   return (
     <div className='flex items-center justify-center gap-4'>
       <Image src={megaphoneImage} alt='image' width={24} height={24}></Image>
-      <h3 className='flex flex-col text-[18px] md:flex-row'>
+      <h3 className='flex flex-col text-sp-h3 lg:text-pc-h3 lg:flex-row'>
         {headlines.map((headline, index) => (
           <span key={index}>{headline}</span>
         ))}

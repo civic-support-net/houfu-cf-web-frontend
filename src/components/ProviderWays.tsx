@@ -13,7 +13,7 @@ const RoundedRectangle: React.FC<RoundedRectangleProps> = ({ texts, link }) => {
   return (
     <Link
       href={link}
-      className='rounded-full border-[2px] border-my-red bg-white px-sp-3 py-sp-1 text-my-red lg:px-[32px] lg:py-pc-3'
+      className='rounded-full border-2 border-my-red bg-white px-sp-3 py-sp-1 text-my-red lg:px-[32px] lg:py-pc-3'
     >
       <div className='flex flex-col items-center text-sp-p tracking-wider lg:flex-row lg:text-pc-h4'>
         <span>{texts}</span>
@@ -24,7 +24,7 @@ const RoundedRectangle: React.FC<RoundedRectangleProps> = ({ texts, link }) => {
 
 const Internet = () => {
   return (
-    <div className='space-y-sp-3 rounded-lg bg-white p-[32px] lg:p-pc-6'>
+    <div className='space-y-4 rounded-lg bg-white p-8 md:p-pc-6'>
       <MegaphoneHeadline side='provider' headlines={['インターネットから', '品物をおくる']} />
       <p>
         インターネット上でお買い物した商品をおくる「スマートサプライ」も受け付けています。Amazonの欲しいものリストに登録されている品物を購入していただくと、コミュニティフリッジへおくることができます。
@@ -40,14 +40,14 @@ const Internet = () => {
 
 const Donate = () => {
   return (
-    <div className='space-y-sp-3 rounded-lg bg-white p-[32px] lg:p-pc-6'>
+    <div className='space-y-4 rounded-lg bg-white p-8 md:p-pc-6'>
       <MegaphoneHeadline side='provider' headlines={['寄付金をおくる']} />
       <p>
         コミュニティフリッジは、できるだけ費用をおさえての運営を目指していますが、設備費・システム費などの維持費はかかっており、みなさまからの寄付によって支えられています。
       </p>
-      <div className='flex flex-col space-y-sp-3 lg:flex-row lg:space-y-[0px]'>
+      <div className='flex flex-col space-y-sp-3 lg:flex-row lg:space-y-0'>
         <div className='flex-1'>
-          <div className='mr-[0.5rem] mt-[0.25rem] inline-block size-[1rem] shrink-0 bg-my-red' />
+          <div className='mr-2 mt-1 inline-block size-4 shrink-0 bg-my-red' />
           <span>クレジットカードで寄付</span>
         </div>
         <div className='flex flex-1 flex-col'>
@@ -57,10 +57,10 @@ const Donate = () => {
       <div className='flex size-full justify-center'>
         <RoundedRectangle texts='寄付をする' link='' />
       </div>
-      <div className='border-t-[2px] border-dashed border-my-red' />
-      <div className='flex flex-col space-y-sp-3 lg:flex-row lg:space-y-[0px]'>
+      <div className='border-t-2 border-dashed border-my-red' />
+      <div className='flex flex-col space-y-sp-3 lg:flex-row lg:space-y-0'>
         <div className='flex-1'>
-          <div className='mr-[0.5rem] mt-[0.25rem] inline-block size-[1rem] shrink-0 bg-my-red' />
+          <div className='mr-2 mt-1 inline-block size-4 shrink-0 bg-my-red' />
           <span>銀行振込で寄付</span>
         </div>
         <div className='flex flex-1 flex-col'>
@@ -75,7 +75,7 @@ const Donate = () => {
 
 const Volunteer = () => {
   return (
-    <div className='space-y-sp-3 rounded-lg bg-white p-[32px] lg:p-pc-6'>
+    <div className='space-y-4 rounded-lg bg-white p-8 md:p-pc-6'>
       <MegaphoneHeadline side='provider' headlines={['ボランティアとして', 'キモチをおくる']} />
       <p>
         フードポストの回収・受け入れた品物の整理等の作業や広報など、食品や日用品、寄付金をおくるのではなくボランティアとしてご協力してくださる方も募集しています。
@@ -86,9 +86,9 @@ const Volunteer = () => {
 
 export default function ProviderWays() {
   return (
-    <div className='space-y-sp-3 bg-my-palered p-sp-3 lg:p-pc-6'>
-      <div className='space-y-sp-3 p-sp-3'>
-        <div className='flex w-full flex-col items-center space-y-[32px] lg:w-3/5 lg:items-start lg:space-y-[40px]'>
+    <div className='space-y-4 bg-my-palered p-4 lg:p-[88px]'>
+      <div className='space-y-4 p-4'>
+        <div className='flex w-full flex-col items-center space-y-[32px] md:w-3/5 md:items-start md:space-y-pc-5'>
           <FlagHeadline
             headlines={['キモチの', 'おくりかたは', 'さまざまです']}
             bgColor='bg-my-red'

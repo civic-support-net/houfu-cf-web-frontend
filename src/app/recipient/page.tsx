@@ -8,16 +8,18 @@ const RecipientPage = () => {
     <>
       <Headline
         headline='食料品や日用品を'
-        headlineColor='うけとる'
-        color='text-my-green'
+        headlineTail='うけとる'
+        tailColor='text-my-green'
         bgImage='bg-heroillust1'
       />
-      <Section>
-        <RecipientFlow />
-      </Section>
-      <Section>
-        <RecipientCasually />
-      </Section>
+      <div className='relative z-10 mx-auto max-w-[1200px]'>
+        <Section>
+          <RecipientFlow />
+        </Section>
+        <Section>
+          <RecipientCasually />
+        </Section>
+      </div>
     </>
   )
 }

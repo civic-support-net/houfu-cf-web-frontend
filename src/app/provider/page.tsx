@@ -8,16 +8,18 @@ const ProviderPage = () => {
     <>
       <Headline
         headline='食料品や日用品を'
-        headlineColor='おくる'
-        color='text-my-red'
+        headlineTail='おくる'
+        tailColor='text-my-red'
         bgImage='bg-heroillust2'
       />
-      <Section>
-        <ProviderFlow />
-      </Section>
-      <Section>
-        <ProviderWays />
-      </Section>
+      <div className='relative mx-auto max-w-[1200px]'>
+        <Section>
+          <ProviderFlow />
+        </Section>
+        <Section>
+          <ProviderWays />
+        </Section>
+      </div>
     </>
   )
 }
