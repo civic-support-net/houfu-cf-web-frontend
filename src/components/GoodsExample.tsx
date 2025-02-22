@@ -17,13 +17,13 @@ function CircleContents({
   bgPaleColor: string
 }) {
   return (
-    <div className='space-y-[16px]'>
-      <div className={cn('mr-2 mt-2 inline-block size-4 shrink-0', bgColor)} />
+    <div className='space-y-sp-3'>
+      <div className={cn('mr-[0.5rem] mt-[0.5rem] inline-block size-[1rem] shrink-0', bgColor)} />
       {headline}
       <ul className='grid grid-cols-2 gap-4 lg:grid-cols-4'>
         {listItems.map((item, index) => (
           <li key={index} className='flex flex-col items-center'>
-            <div className='size-32 rounded-full lg:size-36'>
+            <div className='size-[8rem] rounded-full lg:size-[9rem]'>
               <div
                 className={cn(
                   'relative flex size-full items-center justify-center overflow-hidden rounded-full',
@@ -108,12 +108,12 @@ export default function GoodsExample({ side }: { side: 'provider' | 'recipient' 
   const bgPaleColor = side === 'provider' ? 'bg-my-palered' : 'bg-my-palegreen'
   const borderColor = side === 'provider' ? 'border-my-red' : 'border-my-green'
   return (
-    <div className='space-y-[84px] rounded-lg bg-white px-[28px] py-[44px] lg:p-[84px]'>
-      <div className='space-y-[16px]'>
+    <div className='space-y-[84px] rounded-lg bg-white px-sp-5 py-sp-6 lg:p-pc-6'>
+      <div className='space-y-sp-3'>
         <MegaphoneHeadline side={side} headlines={[firstText[0]]} />
         <p>{firstText[1]}</p>
       </div>
-      <ul className='space-y-[44px] lg:space-y-[84px]'>
+      <ul className='space-y-sp-6 lg:space-y-pc-6'>
         {listInfo.map((note, index) => (
           <li key={index} className=''>
             <CircleContents
@@ -127,8 +127,8 @@ export default function GoodsExample({ side }: { side: 'provider' | 'recipient' 
         ))}
       </ul>
 
-      <div className={cn('border-t-2 border-dashed', borderColor)}></div>
-      <div className='space-y-[16px]'>
+      <div className={cn('border-t-[2px] border-dashed', borderColor)}></div>
+      <div className='space-y-sp-3'>
         <MegaphoneHeadline side={side} headlines={[secondText[0]]} />
         <p>{secondText[1]}</p>
       </div>

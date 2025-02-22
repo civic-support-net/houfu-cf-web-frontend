@@ -13,9 +13,9 @@ const RoundedRectangle: React.FC<RoundedRectangleProps> = ({ texts, link }) => {
   return (
     <Link
       href={link}
-      className='rounded-full border-2 border-my-red bg-white px-4 py-2 text-my-red lg:px-8 lg:py-4'
+      className='rounded-full border-2 border-my-red bg-white px-sp-3 py-sp-1 text-my-red lg:px-[32px] lg:py-pc-3'
     >
-      <div className='flex flex-col items-center text-[18px] tracking-wider md:flex-row lg:text-[24px]'>
+      <div className='flex flex-col items-center text-sp-p tracking-wider lg:flex-row lg:text-pc-h4'>
         <span>{texts}</span>
       </div>
     </Link>
@@ -45,7 +45,7 @@ const Donate = () => {
       <p>
         コミュニティフリッジは、できるだけ費用をおさえての運営を目指していますが、設備費・システム費などの維持費はかかっており、みなさまからの寄付によって支えられています。
       </p>
-      <div className='flex flex-col space-y-4 md:flex-row md:space-y-0'>
+      <div className='flex flex-col space-y-sp-3 lg:flex-row lg:space-y-0'>
         <div className='flex-1'>
           <div className='mr-2 mt-1 inline-block size-4 shrink-0 bg-my-red' />
           <span>クレジットカードで寄付</span>
@@ -58,7 +58,7 @@ const Donate = () => {
         <RoundedRectangle texts='寄付をする' link='' />
       </div>
       <div className='border-t-2 border-dashed border-my-red' />
-      <div className='flex flex-col space-y-4 md:flex-row md:space-y-0'>
+      <div className='flex flex-col space-y-sp-3 lg:flex-row lg:space-y-0'>
         <div className='flex-1'>
           <div className='mr-2 mt-1 inline-block size-4 shrink-0 bg-my-red' />
           <span>銀行振込で寄付</span>
@@ -101,7 +101,7 @@ export default function ProviderWays() {
         </p>
       </div>
 
-      <div className='relative z-10 mx-auto max-w-screen-md space-y-4'>
+      <div className='relative z-10 mx-auto max-w-screen-lg space-y-sp-3'>
         <Internet />
         <Donate />
         <Volunteer />
