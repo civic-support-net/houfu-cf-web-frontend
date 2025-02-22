@@ -23,7 +23,7 @@ function CircleContents({
       <ul className='grid grid-cols-2 gap-4 lg:grid-cols-4'>
         {listItems.map((item, index) => (
           <li key={index} className='flex flex-col items-center'>
-            <div className='size-[8rem] rounded-full lg:size-[9rem]'>
+            <div className='size-32 rounded-full lg:size-36'>
               <div
                 className={cn(
                   'relative flex size-full items-center justify-center overflow-hidden rounded-full',
@@ -108,7 +108,7 @@ export default function GoodsExample({ side }: { side: 'provider' | 'recipient' 
   const bgPaleColor = side === 'provider' ? 'bg-my-palered' : 'bg-my-palegreen'
   const borderColor = side === 'provider' ? 'border-my-red' : 'border-my-green'
   return (
-    <div className='space-y-[84px] rounded-lg bg-white px-sp-5 py-sp-6 lg:p-pc-6'>
+    <div className='space-y-sp-6 rounded-lg bg-white px-sp-5 py-sp-6 lg:space-y-pc-6 lg:p-pc-6'>
       <div className='space-y-sp-3'>
         <MegaphoneHeadline side={side} headlines={[firstText[0]]} />
         <p>{firstText[1]}</p>

@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils'
 
 export default function TopPlace() {
   return (
-    <div className='space-y-[44px] bg-white p-[44px] md:space-y-[88px] md:p-[88px]'>
+    <div className='space-y-sp-6 bg-white p-sp-6 md:space-y-pc-6 md:p-pc-6'>
       <div className='space-y-[24px]'>
         <FlagHeadline
           headlines={['防府コミュニティ', 'フリッジは', 'ルルサス防府にあります']}
@@ -20,7 +20,7 @@ export default function TopPlace() {
         </p>
       </div>
 
-      <div className='flex flex-col gap-[22px] md:flex-row md:gap-[44px]'>
+      <div className='flex flex-col gap-[22px] md:flex-row md:gap-sp-6'>
         <Place
           label='食料品や日用品をおくる'
           hours='10:00〜17:00'
