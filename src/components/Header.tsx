@@ -17,7 +17,7 @@ const Header = () => {
             <Image src='/img/logo.png' fill alt='logo' className='' />
           </Link>
         </div>
-        <ul className='flex h-[72px] items-center gap-[12px]'>
+        <ul className='flex h-[72px] items-center gap-sp-2 lg:gap-pc-2'>
           {menus.map((menu) => (
             <li
               key={menu.href}

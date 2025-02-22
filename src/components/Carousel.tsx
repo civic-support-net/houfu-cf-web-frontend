@@ -42,8 +42,8 @@ const Carousel: React.FC<CarouselProps> = ({ flags, options = {}, plugins = {} }
         {flags.map((flag, index) => (
           <li key={index} className={cn('clip-wavy mx-[10.5px] lg:mx-[14px]', flag.bgColor)}>
             <div
-              className='relative size-full h-[132px] w-[192px] p-sp-4
-            md:h-[176px] md:w-[256px] lg:p-pc-4'
+              className='relative size-full h-[132px] w-[192px] p-sp-flag
+            md:h-[176px] md:w-[256px] md:p-pc-flag'
             >
               <Image
                 src={flag.imageUrl}

@@ -3,6 +3,12 @@ import Image from 'next/image'
 import Carousel, { Flag } from '@/components/Carousel'
 import { Message } from '@/types/Message'
 
+// 2パターンの背景色の順番を用意
+const rBgs1 = ['bg-my-palered', 'bg-my-red', 'bg-my-red', 'bg-my-paleyellow']
+const pBgs1 = ['bg-my-palegreen', 'bg-my-green']
+const rBgs2 = ['bg-my-red', 'bg-my-paleyellow', 'bg-my-red', 'bg-my-palered']
+const pBgs2 = ['bg-my-green', 'bg-my-palegreen']
+
 export default function TopHero({
   recipientMessages,
   providerMessages,
@@ -11,8 +17,9 @@ export default function TopHero({
   providerMessages: Message[]
 }) {
   // 旗の２つのラインにメッセージを割り振りながら、背景色や文字反転を仕込む
-  const upperFlags = mixMessagesToFlags(recipientMessages, providerMessages)
-  const lowerFlags = upperFlags.slice().reverse()
+  const upperFlags = mixMessagesToFlags(recipientMessages, providerMessages, rBgs1, pBgs1)
+  // const lowerFlags = upperFlags.slice().reverse()
+  const lowerFlags = mixMessagesToFlags(recipientMessages, providerMessages, rBgs2, pBgs2)
 
   return (
     <div className='mt-[80px] flex flex-col items-center justify-center space-y-8 lg:mt-[128px]'>
@@ -62,33 +69,34 @@ export default function TopHero({
   )
 }
 
-const recipientBgs = ['bg-my-palered', 'bg-my-red', 'bg-my-red', 'bg-my-paleyellow']
-
-const providerBgs = ['bg-my-palegreen', 'bg-my-green']
-
-function mixMessagesToFlags(recipientMsgs: Message[], providerMsgs: Message[]): Flag[] {
+function mixMessagesToFlags(
+  rMsgs: Message[],
+  pMsgs: Message[],
+  rBgs: string[],
+  pBgs: string[],
+): Flag[] {
   const flags: Flag[] = []
 
   // recipient2つprovider1つの順で旗を追加していく
   let index = 0
   let indexR = 0
   let indexP = 0
-  while (indexR < recipientMsgs.length || indexP < providerMsgs.length) {
+  while (indexR < rMsgs.length && indexP < pMsgs.length) {
     let flag
     if (index % 3 === 0 || index % 3 === 1) {
       // recipient
-      const bgColor = recipientBgs[indexR % recipientBgs.length]
+      const bgColor = rBgs[indexR % rBgs.length]
       flag = {
-        imageUrl: recipientMsgs[indexR].imageUrl,
+        imageUrl: rMsgs[indexR].imageUrl,
         bgColor,
         isInvertImage: bgColor.includes('pale') ? false : true,
       }
       indexR++
     } else {
       // provider
-      const bgColor = providerBgs[indexP % providerBgs.length]
+      const bgColor = pBgs[indexP % pBgs.length]
       flag = {
-        imageUrl: providerMsgs[indexP].imageUrl,
+        imageUrl: pMsgs[indexP].imageUrl,
         bgColor,
         isInvertImage: bgColor.includes('pale') ? false : true,
       }

@@ -6,6 +6,9 @@ import { messageStatus } from '@/consts/constants'
 import { Message } from '@/types/Message'
 
 export const GetMessagesByPosition = async (position: string) => {
+  // 受給者と提供者を2対1の割合で件数取得してみる
+  const limit = position === '受給された方' ? 8 : 4
+
   let message: Message[] = []
   ;(
     await db
@@ -13,6 +16,7 @@ export const GetMessagesByPosition = async (position: string) => {
       .where('status', '==', messageStatus.APPROVED)
       .where('position', '==', position)
       .orderBy('approvedAt', 'desc')
+      .limit(limit)
       .withConverter<Message>(messageConverter)
       .get()
   ).forEach((doc) => {
