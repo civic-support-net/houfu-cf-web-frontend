@@ -12,7 +12,7 @@ export default function FlagHeadline({
   return (
     <div
       className={cn(
-        'relative mx-auto inline-block w-full rounded-sp p-[12px] md:rounded-none',
+        'relative mx-auto inline-block rounded-sp p-[12px] md:mx-0 md:rounded-none',
         bgColor,
         textColor,
       )}
@@ -22,10 +22,9 @@ export default function FlagHeadline({
           'absolute right-1 top-0 z-10 hidden aspect-[2/3] h-full translate-x-full bg-white md:block',
           bgColor,
         )}
-        // style={{ clipPath: 'polygon(100% 0%, 0% 50%, 100% 100%)' }}
         style={{ clipPath: 'polygon(0% 0%, 100% 0%, 20% 50%, 100% 100%, 0 100%)' }}
       ></div>
-      <h2 className='flex flex-col text-center text-sp-h2 font-bold lg:flex-row lg:text-pc-h2'>
+      <h2 className='flex flex-col text-center text-sp-h2 font-bold md:flex-row md:text-pc-h2'>
         {headlines.map((h, idx) => (
           <span key={idx}>{h}</span>
         ))}

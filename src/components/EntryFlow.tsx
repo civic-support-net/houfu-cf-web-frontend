@@ -17,9 +17,9 @@ const RoundedSquare: React.FC<RoundedSquareProps> = ({ circleText, side }) => {
           color,
         )}
       >
-        <p className='text-16px text-center text-white lg:text-20px'>{circleText}</p>
+        <p className='text-center text-sp-p text-white lg:text-pc-p'>{circleText}</p>
       </div>
-      <p className='relative top-1/2 -translate-y-1/2 p-[10px] text-center text-sp-h4 lg:text-pc-h4 text-gray-400'>
+      <p className='relative top-1/2 -translate-y-1/2 p-[10px] text-center text-sp-h4 text-gray-400 lg:text-pc-h4'>
         写真・イラストが入ります。
       </p>
     </div>
@@ -110,7 +110,13 @@ export default function EntryFlow({ side }: { side: 'provider' | 'recipient' }) 
             </div>
             <p>{topText[2]}</p>
           </div>
-          <Image src='/img/hcf_hukidashi.png' alt='' width='75' height='50' className='rotate-180 -scale-y-100'></Image>
+          <Image
+            src='/img/hcf_hukidashi.png'
+            alt=''
+            width='75'
+            height='50'
+            className='rotate-180 -scale-y-100'
+          ></Image>
         </div>
 
         <div className='flex flex-col justify-center gap-y-pc-5 lg:flex-row lg:gap-x-pc-5'>
@@ -122,7 +128,7 @@ export default function EntryFlow({ side }: { side: 'provider' | 'recipient' }) 
               <RoundedSquare circleText={index + 1} side={side} />
               <p
                 className={classNames(
-                  'items-center text-center text-sp-h4 lg:text-pc-h4 underline underline-offset-4',
+                  'items-center text-center text-sp-h4 underline underline-offset-4 lg:text-pc-h4',
                   textLine,
                 )}
               >

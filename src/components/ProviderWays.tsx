@@ -24,7 +24,7 @@ const RoundedRectangle: React.FC<RoundedRectangleProps> = ({ texts, link }) => {
 
 const Internet = () => {
   return (
-    <div className='space-y-4 rounded-lg bg-white p-8 md:p-[84px]'>
+    <div className='space-y-4 rounded-lg bg-white p-8 md:p-pc-6'>
       <MegaphoneHeadline side='provider' headlines={['インターネットから', '品物をおくる']} />
       <p>
         インターネット上でお買い物した商品をおくる「スマートサプライ」も受け付けています。Amazonの欲しいものリストに登録されている品物を購入していただくと、コミュニティフリッジへおくることができます。
@@ -40,7 +40,7 @@ const Internet = () => {
 
 const Donate = () => {
   return (
-    <div className='space-y-4 rounded-lg bg-white p-8 md:p-[84px]'>
+    <div className='space-y-4 rounded-lg bg-white p-8 md:p-pc-6'>
       <MegaphoneHeadline side='provider' headlines={['寄付金をおくる']} />
       <p>
         コミュニティフリッジは、できるだけ費用をおさえての運営を目指していますが、設備費・システム費などの維持費はかかっており、みなさまからの寄付によって支えられています。
@@ -75,7 +75,7 @@ const Donate = () => {
 
 const Volunteer = () => {
   return (
-    <div className='space-y-4 rounded-lg bg-white p-8 md:p-[84px]'>
+    <div className='space-y-4 rounded-lg bg-white p-8 md:p-pc-6'>
       <MegaphoneHeadline side='provider' headlines={['ボランティアとして', 'キモチをおくる']} />
       <p>
         フードポストの回収・受け入れた品物の整理等の作業や広報など、食品や日用品、寄付金をおくるのではなくボランティアとしてご協力してくださる方も募集しています。
@@ -88,7 +88,7 @@ export default function ProviderWays() {
   return (
     <div className='space-y-4 bg-my-palered p-4 lg:p-[88px]'>
       <div className='space-y-4 p-4'>
-        <div className='flex w-full flex-col items-center space-y-[32px] md:w-3/5 md:items-start md:space-y-[40px]'>
+        <div className='flex w-full flex-col items-center space-y-[32px] md:w-3/5 md:items-start md:space-y-pc-5'>
           <FlagHeadline
             headlines={['キモチの', 'おくりかたは', 'さまざまです']}
             bgColor='bg-my-red'

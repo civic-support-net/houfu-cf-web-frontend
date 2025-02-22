@@ -9,20 +9,22 @@ const AboutPage = () => {
     <>
       <>
         <Headline
-          headline='このサイトについて'
-          headlineColor='ついて'
-          color='text-my-dark'
+          headline='このサイトに'
+          headlineTail='ついて'
+          tailColor='text-my-dark'
           bgImage='bg-heroillust3'
         />
-        <Section>
-          <AboutOwner />
-        </Section>
-        <Section>
-          <AboutOrganizations />
-        </Section>
-        <Section>
-          <AboutNotes />
-        </Section>
+        <div className='relative z-10 mx-auto max-w-[1200px]'>
+          <Section>
+            <AboutOwner />
+          </Section>
+          <Section>
+            <AboutOrganizations />
+          </Section>
+          <Section>
+            <AboutNotes />
+          </Section>
+        </div>
       </>
     </>
   )

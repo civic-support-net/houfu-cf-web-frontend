@@ -31,22 +31,24 @@ export default function TopHero({
               alt=''
               width='60'
               height='40'
-              className='aspect-[5/6] w-[40px] md:w-[60px]'
+              className='aspect-[5/6] w-pc-5 md:w-[60px]'
             ></Image>
-            <p className=''>
-              おたがいさまの
-              <br className='lg:hidden' />
-              キモチを応援！
-            </p>
+            <div className='text-center'>
+              <p className=''>
+                おたがいさまの
+                <br className='lg:hidden' />
+                キモチを応援
+              </p>
+              <p>防府コミュニティフリッジ</p>
+            </div>
             <Image
               src='/img/hcf_hukidashi.png'
               alt=''
               width='60'
               height='40'
-              className='aspect-[5/6] w-[40px] -scale-x-100 md:w-[60px]'
+              className='aspect-[5/6] w-pc-5 -scale-x-100 md:w-[60px]'
             ></Image>
           </div>
-          防府コミュニティフリッジ
         </h1>
       </div>
       <div className='w-[120%] rotate-[-8deg] overflow-hidden'>

@@ -1,26 +1,24 @@
-import Image from 'next/image'
-
 import { cn } from '@/lib/utils'
 
 export default function Headline({
   headline,
-  headlineColor,
-  color,
+  headlineTail,
+  tailColor,
   bgImage,
 }: {
   headline: string
-  headlineColor: string
-  color: string
+  headlineTail: string
+  tailColor: string
   bgImage: string
 }) {
   return (
-    <div className='mb-[84px] mt-[168px] flex flex-col'>
-      <div className='relative mx-auto text-right'>
+    <div className='mb-sp-6 mt-[168px] flex flex-col md:mb-pc-6'>
+      <div className='relative mx-auto w-full max-w-screen-lg text-right'>
         <div className={cn('bg-contain bg-right bg-no-repeat pt-[60px]', bgImage)}>
-          <h1 className='rounded-sp border-[3px] border-my-dark bg-white p-[12px] text-center text-3xl md:rounded-pc md:px-[52px] md:py-[24px]'>
+          <h1 className='w-full rounded-sp border-4 border-my-dark bg-white py-[0.5em] text-center text-sp-h1 md:rounded-pc md:px-[1.3em] md:py-[0.5em] md:text-pc-h1'>
             {headline}
             <br className='md:hidden' />
-            <span className={cn('', color)}>{headlineColor}</span>
+            <span className={cn('', tailColor)}>{headlineTail}</span>
           </h1>
         </div>
       </div>
