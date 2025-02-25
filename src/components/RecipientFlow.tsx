@@ -23,7 +23,7 @@ export default function RecipientFlow() {
       </div>
 
       {/* 分割背景（上部だけ色あり） */}
-      <div className='relative p-[12px] md:p-[88px]'>
+      <div className='relative p-sp-2 md:p-[88px] lg:p-pc-2'>
         <div className='absolute inset-0 z-0'>
           <div className='mr-[-88px] h-1/2 w-full bg-my-palegreen'></div>
         </div>

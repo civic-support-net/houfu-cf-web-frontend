@@ -1,23 +1,27 @@
 import { cn } from '@/lib/utils'
+import Image from 'next/image'
 
 export default function Headline({
   headline,
   headlineTail,
   tailColor,
-  bgImage,
+  image,
 }: {
   headline: string
   headlineTail: string
   tailColor: string
-  bgImage: string
+  image: string
 }) {
   return (
-    <div className='mb-sp-6 mt-[168px] flex flex-col md:mb-pc-6'>
-      <div className='relative mx-auto w-full max-w-screen-lg text-right'>
-        <div className={cn('bg-contain bg-right bg-no-repeat pt-[60px]', bgImage)}>
-          <h1 className='w-full rounded-sp border-4 border-my-dark bg-white py-[0.5em] text-center text-sp-h1 md:rounded-pc md:px-[1.3em] md:py-[0.5em] md:text-pc-h1'>
+    <div className='mb-sp-6 flex flex-col lg:mb-pc-6'>
+      <div className='relative mx-auto max-w-screen-lg text-right'>
+        <div className='relative pt-[60px] lg:pt-[80px]'>
+          <div className='absolute right-[10%] top-0 z-0 aspect-square w-[80px] lg:w-[100px]'>
+            <Image src={image} alt='' fill className='' />
+          </div>
+          <h1 className='relative z-10 w-full rounded-sp border-4 border-my-dark bg-white p-[0.5em] text-center text-sp-h1 lg:rounded-pc lg:px-[1.3em] lg:py-[0.5em] lg:text-pc-h1'>
             {headline}
-            <br className='md:hidden' />
+            <br className='lg:hidden' />
             <span className={cn('', tailColor)}>{headlineTail}</span>
           </h1>
         </div>

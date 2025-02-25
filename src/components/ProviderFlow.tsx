@@ -7,7 +7,7 @@ export default function ProviderFlow() {
   return (
     // 白地がデフォルト背景
     <div className='bg-white'>
-      <div className='space-y-4 p-[48px] md:p-[88px]'>
+      <div className='p-[48px] md:p-[88px]'>
         <FlagHeadline
           headlines={['キモチを', 'かたちにしておくる']}
           bgColor='bg-my-red'

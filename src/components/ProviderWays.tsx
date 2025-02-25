@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
 import FlagHeadline from '@/components/FlagHeadline'
@@ -88,13 +87,11 @@ export default function ProviderWays() {
   return (
     <div className='space-y-4 bg-my-palered p-4 lg:p-[88px]'>
       <div className='space-y-4 p-4'>
-        <div className='flex w-full flex-col items-center space-y-[32px] md:w-3/5 md:items-start md:space-y-pc-5'>
-          <FlagHeadline
-            headlines={['キモチの', 'おくりかたは', 'さまざまです']}
-            bgColor='bg-my-red'
-            textColor='text-white'
-          />
-        </div>
+        <FlagHeadline
+          headlines={['キモチの', 'おくりかたは', 'さまざまです']}
+          bgColor='bg-my-red'
+          textColor='text-white'
+        />
         <p>フードプレゼンター以外の方法で、キモチをおくることもできます。</p>
         <p>
           例えば、現地へのお持ち込みではなく、インターネットを通じて品物をおくることができたり、ボラインティアとしてコミュニティフリッジの運営のお手伝いをしていただいたり、それぞれのライフスタイルに合った方法で「おたがいさま」のキモチをおくっていただいています。

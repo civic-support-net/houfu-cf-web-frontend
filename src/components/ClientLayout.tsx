@@ -5,6 +5,9 @@ import { useState } from 'react'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import MobileMenu from '@/components/MobileMenu'
+import Image from 'next/image'
+import { cn } from '@/lib/utils'
+import Link from 'next/link'
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -22,20 +25,25 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
         <Header />
       </div>
       {/* Mobile header button */}
-      {/* TODO */}
+      <Link
+        href='/'
+        className='fixed z-50 size-[96px] rounded-bl-full rounded-br-full rounded-tr-full bg-white p-sp-3 lg:hidden'
+      >
+        <Image src='/img/logo.png' width={64} height={64} alt='' />
+      </Link>
       {/* Mobile menu button */}
       <button
         onClick={toggleMenu}
-        className='fixed right-4 top-4 z-50 rounded-full border-2 border-white text-white shadow-lg lg:hidden'
+        className={cn(
+          'fixed right-2 top-2 z-50 flex size-[72px] flex-col items-center overflow-hidden rounded-full border-4 border-black pt-2 text-sm text-black lg:hidden',
+          isMenuOpen ? 'bg-my-yellow' : 'bg-white',
+        )}
         aria-expanded={isMenuOpen}
         aria-controls='mobile-menu'
       >
         <span className='sr-only'>{isMenuOpen ? 'Close menu' : 'Open menu'}</span>
-        {isMenuOpen ? (
-          <div className='size-12 rounded-full bg-red-100 text-black'>close</div>
-        ) : (
-          <div className='size-12 rounded-full bg-green-100 text-black'>open</div>
-        )}
+        {isMenuOpen ? <p>とじる</p> : <p>メニュー</p>}
+        <Image src='/img/hcf_fridge.png' width={36} height={52} alt='' />
       </button>
 
       {/* Mobile menu */}
@@ -48,7 +56,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       {/* Content */}
       <div className='flex h-lvh'>
         <main className='h-screen flex-1 overflow-y-auto'>
-          <div className='px-sp-3 xl:px-0'>{children}</div>
+          <div className='mt-[96px] px-sp-3 lg:mt-[144px] xl:px-0'>{children}</div>
           <Footer />
         </main>
       </div>

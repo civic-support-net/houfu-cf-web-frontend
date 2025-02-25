@@ -12,7 +12,7 @@ const AboutPage = () => {
           headline='このサイトに'
           headlineTail='ついて'
           tailColor='text-my-dark'
-          bgImage='bg-heroillust3'
+          image='/img/hcf_heroillust_3.png'
         />
         <div className='relative z-10 mx-auto max-w-[1200px]'>
           <Section>
