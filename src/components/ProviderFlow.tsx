@@ -7,7 +7,7 @@ export default function ProviderFlow() {
   return (
     // 白地がデフォルト背景
     <div className='bg-white'>
-      <div className='space-y-4 p-[48px] md:p-[88px]'>
+      <div className='p-[48px] md:p-[88px]'>
         <FlagHeadline
           headlines={['キモチを', 'かたちにしておくる']}
           bgColor='bg-my-red'
@@ -23,7 +23,7 @@ export default function ProviderFlow() {
       </div>
 
       {/* 分割背景（上部だけ色あり） */}
-      <div className='relative p-[12px] md:p-[88px]'>
+      <div className='relative p-sp-2 md:p-[88px] '>
         <div className='absolute inset-0 z-0'>
           <div className='mr-[-88px] h-1/2 w-full bg-my-palered'></div>
         </div>

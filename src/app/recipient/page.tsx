@@ -10,7 +10,7 @@ const RecipientPage = () => {
         headline='食料品や日用品を'
         headlineTail='うけとる'
         tailColor='text-my-green'
-        bgImage='bg-heroillust1'
+        image='/img/hcf_heroillust_1.png'
       />
       <div className='relative z-10 mx-auto max-w-[1200px]'>
         <Section>

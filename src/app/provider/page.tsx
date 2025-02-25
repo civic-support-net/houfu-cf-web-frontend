@@ -10,7 +10,7 @@ const ProviderPage = () => {
         headline='食料品や日用品を'
         headlineTail='おくる'
         tailColor='text-my-red'
-        bgImage='bg-heroillust2'
+        image='/img/hcf_heroillust_2.png'
       />
       <div className='relative mx-auto max-w-[1200px]'>
         <Section>

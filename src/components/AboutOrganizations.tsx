@@ -1,5 +1,3 @@
-import { text } from 'stream/consumers'
-
 import FlagHeadline from '@/components/FlagHeadline'
 
 const organizations = [
@@ -23,7 +21,7 @@ const organizations = [
 export default function AboutOrganizations() {
   return (
     <div className='flex flex-col justify-start bg-white p-8 md:p-16'>
-      <div className=' mb-6 space-y-6 p-6 text-left'>
+      <div className='space-y-6 p-6 text-left'>
         <FlagHeadline
           headlines={['このサイトに', '関わっている団体']}
           bgColor='bg-my-yellow'
