@@ -16,7 +16,7 @@ const HomePage = async () => {
         <TopHero recipientMessages={recipientMessages} providerMessages={providerMessages} />
       </div>
       <div className='relative z-10 mx-auto max-w-[1200px]'>
-        <div className='absolute left-1/2 right-sp-5 z-0 -translate-x-[50%] -translate-y-[45%] lg:right-pc-6 lg:translate-x-0'>
+        <div className='absolute left-1/2 right-sp-5 z-0 -translate-x-1/2 translate-y-[-45%] lg:right-pc-6 lg:translate-x-0'>
           <div className='flex justify-center space-x-2 lg:justify-end '>
             <Image
               src='/img/hcf_giftpeople.png'

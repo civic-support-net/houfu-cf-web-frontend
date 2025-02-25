@@ -1,13 +1,13 @@
 'use client'
 
+import Image from 'next/image'
+import Link from 'next/link'
 import { useState } from 'react'
 
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import MobileMenu from '@/components/MobileMenu'
-import Image from 'next/image'
 import { cn } from '@/lib/utils'
-import Link from 'next/link'
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -27,7 +27,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       {/* Mobile header button */}
       <Link
         href='/'
-        className='fixed z-50 size-[96px] rounded-bl-full rounded-br-full rounded-tr-full bg-white p-sp-3 lg:hidden'
+        className='fixed z-50 size-[96px] rounded-r-full rounded-bl-full bg-white p-sp-3 lg:hidden'
       >
         <Image src='/img/logo.png' width={64} height={64} alt='' />
       </Link>

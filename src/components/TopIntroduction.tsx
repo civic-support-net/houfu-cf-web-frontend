@@ -129,7 +129,7 @@ const renderRoleIntro = ({ side, texts }: { side: 'provider' | 'recipient'; text
             </div>
           </div>
 
-          <div className='spacy-y-sp-1 text-sp-p lg:space-y-pc-1 lg:text-pc-p'>
+          <div className='space-y-sp-1 text-sp-p lg:space-y-pc-1 lg:text-pc-p'>
             {texts.map((text, index) => (
               <p key={index}>{text}</p>
             ))}
