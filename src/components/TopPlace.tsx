@@ -1,46 +1,30 @@
+import Button from '@/components/Button'
 import FlagHeadline from '@/components/FlagHeadline'
+import MegaphoneHeadline from '@/components/MegaphoneHeadline'
 import { cn } from '@/lib/utils'
 
 export default function TopPlace() {
   return (
-    <div className='space-y-sp-6 bg-white p-sp-6 md:space-y-pc-6 md:p-pc-6'>
-      <div className='space-y-[24px]'>
+    <div className='relative space-y-sp-6 overflow-visible bg-white p-sp-6 px-sp-3 md:space-y-pc-6 md:p-pc-6'>
+      <div className='px-sp-5 text-sp-p lg:text-pc-p'>
         <FlagHeadline
-          headlines={['防府コミュニティ', 'フリッジは', 'ルルサス防府にあります']}
+          headlines={['防府コミュニティ', 'フリッジは', 'ルルサス防府に', 'あります']}
           bgColor='bg-my-yellow'
           textColor='text-black'
         />
-        <p>
-          食品・日用品のお持ち込みは、2階
-          防府市市民活動支援センター気付へお越しください。お持ち込みいただく前に、フードプレゼンター登録をお願いいたします。
-        </p>
-        <p>
-          食品・日用品のうけとりは、1階
-          防府コミュニティフリッジへお越しください。うけとりメンバー登録の際にお渡しする電子ロックの鍵で自由にうけとることができます。
-        </p>
+        <div className='space-y-sp-1 tracking-widest lg:space-y-pc-1'>
+          <p>
+            食品・日用品のお持ち込みは、2階防府市市民活動支援センター気付へお越しください。お持ち込みいただく前に、フードプレゼンター登録をお願いいたします。
+          </p>
+          <p>
+            食品・日用品のうけとりは、1階防府コミュニティフリッジへお越しください。うけとりメンバー登録の際にお渡しする電子ロックの鍵で自由にうけとることができます。
+          </p>
+        </div>
       </div>
 
-      <div className='flex flex-col gap-[22px] md:flex-row md:gap-sp-6'>
-        <Place
-          label='食料品や日用品をおくる'
-          hours='10:00〜17:00'
-          phoneNumber='0835-24-7744'
-          note='火曜、年末年始を除く'
-          buttonText='おくる場所'
-          textColor='text-my-red'
-          bgColor='bg-my-palered'
-          borderColor='border-my-red'
-        />
-        <Place
-          label='食料品や日用品をうけとる'
-          hours='8:00〜21:30'
-          phoneNumber='0835-24-7744'
-          note='火曜、年末年始を除く'
-          buttonText='うけとる場所'
-          textColor='text-my-green'
-          bgColor='bg-my-palegreen'
-          borderColor='border-my-green'
-        />
+      <div className='flex flex-col justify-between gap-sp-5 lg:flex-row lg:gap-pc-5'>
+        <Place side='provider' />
+        <Place side='recipient' />
       </div>
 
       <div className='w-full overflow-hidden rounded-sp md:rounded-pc'>
@@ -56,42 +40,42 @@ export default function TopPlace() {
   )
 }
 
-const Place = ({
-  label,
-  hours,
-  phoneNumber,
-  note,
-  buttonText,
-  textColor,
-  bgColor,
-  borderColor,
-}: {
-  label: string
-  hours: string
-  phoneNumber: string
-  note: string
-  buttonText: string
-  textColor: string
-  bgColor: string
-  borderColor: string
-}) => {
+const Place = ({ side }: { side: 'provider' | 'recipient' }) => {
+  const labels =
+    side === 'provider' ? ['食料品や日用品を', 'おくる'] : ['食料品や日用品を', 'うけとる']
+  const hours = side === 'provider' ? '10:00〜17:00' : '8:00〜21:30'
+  const buttonText = side === 'provider' ? 'おくる場所' : 'うけとる場所'
+  const bgColor = side === 'provider' ? 'bg-my-palered' : 'bg-my-palegreen'
+  const rectColor = side === 'provider' ? 'bg-my-red' : 'bg-my-green'
+
   return (
     <div
-      className={cn('flex-1 space-y-[24px] rounded-sp p-[28px] md:rounded-pc md:p-[44px]', bgColor)}
+      className={cn(
+        'w-full space-y-sp-5 rounded-sp p-sp-5 lg:space-y-sp-5 lg:rounded-pc lg:p-pc-5',
+        bgColor,
+      )}
     >
-      <p>{label}</p>
-      <div>
-        <div>
-          <div>受付時間</div>
-          <div>{hours}</div>
+      <MegaphoneHeadline side={side} headlines={labels} />
+      <div className='flex flex-col items-center space-y-sp-4 lg:space-y-pc-4'>
+        <div className='flex flex-col items-start space-y-sp-4 lg:flex-row lg:space-x-3 lg:space-y-0'>
+          <div className='flex space-x-sp-1 lg:flex-col lg:space-x-[24px]'>
+            <p>
+              <span className={cn('mr-sp-1 inline-block size-4 rounded lg:mr-pc-1', rectColor)} />
+              受付時間
+            </p>
+            <p>{hours}</p>
+          </div>
+          <div className='flex space-x-sp-1 lg:flex-col lg:space-x-[24px]'>
+            <p>
+              <span className={cn('mr-sp-1 inline-block size-4 rounded lg:mr-pc-1', rectColor)} />
+              お問い合わせ先
+            </p>
+            <p>0835-24-7744</p>
+          </div>
         </div>
-        <div>
-          <div>お問い合わせ先</div>
-          <div>{phoneNumber}</div>
-        </div>
+        <p>※火曜、年末年始を除く</p>
+        <Button href='' text={buttonText} side={side} />
       </div>
-      <p>{note}</p>
-      <button className={cn(textColor, borderColor)}>{buttonText}</button>
     </div>
   )
 }
