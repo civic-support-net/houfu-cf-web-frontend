@@ -33,7 +33,7 @@ export default function RecipientFlow() {
       </div>
 
       <div className='p-[48px] md:p-[88px]'>
-        <Map />
+        <Map side='recipient' />
       </div>
     </div>
   )
