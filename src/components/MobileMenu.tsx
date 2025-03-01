@@ -2,7 +2,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { menus } from '@/consts/menus'
-import { cn } from '@/lib/utils'
 
 export default function MobileMenu() {
   return (
@@ -10,32 +9,33 @@ export default function MobileMenu() {
       className='absolute inset-8 overflow-auto rounded-sp border-4 border-black bg-white shadow-lg md:rounded-pc'
       onClick={(e) => e.stopPropagation()}
     >
-      <nav className='flex flex-col items-center p-4'>
-        <div className='mt-4 size-40 rounded-full p-4'>
-          <Link
-            href='/'
-            className='relative block size-full overflow-hidden rounded-full bg-my-yellow'
-          >
-            <Image src='/img/logo.png' fill alt='logo' className='' />
+      <nav className='flex h-full flex-col items-center justify-center space-y-sp-5 p-sp-6'>
+        <div className=''>
+          <Link href='/' className='relative block size-full'>
+            <Image src='/img/logo.png' alt='logo' width={140} height={140} className='' />
           </Link>
         </div>
-        <div className='inset-0 flex'>
-          <ul className='items-center gap-4'>
-            {menus.map((menu, index) => (
-              <li key={index} className='my-4 flex items-start justify-center'>
-                <Image src={menu.mg_href} alt='image' width={24} height={24} />
-                <Link href={menu.href} className='ml-4'>
-                  {menu.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+        <ul className='space-y-sp-4'>
+          {menus.map((menu, index) => (
+            <li key={index} className='flex items-start justify-center'>
+              <Image src={menu.mg_href} alt='image' width={24} height={24} />
+              <Link href={menu.href} className='ml-sp-3'>
+                {menu.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <div className='relative h-[100px] min-w-[215px]'>
+          <div className='absolute left-[-5%] top-0 size-[100px]'>
+            <Image src='/img/hcf_heroillust_1.png' alt='' width={100} height={100} />
+          </div>
+          <div className='absolute left-1/2 top-[30%] size-[100px] -translate-x-1/2'>
+            <Image src='/img/hcf_heroillust_2.png' alt='' width={100} height={100} />
+          </div>
+          <div className='absolute right-[-5%] top-[15%] size-[100px]'>
+            <Image src='/img/hcf_heroillust_3.png' alt='' width={100} height={100} />
+          </div>
         </div>
-        <div className='mt-4 flex'>
-          <Image src='#' alt='image' width={100} height={100} />
-          <Image src='#' alt='image' width={100} height={100} />
-        </div>
-        <Image src='#' alt='image' width={100} height={100} />
       </nav>
     </div>
   )

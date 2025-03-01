@@ -48,7 +48,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
 
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div id='mobile-menu' className='z-40 flex h-lvh bg-gray-400/50 backdrop-blur-sm lg:hidden'>
+        <div id='mobile-menu' className='z-40 flex h-lvh  backdrop-blur-sm lg:hidden'>
           <MobileMenu />
         </div>
       )}

@@ -32,8 +32,8 @@ export default function ProviderFlow() {
         </div>
       </div>
 
-      <div className='p-[48px] md:p-[88px]'>
-        <Map />
+      <div className='p-sp-3 lg:p-pc-3'>
+        <Map side='provider' />
       </div>
     </div>
   )
