@@ -1,39 +1,31 @@
-'use client'
-
-import Image from 'next/image'
-
-import AboutDescription from '@/components/AboutDescription'
-import AboutGroups from '@/components/AboutGroups'
-import AboutIntroduction from '@/components/AboutIntroduction'
-import AboutRightDisclaimer from '@/components/AboutRightDisclaimer'
-import Donation from '@/components/Donation'
-import HeroRect from '@/components/HeroRect'
+import AboutNotes from '@/components/AboutNotes'
+import AboutOrganizations from '@/components/AboutOrganizations'
+import AboutOwner from '@/components/AboutOwner'
+import Headline from '@/components/Headline'
+import Section from '@/components/Section'
 
 const AboutPage = () => {
   return (
     <>
-      <HeroRect bgUrl='/img/hero-rect-bg.jpg'>
-        <h1 className='text-hb flex flex-col items-center'>
-          <div className='h-[67px] w-[80vw] max-w-[400px]'>
-            <Image
-              src='/img/logo_mix.svg'
-              width={400}
-              height={100}
-              alt=''
-              className='h-[100px] w-[400px]'
-            />
-          </div>
-          について
-        </h1>
-      </HeroRect>
-
-      <div className='bg-myyellow py-[2.5em]'>
-        <AboutIntroduction />
-      </div>
-      <AboutGroups />
-      <AboutDescription />
-      <AboutRightDisclaimer />
-      <Donation />
+      <>
+        <Headline
+          headline='このサイトに'
+          headlineTail='ついて'
+          tailColor='text-my-dark'
+          image='/img/hcf_heroillust_3.png'
+        />
+        <div className='relative z-10 mx-auto max-w-[1200px]'>
+          <Section>
+            <AboutOwner />
+          </Section>
+          <Section>
+            <AboutOrganizations />
+          </Section>
+          <Section>
+            <AboutNotes />
+          </Section>
+        </div>
+      </>
     </>
   )
 }

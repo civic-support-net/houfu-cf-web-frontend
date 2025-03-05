@@ -2,46 +2,35 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-const links = [
-  {
-    label: '最近のおたより',
-    path: '/latest-posts',
-  },
-  {
-    label: 'これまでのおたより',
-    path: '/monthly-posts/latest',
-  },
-  {
-    label: 'このサイトについて',
-    path: '/about',
-  },
-]
+import { menus } from '@/consts/menus'
+import { cn } from '@/lib/utils'
 
 const Header = () => {
   return (
-    <div>
-      <div className='flex flex-row items-center justify-between'>
-        <div className='flex h-[48px] w-full items-center justify-center bg-myyellow lg:h-[100px] lg:w-[400px] lg:rounded-br-[36px]'>
-          <Link href='/'>
-            <Image
-              src='/img/logo_alt.svg'
-              width={400}
-              height={100}
-              alt=''
-              className='h-[30px] w-[400px] lg:h-[60px] lg:w-auto'
-            />
+    <header className='h-[72px] bg-white'>
+      <div className='mx-auto flex max-w-[1200px] items-start justify-between'>
+        <div className='size-[144px] rounded-full bg-white p-[22px]'>
+          <Link
+            href='/'
+            className='relative block size-full overflow-hidden rounded-full bg-my-yellow'
+          >
+            <Image src='/img/logo.png' fill alt='logo' className='' />
           </Link>
         </div>
-        {/* 横幅が狭い時は出せない、別の表現になる */}
-        <div className='mr-[32px] hidden h-[64px] items-center gap-x-[12px] rounded-full bg-myyellow px-[32px] text-[20px] text-mywhite lg:flex'>
-          {links.map((link) => (
-            <Link href={link.path} key={link.label} className='hover:text-mybrown'>
-              {link.label}
-            </Link>
+        <ul className='flex h-[72px] items-center gap-sp-2 lg:gap-pc-2'>
+          {menus.map((menu) => (
+            <li
+              key={menu.href}
+              className={cn('rounded-full border-2 px-[18px] py-[6px]', menu.bo_color)}
+            >
+              <Link href={menu.href} className={menu.tx_color}>
+                {menu.label}
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
-    </div>
+    </header>
   )
 }
 

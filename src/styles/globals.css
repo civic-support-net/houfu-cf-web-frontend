@@ -8,57 +8,23 @@
   .palt {
     font-feature-settings: 'palt';
   }
-}
-
-.text-h {
-  font-size: clamp(20px, 2.5vw, 32px);
-  font-height: clamp(32px, 3.75vw, 48px);
-}
-
-.text-hb {
-  font-size: clamp(24px, 3.75vw, 48px);
-  font-weight: 600;
-}
-
-.text-btn {
-  font-size: clamp(18px, 2vw, 24px);
-  border-width: 4px;
-}
-/* 先月・次月*/
-.text-month {
-  font-size: clamp(16px, 2vw, 24px);
-}
-
-/* 投稿見出し */
-.text-posth {
-  font-size: clamp(14px, 1.75vw, 20px);
-}
-
-/* 投稿所属 */
-.text-postd {
-  font-size: clamp(14px, 1.5vw, 16px);
-}
-
-.pt-h {
-  padding-top: clamp(20px, 2.5vw, 32px);
-}
-
-.pb-h {
-  padding-bottom: clamp(20px, 2.5vw, 32px);
-}
-
-.pt-2h {
-  padding-top: clamp(40px, 5vw, 64px);
-}
-
-.pb-2h {
-  padding-bottom: clamp(40px, 5vw, 64px);
-}
-
-.pcard {
-  padding: clamp(12px, 1.25vw, 16px);
-}
-
-.rounded-limit {
-  border-radius: clamp(18px, 5vw, 64px);
+  .clip-wavy {
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      100% 100%,
+      91.666% 85%,
+      83.166% 100%,
+      75% 85%,
+      66.666% 100%,
+      58.333% 85%,
+      50% 100%,
+      41.666% 85%,
+      33.333% 100%,
+      25% 85%,
+      16.666% 100%,
+      8.333% 85%,
+      0% 100%
+    );
+  }
 }

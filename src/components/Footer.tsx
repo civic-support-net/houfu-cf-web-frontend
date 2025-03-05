@@ -1,58 +1,32 @@
-'use client'
-
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-import { EventClickCongrant, EventClickOfficial, event } from '@/lib/gtag'
+import { menus } from '@/consts/menus'
 
 const Footer = () => {
   return (
-    <div className='rounded-limit m-[16px] flex h-auto flex-col gap-8 whitespace-nowrap bg-mybrown p-[32px] text-mywhite md:relative md:m-[32px] md:h-[280px] md:flex-row'>
-      {/* ロゴ */}
-      <div className='static left-[5vw] top-[40px] w-[280px] text-center md:absolute lg:w-[480px] lg:text-left'>
-        <Link href='/'>
-          <Image src='/img/logo_normal.svg' width='480' height='80' alt='ありがとうWebsiteロゴ' />
-        </Link>
-      </div>
-      {/* サイト内リンク */}
-      <div className='flex flex-col gap-y-4 md:absolute md:bottom-1/2 md:right-[5vw] md:translate-y-1/2 lg:ml-auto'>
-        <Link href='/latest-posts'>
-          <span className='mr-2'>▶</span>最近のお便り
-        </Link>
-        <Link href='/monthly-posts/latest' className=''>
-          <span className='mr-2'>▶</span>これまでのお便り
-        </Link>
-        <Link href='/about'>
-          <span className='mr-2'>▶</span>ありがとうWebsiteについて
-        </Link>
-        <Link
-          href='https://fbyamaguchi.org/'
-          target='_blank'
-          onClick={() => event(EventClickOfficial)}
-        >
-          <span className='mr-2'>▶</span>フードバンク山口公式サイト
-        </Link>
-        <Link
-          href='https://congrant.com/project/foodbank-ymg/8052'
-          target='_blank'
-          onClick={() => event(EventClickCongrant)}
-        >
-          <span className='mr-2'>▶️</span>フードバンク山口寄付サイト
-        </Link>
-      </div>
-      {/* 連絡先 */}
-      <div className='static bottom-[40px] left-[5vw] text-center md:absolute md:text-left'>
-        <p className='text-[18px]'>特定非営利活動法人&nbsp;フードバンク山口</p>
-        <div className='pt-4'>
-          <p>山口市黒川1159-13</p>
-          <div className='flex flex-col justify-start md:flex-row'>
-            <p>TEL: 080-3565-9640(事務局)&emsp;</p>
-            <p>FAX: 083-963-4157</p>
-          </div>
+    <footer className='bg-white'>
+      <div className='relative mx-auto flex max-w-screen-lg flex-col items-center justify-start space-y-5 p-5 md:flex-row'>
+        <Image src='/img/logo.png' width={128} height={128} className='p-4' alt='ロゴ' />
+
+        <ul className='flex-col gap-y-2 md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2'>
+          {menus.map((menu, index) => (
+            <li key={index} className='flex '>
+              <Image src='/img/hcf_yajirushi.png' width={23} height={16} alt=''></Image>
+              <Link href={menu.href}>{menu.label}</Link>
+            </li>
+          ))}
+        </ul>
+
+        <div className='space-y-3 break-words text-center text-sm md:text-left'>
+          <p className='space-y-5 text-2xl'>防府コミュニティブリッジ</p>
+          <Link href='null'>特定非営利活動法人市民活動さぽーとねっと</Link>
+          <p className='mt-2'>〒745-0035 山口県防府市栄町1-1-17 (ルルサス防府)</p>
+          <p>TEL 0835-24-7744</p>
         </div>
       </div>
-    </div>
+    </footer>
   )
 }
 
