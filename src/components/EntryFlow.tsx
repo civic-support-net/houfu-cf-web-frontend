@@ -5,9 +5,10 @@ import Link from 'next/link'
 interface RoundedSquareProps {
   circleText: number
   side: 'provider' | 'recipient'
+  image: string
 }
 
-const RoundedSquare: React.FC<RoundedSquareProps> = ({ circleText, side }) => {
+const RoundedSquare: React.FC<RoundedSquareProps> = ({ circleText, side ,image }) => {
   const color = side === 'provider' ? 'bg-my-red' : 'bg-my-green'
   return (
     <div className='relative size-[200px] rounded-sp border-2 border-black bg-white'>
@@ -19,9 +20,9 @@ const RoundedSquare: React.FC<RoundedSquareProps> = ({ circleText, side }) => {
       >
         <p className='text-center text-sp-p text-white lg:text-pc-p'>{circleText}</p>
       </div>
-      <p className='relative top-1/2 -translate-y-1/2 p-[10px] text-center text-sp-h4 text-gray-400 lg:text-pc-h4'>
-        写真・イラストが入ります。
-      </p>
+      <div className='relative w-full h-full flex items-center justify-center'>
+      <Image src={image} alt="" width={150} height={150} className='object-contain'/>
+      </div>
     </div>
   )
 }
@@ -64,34 +65,34 @@ export default function EntryFlow({ side }: { side: 'provider' | 'recipient' }) 
       ? [
           {
             label: 'フードプレゼンター登録',
-            image: '',
+            image: '/img/hcf_okuru_flow1.png',  
             text: '下記ボタンよりフードプレゼンター登録をお願いします。',
           },
           {
             label: '品物のお持ち込み',
-            image: '',
+            image: '/img/hcf_okuru_flow2.png',
             text: 'ルルサス防府2階「防府市市民活動登録センター受付」へ物品をお持ち込みください。',
           },
           {
             label: '確認のあとご提供',
-            image: '',
+            image: '/img/hcf_okuru_flow3.png',
             text: '賞味期限などを確認したあと、防府コミュニティブリッジで品物をご提供します。',
           },
         ]
       : [
           {
             label: '電話で面談予約',
-            image: '',
+            image: '/img/hcf_uketoru_flow1.png',
             text: '電話でお問い合わせをしていただき、面談・登録の日時を決めます。',
           },
           {
             label: 'うけとりメンバー登録',
-            image: '',
+            image: '/img/hcf_uketoru_flow2.png',
             text: 'ご利用前に面談してから、うけとりメンバー登録のお手続き・ご利用方法の説明をします。',
           },
           {
             label: '自由にうけとり',
-            image: '',
+            image: '/img/hcf_uketoru_flow3.png',
             text: 'お手持ちのスマートフォンに電子ロックの鍵を登録し、鍵を使って8:00〜21:30の間は間は自由にうけとりにいけます',
           },
         ]
@@ -120,12 +121,12 @@ export default function EntryFlow({ side }: { side: 'provider' | 'recipient' }) 
         </div>
 
         <div className='flex flex-col justify-center gap-y-pc-5 lg:flex-row lg:gap-x-pc-5'>
-          {flowContents.map(({ label, text }, index) => (
+          {flowContents.map(({ label, text,image }, index) => (
             <div
               key={index}
               className='flex max-w-[200px] flex-col items-center gap-y-4 break-words'
             >
-              <RoundedSquare circleText={index + 1} side={side} />
+              <RoundedSquare circleText={index + 1} side={side} image={image}/>
               <p
                 className={classNames(
                   'items-center text-center text-sp-h4 underline underline-offset-4 lg:text-pc-h4',
@@ -134,7 +135,7 @@ export default function EntryFlow({ side }: { side: 'provider' | 'recipient' }) 
               >
                 {label}
               </p>
-              <p className='text-left text-sp-p lg:text-pc-p '>{text}</p>
+              <p className='text-left text-sp-p2 lg:text-pc-p2 '>{text}</p>
             </div>
           ))}
         </div>
