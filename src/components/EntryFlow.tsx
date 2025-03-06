@@ -100,7 +100,7 @@ export default function EntryFlow({ side }: { side: 'provider' | 'recipient' }) 
   const textLine = side === 'provider' ? 'decoration-my-red' : 'decoration-my-green'
 
   return (
-    <div className='flex-col lg:flex-row'>
+    <div className='flex flex-col lg:flex-row x-[768px]'>
       <div className='mx-auto flex flex-col items-center justify-center gap-y-[100px] lg:max-w-screen-lg'>
         <div className='mx-auto flex items-center gap-x-[0.4em] lg:gap-x-[1em]'>
           <Image src='/img/hcf_hukidashi.png' alt='' width='75' height='50'></Image>

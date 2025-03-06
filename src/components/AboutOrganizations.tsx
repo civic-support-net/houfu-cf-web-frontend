@@ -1,51 +1,52 @@
 import FlagHeadline from '@/components/FlagHeadline'
+import Image from 'next/image'
 
 const organizations = [
   {
-    organizationURL: 'a',
+    organizationURL: '/img/group-tokuyama-kosen.png',
     organizationText:
-      '情報電子工学科の学生融資二名がLINEの機能を活用した投稿システム・OCR技術を活用し、Webサイト開発に挑戦。',
+      '情報電子工学科の学生有志2名が、LINEの機能を活用した(記事)投稿システム・OCR技術を活用し、Webサイト開発に挑戦。',
   },
   {
-    organizationURL: 'a',
+    organizationURL: '/img/hcf_supportnet_logo.png',
     organizationText:
-      '情報電子工学科の学生融資二名がLINEの機能を活用した投稿システム・OCR技術を活用し、Webサイト開発に挑戦。',
+      '防府コミュニティフリッジに参加している方々のキモチをより多くの方へお届けし、「困ったときはおたがいさま」のキモチを支え合える仕組みを目指す。',
   },
   {
-    organizationURL: 'a',
+    organizationURL: '/img/hcf_digitech.png',
     organizationText:
-      '情報電子工学科の学生融資二名がLINEの機能を活用した投稿システム・OCR技術を活用し、Webサイト開発に挑戦。',
+      '徳山高専の学生や特定非営利活動法人市民活動さぽーとねっとなど「デジテック for YAMAGUCHI」の会員同士による地域課題等の解決に挑戦する活動を促進。',
   },
 ]
 
 export default function AboutOrganizations() {
   return (
-    <div className='flex flex-col justify-start bg-white p-8 md:p-16'>
-      <div className='space-y-6 p-6 text-left'>
+    <div className='flex flex-col justify-start items-center bg-white gap-y-sp5 lg:gap-y-pc-5 p-6 lg:p-12'>
+      <div className='space-y-6 text-left'>
         <FlagHeadline
           headlines={['このサイトに', '関わっている団体']}
           bgColor='bg-my-yellow'
           textColor='text-black'
         />
-        <p>
-          当サイトは、デジタル技術を活用して地域課題の解決等に取り組むコミュニティ「デジテック for
-          YAMAGUCHI」の饗応プロジェクトにより作成されました。徳山高専の学生が中心となって開発を行いました
+        <p className='text-sp-p lg:text-pc-p'>
+        当サイトは、デジタル技術を活用して地域課題の解決等に取り組むコミュニティ「デジテック for YAMAGUCHI」の共創プロジェクトにより作成されました。 徳山高専の学生が中心となって開発を行いました。
         </p>
       </div>
 
-      <ul className='flex flex-col space-y-4 rounded-sp p-5 md:flex-row md:rounded-pc'>
-        {organizations.map((organizations, index) => (
-          <li key={index}>
-            <div className='h-40 items-center justify-center rounded-sp border-2 border-gray-300 bg-gray-200 md:rounded-pc'>
-              <p className='text-gray-500'>画像がここに入ります</p>
-            </div>
-            <p>{organizations.organizationText}</p>
-          </li>
-        ))}
-      </ul>
+      <div className='flex flex-col mx-auto  justify-center items-center gap-y-sp-5 lg:flex-row lg:gap-x-pc-5'>
+      {organizations.map(({organizationURL,organizationText}, index) => (
+        <div className='flex flex-1 flex-col space-y-[1em] items-center text-center' key={index}>
+          <div className='relative w-64 h-64 justify-center items-center'>
+          <Image src={organizationURL} alt='' layout='fill' objectFit='contain'/>
+          </div>
+          <p className='text-sp-p2 lg:text-pc-p2'>{organizationText}</p>
+        </div>
+          
+      ))}
+      </div>
 
       <div className='flex items-center justify-center p-2'>
-        <div className='w-3/4 rounded-sp border-2 border-black  p-6 md:rounded-pc'>
+        <div className='w-full rounded-sp border-2 border-black  lg:rounded-pc'>
           <p>OSSの案内</p>
         </div>
       </div>
