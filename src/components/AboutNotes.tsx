@@ -5,7 +5,7 @@ const notes = [
   {
     headlines: ['みなさまからの', 'メッセージについて'],
     listItems: [
-      '皆様からのメッセージは、特定非営利活動法人市民活動さぽーとねっとがチェックをし、投稿して公開されます。',
+      'みなさまからのメッセージは、特定非営利活動法人市民活動さぽーとねっとがチェックをし、投稿して公開されます。',
     ],
   },
   {
@@ -27,11 +27,11 @@ const notes = [
 
 function SquareBulletList({ items, bgColor }: { items: string[]; bgColor: string }) {
   return (
-    <ul className='my-5'>
+    <ul className='space-y-sp-3 lg:space-y-pc-3'>
       {items.map((item, index) => (
-        <li key={index} className='my-3 flex items-start'>
-          <span className={cn('mr-2 mt-2 inline-block size-2 shrink-0', bgColor)} />
-          <span>{item}</span>
+        <li key={index} className='flex'>
+          <span className={cn('m-2 inline-block size-[12px] shrink-0 rounded-full', bgColor)} />
+          <p className='text-sp-p lg:text-pc-p'>{item}</p>
         </li>
       ))}
     </ul>
@@ -40,11 +40,11 @@ function SquareBulletList({ items, bgColor }: { items: string[]; bgColor: string
 
 export default function AboutNotes() {
   return (
-    <div className='space-y-8 bg-white p-8 md:p-16'>
+    <div className=' space-y-sp-6 bg-white p-sp-6 lg:space-y-pc-6 lg:p-pc-6'>
       {notes.map((note, index) => (
         <div key={index} className=''>
           <FlagHeadline headlines={note.headlines} bgColor='bg-my-yellow' textColor='text-black' />
-          <SquareBulletList items={note.listItems} bgColor='bg-orange-300' />
+          <SquareBulletList items={note.listItems} bgColor='bg-my-yellow' />
         </div>
       ))}
     </div>

@@ -36,7 +36,7 @@ export default function RecipientCasually() {
       </div>
 
       <div className='space-y-sp-5 lg:space-y-pc-5'>
-        <div className='mx-auto max-w-screen-lg space-y-4 rounded-lg bg-white px-sp-5 py-sp-6 lg:p-pc-6'>
+        <div className='mx-auto max-w-screen-lg space-y-4 rounded-sp bg-white px-sp-5 py-sp-6 lg:rounded-pc lg:p-pc-6'>
           <MegaphoneHeadline
             side='recipient'
             headlines={['季節イベントならでは', 'の品物もあります']}
@@ -51,7 +51,7 @@ export default function RecipientCasually() {
           </ul>
         </div>
 
-        <div className='mx-auto max-w-screen-lg space-y-4 rounded-lg bg-white px-sp-5 py-sp-6 lg:py-pc-6'>
+        <div className='mx-auto max-w-screen-lg space-y-4 rounded-sp bg-white px-sp-5 py-sp-6 lg:rounded-pc lg:py-pc-6'>
           <MegaphoneHeadline
             side='recipient'
             headlines={['お米や野菜などの', '生鮮食品もあります']}

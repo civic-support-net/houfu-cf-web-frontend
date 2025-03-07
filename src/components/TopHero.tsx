@@ -21,7 +21,7 @@ export default function TopHero({
   const lowerFlags = mixMessagesToFlags(recipientMessages, providerMessages, rTcs2, pTcs2)
 
   return (
-    <div className='flex flex-col items-center justify-center'>
+    <div className='flex flex-col items-center justify-center gap-y-sp-3 md:gap-y-pc-4'>
       <div className='w-[120%] rotate-[-8deg] overflow-hidden'>
         <Carousel
           flags={upperFlags}
@@ -29,34 +29,22 @@ export default function TopHero({
           plugins={{ speed: -1 }}
         />
       </div>
-      <div className='flex w-full rotate-[-8deg] flex-col items-center gap-4'>
-        <h1 className='text-sp-h1 md:text-pc-h1'>
-          <div className='flex items-center gap-x-[0.375em]  md:gap-x-[1em] '>
-            <Image
-              src='/img/hcf_hukidashi.png'
-              alt=''
-              width='60'
-              height='40'
-              className='aspect-[5/6] w-pc-5 md:w-[60px]'
-            ></Image>
-            <div className='my-[0.5em] text-center'>
-              <p className=''>
-                おたがいさまの
-                <br className='lg:hidden' />
-                キモチを応援
-              </p>
-              <p>防府コミュニティフリッジ</p>
-            </div>
-            <Image
-              src='/img/hcf_hukidashi.png'
-              alt=''
-              width='60'
-              height='40'
-              className='aspect-[5/6] w-pc-5 -scale-x-100 md:w-[60px]'
-            ></Image>
-          </div>
-        </h1>
-      </div>
+      <h1 className='flex w-full rotate-[-8deg] justify-center'>
+        <Image
+          src='/img/hcf_title_pc.png'
+          alt='おたがいさまのキモチを応援！防府コミュニティフリッジ'
+          width={720}
+          height={120}
+          className='hidden animate-minibounce md:block'
+        />
+        <Image
+          src='/img/hcf_title_sp.png'
+          alt='おたがいさまのキモチを応援！防府コミュニティフリッジ'
+          width={343}
+          height={147}
+          className='animate-minibounce md:hidden'
+        />
+      </h1>
       <div className='w-[120%] rotate-[-8deg] overflow-hidden'>
         <Carousel
           flags={lowerFlags}

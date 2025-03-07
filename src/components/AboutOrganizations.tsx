@@ -1,53 +1,57 @@
+import Image from 'next/image'
+
 import FlagHeadline from '@/components/FlagHeadline'
+import MegaphoneHeadline from '@/components/MegaphoneHeadline'
 
 const organizations = [
   {
-    organizationURL: 'a',
-    organizationText:
-      '情報電子工学科の学生融資二名がLINEの機能を活用した投稿システム・OCR技術を活用し、Webサイト開発に挑戦。',
+    url: '/img/hcf_tokuyamakousen.png',
+    alt: '徳山高専',
+    text: '情報電子工学科の学生有志2名が、LINEの機能を活用した(記事)投稿システム・OCR技術を活用し、Webサイト開発に挑戦。',
   },
   {
-    organizationURL: 'a',
-    organizationText:
-      '情報電子工学科の学生融資二名がLINEの機能を活用した投稿システム・OCR技術を活用し、Webサイト開発に挑戦。',
+    url: '/img/hcf_supportnet.png',
+    alt: '特定非営利活動法人市民活動さぽーとねっと',
+    text: '防府コミュニティフリッジに参加している方々のキモチをより多くの方へお届けし、「困ったときはおたがいさま」のキモチを支え合える仕組みを目指す。',
   },
   {
-    organizationURL: 'a',
-    organizationText:
-      '情報電子工学科の学生融資二名がLINEの機能を活用した投稿システム・OCR技術を活用し、Webサイト開発に挑戦。',
+    url: '/img/hcf_digitech.png',
+    alt: 'デジテック for YAMAGUCHI',
+    text: '徳山高専の学生や特定非営利活動法人市民活動さぽーとねっとなど「デジテック for YAMAGUCHI」の会員同士による地域課題等の解決に挑戦する活動を促進。',
   },
 ]
 
 export default function AboutOrganizations() {
   return (
-    <div className='flex flex-col justify-start bg-white p-8 md:p-16'>
-      <div className='space-y-6 p-6 text-left'>
-        <FlagHeadline
-          headlines={['このサイトに', '関わっている団体']}
-          bgColor='bg-my-yellow'
-          textColor='text-black'
-        />
-        <p>
-          当サイトは、デジタル技術を活用して地域課題の解決等に取り組むコミュニティ「デジテック for
-          YAMAGUCHI」の饗応プロジェクトにより作成されました。徳山高専の学生が中心となって開発を行いました
-        </p>
+    <div className='flex flex-col justify-start gap-y-sp-6 bg-white p-sp-3 lg:gap-y-pc-6 lg:p-pc-6'>
+      <div className='space-y-sp-6 p-sp-5 lg:space-y-pc-6 lg:p-0'>
+        <div>
+          <FlagHeadline
+            headlines={['このサイトに', '関わっている団体']}
+            bgColor='bg-my-yellow'
+            textColor='text-black'
+          />
+          <p className='text-sp-p lg:text-pc-p'>
+            当サイトは、デジタル技術を活用して地域課題の解決等に取り組むコミュニティ「デジテック for
+            YAMAGUCHI」の共創プロジェクトにより作成されました。徳山高専の学生が中心となって開発を行いました。
+          </p>
+        </div>
+
+        <div className='mx-auto flex flex-col  items-center justify-center gap-sp-5 lg:flex-row lg:gap-pc-5'>
+          {organizations.map((org, index) => (
+            <div className='flex flex-1 flex-col items-center space-y-[1em]' key={index}>
+              <div className='relative aspect-[888/660] w-full'>
+                <Image src={org.url} alt={org.alt} fill />
+              </div>
+              <p className='text-sp-p2 lg:text-pc-p2'>{org.text}</p>
+            </div>
+          ))}
+        </div>
       </div>
 
-      <ul className='flex flex-col space-y-4 rounded-sp p-5 md:flex-row md:rounded-pc'>
-        {organizations.map((organizations, index) => (
-          <li key={index}>
-            <div className='h-40 items-center justify-center rounded-sp border-2 border-gray-300 bg-gray-200 md:rounded-pc'>
-              <p className='text-gray-500'>画像がここに入ります</p>
-            </div>
-            <p>{organizations.organizationText}</p>
-          </li>
-        ))}
-      </ul>
-
-      <div className='flex items-center justify-center p-2'>
-        <div className='w-3/4 rounded-sp border-2 border-black  p-6 md:rounded-pc'>
-          <p>OSSの案内</p>
-        </div>
+      <div className='mx-auto w-full max-w-screen-md space-y-sp-3 rounded-sp bg-my-paleyellow p-sp-6 lg:space-y-pc-3 lg:rounded-pc lg:p-pc-6'>
+        <MegaphoneHeadline side={'oss'} headlines={['OSSの案内']} />
+        <div className='h-[200px]'>TODO</div>
       </div>
     </div>
   )

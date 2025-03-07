@@ -4,11 +4,15 @@ export default function MegaphoneHeadline({
   side,
   headlines,
 }: {
-  side: 'provider' | 'recipient'
+  side: 'provider' | 'recipient' | 'oss'
   headlines: string[]
 }) {
   const megaphoneImage =
-    side === 'provider' ? '/img/hcf_megahon_okuru.png' : '/img/hcf_megahon_uketoru.png'
+    side === 'provider'
+      ? '/img/hcf_megahon_okuru.png'
+      : side === 'recipient'
+      ? '/img/hcf_megahon_uketoru.png'
+      : '/img/hcf_megahon.png'
 
   return (
     <div className='flex items-center justify-center gap-sp-2 lg:gap-pc-2'>
