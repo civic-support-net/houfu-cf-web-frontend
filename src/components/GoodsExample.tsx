@@ -37,7 +37,7 @@ function CircleContents({
           </li>
         ))}
       </ul>
-      <p>{info}</p>
+      <p className='text-sp-p2 lg:text-pc-p2'>{info}</p>
     </div>
   )
 }
@@ -103,12 +103,11 @@ export default function GoodsExample({ side }: { side: 'provider' | 'recipient' 
             info: '生理用品・石鹸・文房具や学用品など',
           },
         ]
-  //const textColor = side === 'provider' ? 'text-my-red' : 'text-my-green'
   const bgColor = side === 'provider' ? 'bg-my-red' : 'bg-my-green'
   const bgPaleColor = side === 'provider' ? 'bg-my-palered' : 'bg-my-palegreen'
   const borderColor = side === 'provider' ? 'border-my-red' : 'border-my-green'
   return (
-    <div className='space-y-sp-6 rounded-lg bg-white px-sp-5 py-sp-6 lg:space-y-pc-6 lg:p-pc-6'>
+    <div className='space-y-sp-6 rounded-sp bg-white px-sp-5 py-sp-6 lg:space-y-pc-6 lg:rounded-pc lg:p-pc-6'>
       <div className='space-y-sp-3'>
         <MegaphoneHeadline side={side} headlines={[firstText[0]]} />
         <p>{firstText[1]}</p>

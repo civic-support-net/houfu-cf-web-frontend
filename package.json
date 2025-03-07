@@ -23,6 +23,7 @@
     "eslint": "8.32.0",
     "eslint-config-next": "13.1.4",
     "firebase-admin": "^11.10.1",
+    "lucide-react": "^0.477.0",
     "moment": "^2.29.4",
     "next": "^14.2.3",
     "postcss": "^8.4.21",

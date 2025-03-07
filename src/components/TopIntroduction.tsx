@@ -104,8 +104,8 @@ const renderRoleIntro = ({ side, texts }: { side: 'provider' | 'recipient'; text
           bgPaleColor,
           isProvider ? 'lg:flex-row' : 'lg:flex-row-reverse',
           isBackgroundFitLeft
-            ? '-ml-[44px] -mr-[28px] rounded-r-sp pl-[44px] lg:-ml-pc-6 lg:rounded-r-pc'
-            : '-ml-[28px] -mr-[44px] rounded-l-sp pr-[44px] lg:-mr-pc-6 lg:rounded-l-pc',
+            ? '-ml-sp-6 -mr-sp-5 rounded-r-sp pl-sp-6 lg:-ml-pc-6 lg:rounded-r-pc'
+            : '-ml-sp-5 -mr-sp-6 rounded-l-sp pr-sp-6 lg:-mr-pc-6 lg:rounded-l-pc',
         )}
       >
         <div className='flex w-full flex-col items-center space-y-sp-5 lg:items-start lg:space-y-pc-5'>

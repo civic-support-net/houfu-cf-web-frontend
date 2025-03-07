@@ -20,7 +20,7 @@ export const metadata: Metadata = SEO_DEFAULT
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='ja' className={cn(notoSansJP.variable, 'fonts-sans')}>
-      <body className='palt bg-my-yellow text-black'>
+      <body className='palt bg-my-yellow tracking-widest text-black'>
         <ClientLayout>{children}</ClientLayout>
       </body>
       <GoogleAnalytics gaId={gaId} />
