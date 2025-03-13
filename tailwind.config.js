@@ -12,6 +12,7 @@ module.exports = {
         'my-palegreen': '#E8F6EB',
         'my-red': '#E95513',
         'my-palered': '#FCE2D8',
+        'my-palegray': '#EBEBEB',
       },
       fontFamily: {
         sans: ['var(--font-noto-sans-jp)'],
@@ -57,6 +58,21 @@ module.exports = {
       },
       padding: {
         common: '3vw',
+      },
+      keyframes: {
+        minibounce: {
+          '0%,100%': {
+            transform: 'translateY(-10%)',
+            'animation-timing-function': 'cubic-bezier(0.8,0,1,1)',
+          },
+          '50%': {
+            transform: 'none',
+            'animation-timing-function': 'cubic-bezier(0,0,0.2,1)',
+          },
+        },
+      },
+      animation: {
+        minibounce: 'minibounce 1s infinite',
       },
     },
     backgroundImage: {

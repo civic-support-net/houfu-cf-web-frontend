@@ -21,7 +21,11 @@ const Header = () => {
           {menus.map((menu) => (
             <li
               key={menu.href}
-              className={cn('rounded-full border-2 px-[18px] py-[6px]', menu.bo_color)}
+              className={cn(
+                'rounded-full border-2 px-[18px] py-[6px]',
+                menu.bo_color,
+                menu.hover_bg_color,
+              )}
             >
               <Link href={menu.href} className={menu.tx_color}>
                 {menu.label}

@@ -1,92 +1,13 @@
-import Link from 'next/link'
+import Image from 'next/image'
 
+import Button from '@/components/Button'
 import FlagHeadline from '@/components/FlagHeadline'
 import MegaphoneHeadline from '@/components/MegaphoneHeadline'
 
-type RoundedRectangleProps = {
-  texts: string
-  link: string
-}
-
-const RoundedRectangle: React.FC<RoundedRectangleProps> = ({ texts, link }) => {
-  return (
-    <Link
-      href={link}
-      className='rounded-full border-2 border-my-red bg-white px-sp-3 py-sp-1 text-my-red lg:px-[32px] lg:py-pc-3'
-    >
-      <div className='flex flex-col items-center text-sp-p tracking-wider lg:flex-row lg:text-pc-h4'>
-        <span>{texts}</span>
-      </div>
-    </Link>
-  )
-}
-
-const Internet = () => {
-  return (
-    <div className='space-y-4 rounded-lg bg-white p-8 md:p-pc-6'>
-      <MegaphoneHeadline side='provider' headlines={['インターネットから', '品物をおくる']} />
-      <p>
-        インターネット上でお買い物した商品をおくる「スマートサプライ」も受け付けています。Amazonの欲しいものリストに登録されている品物を購入していただくと、コミュニティフリッジへおくることができます。
-      </p>
-      <p>※スマートサプライというサービスを利用します。</p>
-      <p>※Amazonアカウントが必要です。</p>
-      <div className='flex size-full justify-center'>
-        <RoundedRectangle texts='スマートサプライ' link='#' />
-      </div>
-    </div>
-  )
-}
-
-const Donate = () => {
-  return (
-    <div className='space-y-4 rounded-lg bg-white p-8 md:p-pc-6'>
-      <MegaphoneHeadline side='provider' headlines={['寄付金をおくる']} />
-      <p>
-        コミュニティフリッジは、できるだけ費用をおさえての運営を目指していますが、設備費・システム費などの維持費はかかっており、みなさまからの寄付によって支えられています。
-      </p>
-      <div className='flex flex-col space-y-sp-3 lg:flex-row lg:space-y-0'>
-        <div className='flex-1'>
-          <div className='mr-2 mt-1 inline-block size-4 shrink-0 bg-my-red' />
-          <span>クレジットカードで寄付</span>
-        </div>
-        <div className='flex flex-1 flex-col'>
-          <span>※congrantというサービスを利用します。</span>
-        </div>
-      </div>
-      <div className='flex size-full justify-center'>
-        <RoundedRectangle texts='寄付をする' link='' />
-      </div>
-      <div className='border-t-2 border-dashed border-my-red' />
-      <div className='flex flex-col space-y-sp-3 lg:flex-row lg:space-y-0'>
-        <div className='flex-1'>
-          <div className='mr-2 mt-1 inline-block size-4 shrink-0 bg-my-red' />
-          <span>銀行振込で寄付</span>
-        </div>
-        <div className='flex flex-1 flex-col'>
-          <span>もみじ銀行 防府市店</span>
-          <span>普通　1542374</span>
-          <span>トクヒ）シミンカツドウサポートネット</span>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-const Volunteer = () => {
-  return (
-    <div className='space-y-4 rounded-lg bg-white p-8 md:p-pc-6'>
-      <MegaphoneHeadline side='provider' headlines={['ボランティアとして', 'キモチをおくる']} />
-      <p>
-        フードポストの回収・受け入れた品物の整理等の作業や広報など、食品や日用品、寄付金をおくるのではなくボランティアとしてご協力してくださる方も募集しています。
-      </p>
-    </div>
-  )
-}
-
 export default function ProviderWays() {
   return (
-    <div className='space-y-4 bg-my-palered p-4 lg:p-[88px]'>
-      <div className='space-y-4 p-4'>
+    <div className='space-y-sp-6 bg-my-palered px-sp-3 py-sp-6 text-sp-p lg:space-y-pc-6 lg:p-pc-6 lg:text-pc-p'>
+      <div className='px-sp-5 lg:p-0'>
         <FlagHeadline
           headlines={['キモチの', 'おくりかたは', 'さまざまです']}
           bgColor='bg-my-red'
@@ -98,10 +19,97 @@ export default function ProviderWays() {
         </p>
       </div>
 
-      <div className='relative z-10 mx-auto max-w-screen-lg space-y-sp-3'>
+      <div className='relative z-10 mx-auto max-w-screen-md space-y-sp-5 lg:space-y-pc-5'>
         <Internet />
         <Donate />
         <Volunteer />
+      </div>
+    </div>
+  )
+}
+
+const Internet = () => {
+  return (
+    <div className='relative'>
+      <div className='space-y-sp-5 rounded-sp bg-white p-8 md:p-pc-6 lg:space-y-pc-5 lg:rounded-pc'>
+        <MegaphoneHeadline side='provider' headlines={['インターネットから', '品物をおくる']} />
+        <p>
+          インターネット上でお買い物した商品をおくる「スマートサプライ」も受け付けています。Amazonの欲しいものリストに登録されている品物を購入していただくと、コミュニティフリッジへおくることができます。
+        </p>
+        <p>※スマートサプライというサービスを利用します。</p>
+        <p>※Amazonアカウントが必要です。</p>
+        <div className='flex justify-center'>
+          <Button
+            texts={['スマートサプライ']}
+            href='https://hofu.communityfridge.jp/personal-form/?fbclid=IwAR0BV0L4h1tvkVPkdDtuqYRxeUaww-m2DEc6DrYVvrac_RkAZV57HxN4Prc'
+            side='provider'
+            isExternal={true}
+          />
+        </div>
+      </div>
+      <div className='absolute -top-sp-5 right-sp-5 z-10 aspect-[225/240] w-[50px] lg:-top-pc-5 lg:right-pc-6 lg:w-[80px]'>
+        <Image src='/img/hcf_internetsupply.png' fill alt='' />
+      </div>
+    </div>
+  )
+}
+
+const Donate = () => {
+  return (
+    <div className='relative'>
+      <div className='space-y-sp-5 rounded-sp bg-white p-8 lg:rounded-pc lg:p-pc-6'>
+        <MegaphoneHeadline side='provider' headlines={['寄付金をおくる']} />
+        <p>
+          コミュニティフリッジは、できるだけ費用をおさえての運営を目指していますが、設備費・システム費などの維持費はかかっており、みなさまからの寄付によって支えられています。
+        </p>
+        <div className='flex flex-col space-y-sp-3 lg:flex-row lg:space-y-0'>
+          <div className='flex-1'>
+            <div className='mr-2 mt-1 inline-block size-4 shrink-0 bg-my-red' />
+            <span>クレジットカードで寄付</span>
+          </div>
+          <div className='flex flex-1 flex-col'>
+            <span>※congrantというサービスを利用します。</span>
+          </div>
+        </div>
+        <div className='flex justify-center'>
+          <Button
+            texts={['寄付する']}
+            href='https://congrant.com/credit/form?project_id=3204'
+            side='provider'
+            isExternal={true}
+          />
+        </div>
+        <div className='border-t-2 border-dashed border-my-red' />
+        <div className='flex flex-col space-y-sp-3 lg:flex-row lg:space-y-0'>
+          <div className='flex-1'>
+            <div className='mr-2 mt-1 inline-block size-4 shrink-0 bg-my-red' />
+            <span>銀行振込で寄付</span>
+          </div>
+          <div className='flex flex-1 flex-col'>
+            <span>もみじ銀行 防府市店</span>
+            <span>普通　1542374</span>
+            <span>トクヒ）シミンカツドウサポートネット</span>
+          </div>
+        </div>
+      </div>
+      <div className='absolute -top-sp-5 left-sp-5 z-10 aspect-square w-[60px] lg:-top-pc-5 lg:left-pc-6 lg:w-[80px]'>
+        <Image src='/img/hcf_okuruillust_1.png' fill alt='' />
+      </div>
+    </div>
+  )
+}
+
+const Volunteer = () => {
+  return (
+    <div className='relative'>
+      <div className='space-y-sp-5 rounded-sp bg-white p-8 md:p-pc-6 lg:space-y-pc-5 lg:rounded-pc'>
+        <MegaphoneHeadline side='provider' headlines={['ボランティアとして', 'キモチをおくる']} />
+        <p>
+          フードポストの回収・受け入れた品物の整理等の作業や広報など、食品や日用品、寄付金をおくるのではなくボランティアとしてご協力してくださる方も募集しています。
+        </p>
+      </div>
+      <div className='absolute -bottom-sp-5 right-sp-5 z-10 aspect-square w-[60px] lg:-right-pc-5 lg:bottom-pc-5 lg:-z-10 lg:w-[80px] lg:rotate-45'>
+        <Image src='/img/hcf_kyoutsuillust_red.png' fill alt='' />
       </div>
     </div>
   )

@@ -88,7 +88,7 @@ const renderRoleIntro = ({ side, texts }: { side: 'provider' | 'recipient'; text
   const bgColor = isProvider ? 'bg-my-red' : 'bg-my-green'
   const bgPaleColor = isProvider ? 'bg-my-palered' : 'bg-my-palegreen'
   const linkText = isProvider ? 'おくる方法を見る' : 'うけとる方法を見る'
-  const linkHref = isProvider ? '/#provider' : '/#recipient'
+  const linkHref = isProvider ? '/provider' : '/recipient'
   const illustImage = isProvider ? '/img/hcf_topokuru.png' : '/img/hcf_topuketoru.png'
   const topRightImage = isProvider ? '/img/hcf_okuruillust_1.png' : '/img/hcf_uketoruillust_1.png'
   const bottomLeftImage = isProvider
@@ -104,8 +104,8 @@ const renderRoleIntro = ({ side, texts }: { side: 'provider' | 'recipient'; text
           bgPaleColor,
           isProvider ? 'lg:flex-row' : 'lg:flex-row-reverse',
           isBackgroundFitLeft
-            ? '-ml-[44px] -mr-[28px] rounded-r-sp pl-[44px] lg:-ml-pc-6 lg:rounded-r-pc'
-            : '-ml-[28px] -mr-[44px] rounded-l-sp pr-[44px] lg:-mr-pc-6 lg:rounded-l-pc',
+            ? '-ml-sp-6 -mr-sp-5 rounded-r-sp pl-sp-6 lg:-ml-pc-6 lg:rounded-r-pc'
+            : '-ml-sp-5 -mr-sp-6 rounded-l-sp pr-sp-6 lg:-mr-pc-6 lg:rounded-l-pc',
         )}
       >
         <div className='flex w-full flex-col items-center space-y-sp-5 lg:items-start lg:space-y-pc-5'>
@@ -144,7 +144,7 @@ const renderRoleIntro = ({ side, texts }: { side: 'provider' | 'recipient'; text
       </div>
       <div className='absolute -bottom-sp-5 z-20 w-full lg:-bottom-pc-5'>
         <div className='flex justify-center'>
-          <Button href={linkHref} text={linkText} side={side} />
+          <Button href={linkHref} texts={[linkText]} side={side} />
         </div>
       </div>
       <div className='absolute -right-5 -top-sp-5 z-10 aspect-square w-[60px] lg:-top-pc-5 lg:right-pc-5 lg:w-[80px]'>
