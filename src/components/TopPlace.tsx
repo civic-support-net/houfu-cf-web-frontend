@@ -44,7 +44,8 @@ const Place = ({ side }: { side: 'provider' | 'recipient' }) => {
   const labels =
     side === 'provider' ? ['食料品や日用品を', 'おくる'] : ['食料品や日用品を', 'うけとる']
   const hours = side === 'provider' ? '10:00〜17:00' : '8:00〜21:30'
-  const buttonText = side === 'provider' ? 'おくる場所' : 'うけとる場所'
+  const linkText = side === 'provider' ? 'おくる場所' : 'うけとる場所'
+  const linkHref = side === 'provider' ? '/provider/#place' : '/recipient/#place'
   const bgColor = side === 'provider' ? 'bg-my-palered' : 'bg-my-palegreen'
   const rectColor = side === 'provider' ? 'bg-my-red' : 'bg-my-green'
 
@@ -74,7 +75,7 @@ const Place = ({ side }: { side: 'provider' | 'recipient' }) => {
           </div>
         </div>
         <p>※火曜、年末年始を除く</p>
-        <Button href='' text={buttonText} side={side} />
+        <Button texts={[linkText]} href={linkHref} side={side} />
       </div>
     </div>
   )

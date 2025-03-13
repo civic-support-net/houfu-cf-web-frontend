@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 import FlagHeadline from '@/components/FlagHeadline'
 import MegaphoneHeadline from '@/components/MegaphoneHeadline'
@@ -40,7 +41,7 @@ export default function AboutOrganizations() {
         <div className='mx-auto flex flex-col  items-center justify-center gap-sp-5 lg:flex-row lg:gap-pc-5'>
           {organizations.map((org, index) => (
             <div className='flex flex-1 flex-col items-center space-y-[1em]' key={index}>
-              <div className='relative aspect-[888/660] w-full'>
+              <div className='relative aspect-[888/660] w-full max-w-[320px]'>
                 <Image src={org.url} alt={org.alt} fill />
               </div>
               <p className='text-sp-p2 lg:text-pc-p2'>{org.text}</p>
@@ -51,7 +52,18 @@ export default function AboutOrganizations() {
 
       <div className='mx-auto w-full max-w-screen-md space-y-sp-3 rounded-sp bg-my-paleyellow p-sp-6 lg:space-y-pc-3 lg:rounded-pc lg:p-pc-6'>
         <MegaphoneHeadline side={'oss'} headlines={['OSSの案内']} />
-        <div className='h-[200px]'>TODO</div>
+        <p className='text-sp-p lg:text-pc-p'>
+          当サイトのWebシステムは、プログラムをすべてGithubで公開しています。トップページの手書きイラストの旗は、付箋のメッセージを撮影したものをLINEから投稿してWebサイトに反映しています。是非ご活用ください。(システムの構築と運用は、技術者のサポートと少額の実費が必要です)
+        </p>
+        <Link href='https://github.com/civic-support-net' target='_blank' className='block'>
+          <Image
+            src='/img/github-QR.png'
+            alt='GitHub'
+            width={200}
+            height={200}
+            className='mx-auto rounded bg-white p-4'
+          />
+        </Link>
       </div>
     </div>
   )

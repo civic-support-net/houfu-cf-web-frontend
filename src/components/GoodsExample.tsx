@@ -106,30 +106,43 @@ export default function GoodsExample({ side }: { side: 'provider' | 'recipient' 
   const bgColor = side === 'provider' ? 'bg-my-red' : 'bg-my-green'
   const bgPaleColor = side === 'provider' ? 'bg-my-palered' : 'bg-my-palegreen'
   const borderColor = side === 'provider' ? 'border-my-red' : 'border-my-green'
-  return (
-    <div className='space-y-sp-6 rounded-sp bg-white px-sp-5 py-sp-6 lg:space-y-pc-6 lg:rounded-pc lg:p-pc-6'>
-      <div className='space-y-sp-3'>
-        <MegaphoneHeadline side={side} headlines={[firstText[0]]} />
-        <p>{firstText[1]}</p>
-      </div>
-      <ul className='space-y-sp-6 lg:space-y-pc-6'>
-        {listInfo.map((note, index) => (
-          <li key={index} className=''>
-            <CircleContents
-              headline={note.headline}
-              listItems={note.listItems}
-              info={note.info}
-              bgColor={bgColor}
-              bgPaleColor={bgPaleColor}
-            />
-          </li>
-        ))}
-      </ul>
+  const illustImage = side === 'provider' ? '/img/hcf_giftpeople.png' : '/img/hcf_takepeople.png'
+  const illustAspcet = side === 'provider' ? 'aspect-[288/540]' : 'aspect-[216/540]'
 
-      <div className={cn('border-t-[2px] border-dashed', borderColor)}></div>
-      <div className='space-y-sp-3'>
-        <MegaphoneHeadline side={side} headlines={[secondText[0]]} />
-        <p>{secondText[1]}</p>
+  return (
+    <div className='relative'>
+      <div className='space-y-sp-6 rounded-sp bg-white px-sp-5 py-sp-6 lg:space-y-pc-6 lg:rounded-pc lg:p-pc-6'>
+        <div className='space-y-sp-3'>
+          <MegaphoneHeadline side={side} headlines={[firstText[0]]} />
+          <p>{firstText[1]}</p>
+        </div>
+        <ul className='space-y-sp-6 lg:space-y-pc-6'>
+          {listInfo.map((note, index) => (
+            <li key={index} className=''>
+              <CircleContents
+                headline={note.headline}
+                listItems={note.listItems}
+                info={note.info}
+                bgColor={bgColor}
+                bgPaleColor={bgPaleColor}
+              />
+            </li>
+          ))}
+        </ul>
+
+        <div className={cn('border-t-[2px] border-dashed', borderColor)}></div>
+        <div className='space-y-sp-3'>
+          <MegaphoneHeadline side={side} headlines={[secondText[0]]} />
+          <p>{secondText[1]}</p>
+        </div>
+      </div>
+      <div
+        className={cn(
+          'absolute -top-sp-6 left-1/2 -z-10 h-[90px] -translate-x-1/2 lg:top-[-66px] lg:h-[150px]',
+          illustAspcet,
+        )}
+      >
+        <Image src={illustImage} fill alt='' />
       </div>
     </div>
   )

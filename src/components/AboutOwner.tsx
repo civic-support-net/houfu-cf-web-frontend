@@ -1,4 +1,4 @@
-import { ExternalLink } from 'lucide-react'
+import { SquareArrowOutUpRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -24,7 +24,7 @@ export default function AboutOwner() {
               特定非営利活動法人
               <br className='md:hidden' />
               市民活動さぽーとねっと
-              <ExternalLink />
+              <SquareArrowOutUpRight />
             </Link>
           </h3>
           <p>

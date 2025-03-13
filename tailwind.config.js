@@ -12,6 +12,7 @@ module.exports = {
         'my-palegreen': '#E8F6EB',
         'my-red': '#E95513',
         'my-palered': '#FCE2D8',
+        'my-palegray': '#EBEBEB',
       },
       fontFamily: {
         sans: ['var(--font-noto-sans-jp)'],
