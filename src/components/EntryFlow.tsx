@@ -1,47 +1,16 @@
 import Image from 'next/image'
-import Link from 'next/link'
 
+import Button from '@/components/Button'
 import { cn } from '@/lib/utils'
 
-type RoundedRectangleProps = {
-  // link プロパティを追加
-  side: 'provider' | 'recipient'
-}
-
-const RoundedRectangle: React.FC<RoundedRectangleProps> = ({ side }) => {
-  const borderColor = side === 'provider' ? 'border-my-red' : 'border-my-green'
-  const textColor = side === 'provider' ? 'text-my-red' : 'text-my-green'
-
-  const texts =
-    side === 'provider'
-      ? ['フードプレゼンター', '登録をする']
-      : ['うけとりメンバー', '登録の予約をする']
-  const link =
-    side === 'provider'
-      ? 'https://hofu.communityfridge.jp/personal-form/?fbclid=IwAR0BV0L4h1tvkVPkdDtuqYRxeUaww-m2DEc6DrYVvrac_RkAZV57HxN4Prc'
-      : 'tel:0835-24-7744'
-
-  return (
-    <Link
-      href={link}
-      className={cn(
-        'rounded-full border-2 bg-white px-4 py-2 lg:px-8 lg:py-4',
-        borderColor,
-        textColor,
-      )}
-    >
-      <div className='flex flex-col items-center text-sp-h4 tracking-wider lg:flex-row lg:text-pc-h4'>
-        <span>{texts[0]}</span>
-        <span>{texts[1]}</span>
-      </div>
-    </Link>
-  )
-}
 export default function EntryFlow({ side }: { side: 'provider' | 'recipient' }) {
-  const topText =
+  const topTexts =
     side === 'provider'
-      ? ['フードプレゼンター', 'として', '品物をおくる!']
-      : ['うけとりメンバー', 'として', '品物をうけとる!']
+      ? [['フード', 'プレゼンター', 'に登録して'], ['エールをおくる!']]
+      : [
+          ['うけとりメンバー', '登録をして'],
+          ['エールを', 'うけとる!'],
+        ]
 
   const flowContents =
     side === 'provider'
@@ -82,9 +51,25 @@ export default function EntryFlow({ side }: { side: 'provider' | 'recipient' }) 
 
   const borderColor = side === 'provider' ? 'border-my-red' : 'border-my-green'
   const bgColor = side === 'provider' ? 'bg-my-red' : 'bg-my-green'
+  const button =
+    side === 'provider' ? (
+      <Button
+        texts={['フードプレゼンター', '登録をする']}
+        href='https://hofu.communityfridge.jp/personal-form/?fbclid=IwAR0BV0L4h1tvkVPkdDtuqYRxeUaww-m2DEc6DrYVvrac_RkAZV57HxN4Prc'
+        side={side}
+        isExternal={true}
+      />
+    ) : (
+      <Button
+        texts={['うけとりメンバー', '登録の予約をする']}
+        href='tel:0835-24-7744'
+        side={side}
+        isTel={true}
+      />
+    )
 
   return (
-    <div className='mx-auto flex max-w-screen-md flex-col lg:flex-row'>
+    <div className='mx-auto flex max-w-screen-md flex-col px-sp-3 py-sp-6 lg:flex-row lg:px-0 lg:py-pc-6'>
       <div className='mx-auto flex flex-col items-center justify-center gap-y-sp-6 lg:max-w-screen-lg lg:gap-y-pc-6'>
         {/* 表題 */}
         <div className='mx-auto flex items-center gap-x-[0.4em] lg:gap-x-[1em]'>
@@ -97,9 +82,12 @@ export default function EntryFlow({ side }: { side: 'provider' | 'recipient' }) 
           ></Image>
           <div className='mx-auto flex flex-col items-center gap-y-2 text-center text-sp-h3 lg:text-pc-h2'>
             <div className='flex flex-col lg:flex-row'>
-              <p>{topText[0]}</p>
-              <p>{topText[1]}</p>
-              <p>{topText[2]}</p>
+              {topTexts[0].map((text, index) => (
+                <p key={index}>{text}</p>
+              ))}
+              {topTexts[1].map((text, index) => (
+                <p key={index}>{text}</p>
+              ))}
             </div>
           </div>
           <Image
@@ -143,9 +131,7 @@ export default function EntryFlow({ side }: { side: 'provider' | 'recipient' }) 
         </div>
 
         {/* ボタン */}
-        <div className='flex size-full justify-center'>
-          <RoundedRectangle side={side} />
-        </div>
+        <div className='flex justify-center'>{button}</div>
       </div>
     </div>
   )

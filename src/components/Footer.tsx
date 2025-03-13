@@ -1,4 +1,4 @@
-import { ExternalLink } from 'lucide-react'
+import { SquareArrowOutUpRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -30,7 +30,7 @@ const Footer = () => {
               target='_blank'
               className='flex items-center text-sp-p lg:text-pc-p'
             >
-              特定非営利活動法人市民活動さぽーとねっと <ExternalLink size={18} />
+              特定非営利活動法人市民活動さぽーとねっと <SquareArrowOutUpRight size={18} />
             </Link>
           </div>
           <div className='flex flex-col items-center'>

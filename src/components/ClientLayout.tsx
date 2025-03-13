@@ -21,7 +21,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
   return (
     <>
       {/* PC header */}
-      <div className='fixed z-50 hidden w-full lg:fixed lg:block'>
+      <div className='sticky z-50 hidden w-full lg:block'>
         <Header />
       </div>
       {/* Mobile header button */}
@@ -54,7 +54,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       )}
 
       {/* Content */}
-      <div className='flex h-lvh'>
+      <div className=''>
         <main className='h-screen flex-1 overflow-y-auto'>
           <div className='mt-[96px] px-sp-3 lg:mt-[144px] xl:px-0'>{children}</div>
           <Footer />
