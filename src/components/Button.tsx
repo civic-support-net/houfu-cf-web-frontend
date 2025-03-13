@@ -13,6 +13,7 @@ export default function Button({
 }) {
   const textColor = side === 'provider' ? 'text-my-red' : 'text-my-green'
   const borderColor = side === 'provider' ? 'border-my-red' : 'border-my-green'
+  const hoverBgColor = side === 'provider' ? 'hover:bg-my-palered' : 'hover:bg-my-palegreen'
 
   return (
     <Link
@@ -22,6 +23,7 @@ export default function Button({
         'inline-block rounded-full border-2 bg-white px-[1.5rem] py-[1em] text-[1rem] lg:px-[2rem] lg:py-[1rem] lg:text-[1.5rem] lg:leading-[1.5]',
         textColor,
         borderColor,
+        hoverBgColor,
       )}
     >
       {text}
