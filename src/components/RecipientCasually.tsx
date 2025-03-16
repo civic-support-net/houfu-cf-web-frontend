@@ -20,7 +20,7 @@ export default function RecipientCasually() {
   ]
 
   return (
-    <div className='mx-auto gap-4 space-y-sp-6 bg-green-100 px-sp-3 py-sp-6 lg:space-y-pc-6 lg:p-pc-6'>
+    <div className='mx-auto gap-4 space-y-sp-6 bg-my-palegreen px-sp-3 py-sp-6 lg:space-y-pc-6 lg:p-pc-6'>
       <div className='px-sp-5 lg:p-0'>
         <FlagHeadline
           headlines={['さまざまな', 'お届けものが', 'あります']}
@@ -68,7 +68,7 @@ export default function RecipientCasually() {
               side='recipient'
               headlines={['お米や野菜などの', '生鮮食品もあります']}
             />
-            <p className='text-center text-sp-p lg:text-pc-p'>
+            <p className='text-center text-sp-p lg:text-left lg:text-pc-p'>
               農家の方やお店の方からいただいたお米や野菜など、毎日のご飯に助かる生鮮食品も届いています。
             </p>
           </div>

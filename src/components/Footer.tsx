@@ -23,8 +23,8 @@ const Footer = () => {
         </ul>
 
         <div className='space-y-[1em] text-sp-p2 lg:text-pc-p2'>
-          <div className='flex flex-col items-center'>
-            <p className='my-0 text-sp-h2 lg:text-pc-h2'>防府コミュニティブリッジ</p>
+          <div className='flex flex-col items-center lg:items-start'>
+            <p className='my-0 text-sp-h2 lg:text-pc-h2'>防府コミュニティフリッジ</p>
             <Link
               href='https://hofu-saponet.sakura.ne.jp/'
               target='_blank'
@@ -33,10 +33,10 @@ const Footer = () => {
               特定非営利活動法人市民活動さぽーとねっと <SquareArrowOutUpRight size={18} />
             </Link>
           </div>
-          <div className='flex flex-col items-center'>
+          <div className='flex flex-col items-center lg:items-start'>
             <div className='flex flex-col items-center space-x-2 lg:flex-row'>
-              <p>〒745-0035</p>
-              <p>山口県防府市栄町1-1-17 (ルルサス防府)</p>
+              <p>〒747-0035</p>
+              <p>山口県防府市栄町1-5-1 (ルルサス防府)</p>
             </div>
             <p>TEL 0835-24-7744</p>
           </div>

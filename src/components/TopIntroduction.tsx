@@ -82,7 +82,7 @@ const renderIllustIntro = () => {
 const renderRoleIntro = ({ side, texts }: { side: 'provider' | 'recipient'; texts: string[] }) => {
   const isProvider = side === 'provider'
   // sideによって、色や画像を切り分ける
-  const labelHeads = isProvider ? ['食料品や日用品を', 'おくる'] : ['食料品や日用品を', 'うけとる']
+  const labelHeads = isProvider ? ['食品や日用品を', 'おくる'] : ['食品や日用品を', 'うけとる']
   const labelImage1 = isProvider ? '/img/hcf_giving.png' : '/img/hcf_taking.png'
   const labelImage2 = '/img/hcf_food.png'
   const bgColor = isProvider ? 'bg-my-red' : 'bg-my-green'

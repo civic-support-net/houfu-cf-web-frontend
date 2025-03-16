@@ -17,7 +17,7 @@ export default function TopPlace() {
             食品・日用品のお持ち込みは、2階防府市市民活動支援センター気付へお越しください。お持ち込みいただく前に、フードプレゼンター登録をお願いいたします。
           </p>
           <p>
-            食品・日用品のうけとりは、1階防府コミュニティフリッジへお越しください。うけとりメンバー登録の際にお渡しする電子ロックの鍵で自由にうけとることができます。
+            食品・日用品のうけとりは、1階防府コミュニティフリッジへお越しください。うけとりメンバー登録の際にお手持ちのスマートフォンに登録した電子ロックを使って自由にうけとることができます。
           </p>
         </div>
       </div>
@@ -41,13 +41,13 @@ export default function TopPlace() {
 }
 
 const Place = ({ side }: { side: 'provider' | 'recipient' }) => {
-  const labels =
-    side === 'provider' ? ['食料品や日用品を', 'おくる'] : ['食料品や日用品を', 'うけとる']
+  const labels = side === 'provider' ? ['食品や日用品を', 'おくる'] : ['食品や日用品を', 'うけとる']
   const hours = side === 'provider' ? '10:00〜17:00' : '8:00〜21:30'
   const linkText = side === 'provider' ? 'おくる場所' : 'うけとる場所'
   const linkHref = side === 'provider' ? '/provider/#place' : '/recipient/#place'
   const bgColor = side === 'provider' ? 'bg-my-palered' : 'bg-my-palegreen'
   const rectColor = side === 'provider' ? 'bg-my-red' : 'bg-my-green'
+  const restDays = side === 'provider' ? '※火曜、年末年始を除く' : '※年中無休'
 
   return (
     <div
@@ -69,12 +69,12 @@ const Place = ({ side }: { side: 'provider' | 'recipient' }) => {
           <div className='flex space-x-sp-1 lg:flex-col lg:space-x-[24px]'>
             <p>
               <span className={cn('mr-sp-1 inline-block size-4 rounded lg:mr-pc-1', rectColor)} />
-              お問い合わせ先
+              お問合せ先
             </p>
             <p>0835-24-7744</p>
           </div>
         </div>
-        <p>※火曜、年末年始を除く</p>
+        <p>{restDays}</p>
         <Button texts={[linkText]} href={linkHref} side={side} />
       </div>
     </div>
