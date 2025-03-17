@@ -8,4 +8,7 @@ export const messageStatus = {
   CANCELED: 'キャンセル済み',
 }
 
+export const POSITION_RECIPIENT = 'うけとった方'
+export const POSITION_PROVIDER = 'おくった方'
+
 export type messageStatusType = (typeof messageStatus)[keyof typeof messageStatus]

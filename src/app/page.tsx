@@ -4,11 +4,12 @@ import Section from '@/components/Section'
 import TopHero from '@/components/TopHero'
 import TopIntroduction from '@/components/TopIntroduction'
 import TopPlace from '@/components/TopPlace'
+import { POSITION_PROVIDER, POSITION_RECIPIENT } from '@/consts/constants'
 import { GetApprovedMessages } from '@/data/messages'
 
 const HomePage = async () => {
-  const recipientMessages = await GetApprovedMessages('受給された方')
-  const providerMessages = await GetApprovedMessages('提供された方')
+  const recipientMessages = await GetApprovedMessages(POSITION_RECIPIENT)
+  const providerMessages = await GetApprovedMessages(POSITION_PROVIDER)
 
   return (
     <div className='relative'>
