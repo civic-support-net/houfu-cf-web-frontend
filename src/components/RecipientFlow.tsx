@@ -26,7 +26,7 @@ export default function RecipientFlow() {
       <div className='relative bg-my-palegreen'>
         <EntryFlow side='recipient' />
         <div className='absolute -top-sp-5 right-sp-5 z-10 aspect-square w-[60px] lg:-top-pc-5 lg:right-pc-6 lg:w-[80px]'>
-          <Image src='/img/hcf_uketoruillust_1.png' fill alt='' />
+          <Image src='/img/hcf_uketoruillust_1.png' fill alt='' className='animate-myspinb' />
         </div>
       </div>
 

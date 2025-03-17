@@ -32,7 +32,7 @@ function CircleContents({
                   bgPaleColor,
                 )}
               >
-                <Image src={image} width={80} height={80} alt='logo' className='' />
+                <Image src={image} width={80} height={80} alt='logo' />
               </div>
             </div>
             <p className='flex flex-col items-center text-sp-p2 lg:text-pc-p2'>
@@ -153,7 +153,7 @@ export default function GoodsExample({ side }: { side: 'provider' | 'recipient' 
           illustAspcet,
         )}
       >
-        <Image src={illustImage} fill alt='' />
+        <Image src={illustImage} fill alt='' className='animate-mybounce' />
       </div>
     </div>
   )

@@ -35,14 +35,14 @@ export default function TopHero({
           alt='おたがいさまのキモチを応援！防府コミュニティフリッジ'
           width={720}
           height={120}
-          className='hidden animate-minibounce md:block'
+          className='hidden animate-myping md:block'
         />
         <Image
           src='/img/hcf_title_sp.png'
           alt='おたがいさまのキモチを応援！防府コミュニティフリッジ'
           width={343}
           height={147}
-          className='animate-minibounce md:hidden'
+          className='animate-myping md:hidden'
         />
       </h1>
       <div className='w-[120%] rotate-[-8deg] overflow-hidden'>

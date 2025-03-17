@@ -30,7 +30,7 @@ function SquareBulletList({ items, bgColor }: { items: string[]; bgColor: string
     <ul className='space-y-sp-3 lg:space-y-pc-3'>
       {items.map((item, index) => (
         <li key={index} className='flex'>
-          <span className={cn('m-2 inline-block size-[12px] shrink-0 rounded-full', bgColor)} />
+          <span className={cn('m-2 inline-block size-4 shrink-0 rounded-full', bgColor)} />
           <p className='text-sp-p lg:text-pc-p'>{item}</p>
         </li>
       ))}

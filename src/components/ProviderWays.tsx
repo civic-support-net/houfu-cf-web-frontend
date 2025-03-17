@@ -47,7 +47,7 @@ const Internet = () => {
         </div>
       </div>
       <div className='absolute -top-sp-5 right-sp-5 z-10 aspect-[225/240] w-[50px] lg:-top-pc-5 lg:right-pc-6 lg:w-[80px]'>
-        <Image src='/img/hcf_internetsupply.png' fill alt='' />
+        <Image src='/img/hcf_internetsupply.png' fill alt='' className='animate-myspinc' />
       </div>
     </div>
   )
@@ -92,7 +92,7 @@ const Donate = () => {
         </div>
       </div>
       <div className='absolute -top-sp-5 left-sp-5 z-10 aspect-square w-[60px] lg:-top-pc-5 lg:left-pc-6 lg:w-[80px]'>
-        <Image src='/img/hcf_okuruillust_1.png' fill alt='' />
+        <Image src='/img/hcf_okuruillust_1.png' fill alt='' className='animate-myspina' />
       </div>
     </div>
   )
@@ -108,7 +108,7 @@ const Volunteer = () => {
         </p>
       </div>
       <div className='absolute -bottom-sp-5 right-sp-5 z-10 aspect-square w-[60px] lg:-right-pc-5 lg:bottom-pc-5 lg:-z-10 lg:w-[80px] lg:rotate-45'>
-        <Image src='/img/hcf_kyoutsuillust_red.png' fill alt='' />
+        <Image src='/img/hcf_kyoutsuillust_red.png' fill alt='' className='animate-myspinb' />
       </div>
     </div>
   )

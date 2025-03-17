@@ -58,7 +58,7 @@ export default function RecipientCasually() {
             </ul>
           </div>
           <div className='absolute -top-sp-5 right-sp-5 z-10 aspect-[180/315] w-pc-5 lg:-top-pc-5 lg:right-pc-6 lg:w-[50px]'>
-            <Image src='/img/hcf_take.png' fill alt='' />
+            <Image src='/img/hcf_take.png' fill alt='' className='animate-myspinc' />
           </div>
         </div>
 
@@ -73,7 +73,7 @@ export default function RecipientCasually() {
             </p>
           </div>
           <div className='absolute -bottom-sp-5 left-sp-5 z-10 aspect-square w-[60px] rotate-[-10deg] lg:-left-pc-5 lg:bottom-pc-5 lg:w-[80px]'>
-            <Image src='/img/hcf_uketoruillust_2.png' fill alt='' />
+            <Image src='/img/hcf_uketoruillust_2.png' fill alt='' className='animate-myspina' />
           </div>
         </div>
       </div>

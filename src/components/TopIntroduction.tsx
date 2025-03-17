@@ -94,6 +94,8 @@ const renderRoleIntro = ({ side, texts }: { side: 'provider' | 'recipient'; text
   const bottomLeftImage = isProvider
     ? '/img/hcf_okuruillust_2.png'
     : '/img/hcf_kyoutsuillust_green.png'
+  const topRightAnime = isProvider ? 'animate-myspina' : 'animate-myspinc'
+  const bottomLeftAnime = isProvider ? 'animate-myspinb' : 'animate-myspina'
   const isBackgroundFitLeft = isProvider
 
   return (
@@ -148,10 +150,10 @@ const renderRoleIntro = ({ side, texts }: { side: 'provider' | 'recipient'; text
         </div>
       </div>
       <div className='absolute -right-5 -top-sp-5 z-10 aspect-square w-[60px] lg:-top-pc-5 lg:right-pc-5 lg:w-[80px]'>
-        <Image src={topRightImage} fill alt='' />
+        <Image src={topRightImage} fill alt='' className={topRightAnime} />
       </div>
       <div className='absolute -bottom-sp-5 -left-sp-5 z-10 aspect-square w-[60px] lg:-bottom-pc-5 lg:left-0 lg:w-[80px]'>
-        <Image src={bottomLeftImage} fill alt='' />
+        <Image src={bottomLeftImage} fill alt='' className={bottomLeftAnime} />
       </div>
     </div>
   )
