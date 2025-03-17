@@ -37,7 +37,7 @@ const Carousel: React.FC<CarouselProps> = ({ flags, options = {}, plugins = {} }
   )
 
   return (
-    <div className='w-[120%] overflow-hidden' ref={emblaRef}>
+    <div className='w-[120%] overflow-x-hidden' ref={emblaRef}>
       <ul className='flex w-full'>
         {flags.map((flag, index) => (
           <li key={index} className={cn('relative', flag.textColor)}>

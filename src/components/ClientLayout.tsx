@@ -35,7 +35,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       <button
         onClick={toggleMenu}
         className={cn(
-          'fixed right-2 top-2 z-50 flex size-[72px] flex-col items-center overflow-hidden rounded-full border-4 border-black pt-2 text-sm text-black lg:hidden',
+          'fixed right-2 top-2 z-50 flex size-[72px] flex-col items-center rounded-full border-4 border-black pt-2 text-sm text-black lg:hidden',
           isMenuOpen ? 'bg-my-yellow' : 'bg-white',
         )}
         aria-expanded={isMenuOpen}
@@ -55,8 +55,8 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
 
       {/* Content */}
       <div className=''>
-        <main className='h-screen flex-1 overflow-y-auto'>
-          <div className='mt-[96px] px-sp-3 lg:mt-[144px] xl:px-0'>{children}</div>
+        <main className='h-screen flex-1 overflow-x-hidden'>
+          <div className='mt-[96px] px-sp-3 lg:mt-[144px] lg:px-0'>{children}</div>
           <Footer />
         </main>
       </div>

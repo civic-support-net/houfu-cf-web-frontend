@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils'
 
 export default function TopPlace() {
   return (
-    <div className='relative space-y-sp-6 overflow-visible bg-white p-sp-6 px-sp-3 md:space-y-pc-6 md:p-pc-6'>
+    <div className='relative space-y-sp-6 bg-white p-sp-6 px-sp-3 md:space-y-pc-6 md:p-pc-6'>
       <div className='px-sp-5 text-sp-p lg:text-pc-p'>
         <FlagHeadline
           headlines={['防府コミュニティ', 'フリッジは', 'ルルサス防府に', 'あります']}

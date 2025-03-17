@@ -12,7 +12,7 @@ const Header = () => {
         <div className='size-[144px] rounded-full bg-white p-[22px]'>
           <Link
             href='/'
-            className='relative block size-full overflow-hidden rounded-full bg-my-yellow'
+            className='relative block size-full overflow-x-hidden rounded-full bg-my-yellow'
           >
             <Image src='/img/logo.png' fill alt='logo' className='' />
           </Link>

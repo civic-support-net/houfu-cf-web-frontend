@@ -22,7 +22,7 @@ export default function TopHero({
 
   return (
     <div className='flex flex-col items-center justify-center gap-y-sp-3 md:gap-y-pc-4'>
-      <div className='w-[120%] rotate-[-8deg] overflow-hidden'>
+      <div className='w-[120%] rotate-[-8deg] overflow-x-hidden'>
         <Carousel
           flags={upperFlags}
           options={{ loop: true, direction: 'ltr' }}
@@ -45,7 +45,7 @@ export default function TopHero({
           className='animate-myping md:hidden'
         />
       </h1>
-      <div className='w-[120%] rotate-[-8deg] overflow-hidden'>
+      <div className='w-[120%] rotate-[-8deg] overflow-x-hidden'>
         <Carousel
           flags={lowerFlags}
           options={{ loop: true, direction: 'ltr' }}

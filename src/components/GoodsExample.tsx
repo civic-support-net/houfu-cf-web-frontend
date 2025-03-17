@@ -28,7 +28,7 @@ function CircleContents({
             <div className='size-32 rounded-full lg:size-36'>
               <div
                 className={cn(
-                  'relative flex size-full items-center justify-center overflow-hidden rounded-full',
+                  'relative flex size-full items-center justify-center rounded-full',
                   bgPaleColor,
                 )}
               >
