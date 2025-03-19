@@ -4,11 +4,12 @@ import Section from '@/components/Section'
 import TopHero from '@/components/TopHero'
 import TopIntroduction from '@/components/TopIntroduction'
 import TopPlace from '@/components/TopPlace'
+import { POSITION_PROVIDER, POSITION_RECIPIENT } from '@/consts/constants'
 import { GetApprovedMessages } from '@/data/messages'
 
 const HomePage = async () => {
-  const recipientMessages = await GetApprovedMessages('受給された方')
-  const providerMessages = await GetApprovedMessages('提供された方')
+  const recipientMessages = await GetApprovedMessages(POSITION_RECIPIENT)
+  const providerMessages = await GetApprovedMessages(POSITION_PROVIDER)
 
   return (
     <div className='relative'>
@@ -43,10 +44,10 @@ const HomePage = async () => {
           </Section>
         </div>
         <div className='absolute -bottom-sp-3 left-sp-3 z-20 aspect-square w-[80px] lg:-bottom-pc-5 lg:left-pc-6 lg:w-[120px]'>
-          <Image src='/img/hcf_heroillust_1.png' fill alt='' className='' />
+          <Image src='/img/hcf_heroillust_1.png' fill alt='' className='animate-myspinb' />
         </div>
         <div className='absolute -bottom-sp-3 right-sp-3 z-20 aspect-square w-[80px] lg:-bottom-pc-5 lg:right-pc-6 lg:w-[120px]'>
-          <Image src='/img/hcf_heroillust_2.png' fill alt='' className='' />
+          <Image src='/img/hcf_heroillust_2.png' fill alt='' className='animate-myspinc' />
         </div>
       </div>
     </div>

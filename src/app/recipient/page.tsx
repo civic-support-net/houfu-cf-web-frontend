@@ -7,7 +7,7 @@ const RecipientPage = () => {
   return (
     <>
       <Headline
-        headline='食料品や日用品を'
+        headline='食品や日用品を'
         headlineTail='うけとる'
         tailColor='text-my-green'
         image='/img/hcf_heroillust_1.png'

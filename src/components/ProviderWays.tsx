@@ -15,7 +15,7 @@ export default function ProviderWays() {
         />
         <p>フードプレゼンター以外の方法で、キモチをおくることもできます。</p>
         <p>
-          例えば、現地へのお持ち込みではなく、インターネットを通じて品物をおくることができたり、ボラインティアとしてコミュニティフリッジの運営のお手伝いをしていただいたり、それぞれのライフスタイルに合った方法で「おたがいさま」のキモチをおくっていただいています。
+          例えば、現地へのお持ち込みではなく、インターネットを通じて品物をおくることができたり、ボランティアとしてコミュニティフリッジの運営のお手伝いをしていただいたり、それぞれのライフスタイルに合った方法で「おたがいさま」のキモチをおくっていただいています。
         </p>
       </div>
 
@@ -36,7 +36,6 @@ const Internet = () => {
         <p>
           インターネット上でお買い物した商品をおくる「スマートサプライ」も受け付けています。Amazonの欲しいものリストに登録されている品物を購入していただくと、コミュニティフリッジへおくることができます。
         </p>
-        <p>※スマートサプライというサービスを利用します。</p>
         <p>※Amazonアカウントが必要です。</p>
         <div className='flex justify-center'>
           <Button
@@ -48,7 +47,7 @@ const Internet = () => {
         </div>
       </div>
       <div className='absolute -top-sp-5 right-sp-5 z-10 aspect-[225/240] w-[50px] lg:-top-pc-5 lg:right-pc-6 lg:w-[80px]'>
-        <Image src='/img/hcf_internetsupply.png' fill alt='' />
+        <Image src='/img/hcf_internetsupply.png' fill alt='' className='animate-myspinc' />
       </div>
     </div>
   )
@@ -68,7 +67,7 @@ const Donate = () => {
             <span>クレジットカードで寄付</span>
           </div>
           <div className='flex flex-1 flex-col'>
-            <span>※congrantというサービスを利用します。</span>
+            <span>1年に1回のご寄付で応援してください!</span>
           </div>
         </div>
         <div className='flex justify-center'>
@@ -86,14 +85,14 @@ const Donate = () => {
             <span>銀行振込で寄付</span>
           </div>
           <div className='flex flex-1 flex-col'>
-            <span>もみじ銀行 防府市店</span>
+            <span>もみじ銀行 防府支店</span>
             <span>普通　1542374</span>
             <span>トクヒ）シミンカツドウサポートネット</span>
           </div>
         </div>
       </div>
       <div className='absolute -top-sp-5 left-sp-5 z-10 aspect-square w-[60px] lg:-top-pc-5 lg:left-pc-6 lg:w-[80px]'>
-        <Image src='/img/hcf_okuruillust_1.png' fill alt='' />
+        <Image src='/img/hcf_okuruillust_1.png' fill alt='' className='animate-myspina' />
       </div>
     </div>
   )
@@ -105,11 +104,11 @@ const Volunteer = () => {
       <div className='space-y-sp-5 rounded-sp bg-white p-8 md:p-pc-6 lg:space-y-pc-5 lg:rounded-pc'>
         <MegaphoneHeadline side='provider' headlines={['ボランティアとして', 'キモチをおくる']} />
         <p>
-          フードポストの回収・受け入れた品物の整理等の作業や広報など、食品や日用品、寄付金をおくるのではなくボランティアとしてご協力してくださる方も募集しています。
+          受け入れた品物の整理等の作業や広報など、食品や日用品、寄付金をおくるのではなくボランティアとしてご協力してくださる方も募集しています。
         </p>
       </div>
       <div className='absolute -bottom-sp-5 right-sp-5 z-10 aspect-square w-[60px] lg:-right-pc-5 lg:bottom-pc-5 lg:-z-10 lg:w-[80px] lg:rotate-45'>
-        <Image src='/img/hcf_kyoutsuillust_red.png' fill alt='' />
+        <Image src='/img/hcf_kyoutsuillust_red.png' fill alt='' className='animate-myspinb' />
       </div>
     </div>
   )

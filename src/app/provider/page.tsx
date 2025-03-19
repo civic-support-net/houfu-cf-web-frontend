@@ -7,7 +7,7 @@ const ProviderPage = () => {
   return (
     <>
       <Headline
-        headline='食料品や日用品を'
+        headline='食品や日用品を'
         headlineTail='おくる'
         tailColor='text-my-red'
         image='/img/hcf_heroillust_2.png'

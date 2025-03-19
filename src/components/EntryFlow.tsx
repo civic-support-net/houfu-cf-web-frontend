@@ -6,10 +6,10 @@ import { cn } from '@/lib/utils'
 export default function EntryFlow({ side }: { side: 'provider' | 'recipient' }) {
   const topTexts =
     side === 'provider'
-      ? [['フード', 'プレゼンター', 'に登録して'], ['エールをおくる!']]
+      ? [['フード', 'プレゼンター', 'として'], ['品物をおくる!']]
       : [
-          ['うけとりメンバー', '登録をして'],
-          ['エールを', 'うけとる!'],
+          ['うけとりメンバー', 'として'],
+          ['品物を', 'うけとる!'],
         ]
 
   const flowContents =

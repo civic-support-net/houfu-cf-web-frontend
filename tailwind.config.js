@@ -60,19 +60,84 @@ module.exports = {
         common: '3vw',
       },
       keyframes: {
-        minibounce: {
-          '0%,100%': {
-            transform: 'translateY(-10%)',
-            'animation-timing-function': 'cubic-bezier(0.8,0,1,1)',
+        myspin: {
+          '0%': {
+            transform: 'rotate(0deg)',
+            'animation-timing-function': 'cubic-bezier(0.4, 0.8, 0.2, -0.5)',
           },
-          '50%': {
+          '4%': {
+            transform: 'rotate(8deg)',
+            'animation-timing-function': 'ease-in-out',
+          },
+          '12%': {
+            transform: 'rotate(-8deg)',
+            'animation-timing-function': 'cubic-bezier(0.8, 1.5, 0.6, 0.2)',
+          },
+          '16%,100%': {
+            transform: 'rotate(0deg)',
+            'animation-timing-function': 'linear',
+          },
+        },
+        myping: {
+          '0%,15%,100%': {
             transform: 'none',
-            'animation-timing-function': 'cubic-bezier(0,0,0.2,1)',
+            'transform-origin': 'bottom center',
+          },
+          '3%': {
+            transform: 'scale(0.9, 1.1)',
+          },
+          '9%': {
+            transform: 'scale(1.05, 0.95)',
+          },
+          '13%': {
+            transform: 'scale(0.95, 1.05)',
+          },
+        },
+        mybounce: {
+          '0%,100%': {
+            transform: 'none',
+            'animation-timing-function': 'ease-out',
+          },
+          '3%': {
+            transform: 'translate(-6%, -5%) rotate(-2.5deg)',
+            'animation-timing-function': 'ease-in',
+          },
+          '6%': {
+            transform: 'translate(-12%, 0%) rotate(-5deg)',
+            'animation-timing-function': 'ease-out',
+          },
+          '9%': {
+            transform: 'translate(-6%, -5%) rotate(-2.5deg)',
+            'animation-timing-function': 'ease-in',
+          },
+          '12%': {
+            transform: 'translate(0%, 0%)',
+            'animation-timing-function': 'ease-out',
+          },
+          '15%': {
+            transform: 'translate(6%, -5%) rotate(2.5deg)',
+            'animation-timing-function': 'ease-in',
+          },
+          '18%': {
+            transform: 'translate(12%, 0%) rotate(5deg)',
+            'animation-timing-function': 'ease-out',
+          },
+          '21%': {
+            transform: 'translate(6%, -5%) rotate(2.5deg)',
+            'animation-timing-function': 'ease-in',
+          },
+          '24%': {
+            transform: 'translate(0%, 0%)',
+            'animation-timing-function': 'linear',
           },
         },
       },
       animation: {
-        minibounce: 'minibounce 1s infinite',
+        myspina: 'myspin 2s infinite',
+        myspinb: 'myspin 2.2s infinite',
+        myspinc: 'myspin 2.4s infinite',
+        myping: 'myping 6s ease-in-out infinite',
+        mybounce: 'mybounce 4s infinite',
       },
     },
     backgroundImage: {

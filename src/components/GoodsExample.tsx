@@ -5,13 +5,15 @@ import { cn } from '@/lib/utils'
 
 function CircleContents({
   headline,
-  listItems,
+  listImages,
+  listTexts,
   info,
   bgColor,
   bgPaleColor,
 }: {
   headline: string
-  listItems: string[][]
+  listImages: string[]
+  listTexts: string[][]
   info: string
   bgColor: string
   bgPaleColor: string
@@ -21,19 +23,23 @@ function CircleContents({
       <div className={cn('mr-[0.5rem] mt-[0.5rem] inline-block size-[1rem] shrink-0', bgColor)} />
       {headline}
       <ul className='grid grid-cols-2 gap-4 lg:grid-cols-4'>
-        {listItems.map((item, index) => (
+        {listImages.map((image, index) => (
           <li key={index} className='flex flex-col items-center'>
             <div className='size-32 rounded-full lg:size-36'>
               <div
                 className={cn(
-                  'relative flex size-full items-center justify-center overflow-hidden rounded-full',
+                  'relative flex size-full items-center justify-center rounded-full',
                   bgPaleColor,
                 )}
               >
-                <Image src={item[0]} width={80} height={80} alt='logo' className='' />
+                <Image src={image} width={80} height={80} alt='logo' />
               </div>
             </div>
-            <span>{item[1]}</span>
+            <p className='flex flex-col items-center text-sp-p2 lg:text-pc-p2'>
+              {listTexts[index].map((text, idx) => (
+                <span key={idx}>{text}</span>
+              ))}
+            </p>
           </li>
         ))}
       </ul>
@@ -61,45 +67,49 @@ export default function GoodsExample({ side }: { side: 'provider' | 'recipient' 
     side === 'provider'
       ? [
           {
-            headline: '食料品',
-            listItems: [
-              ['/img/hcf_rice.png', 'お米'],
-              ['/img/hcf_vegetable.png', '野菜'],
-              ['/img/hcf_snack.png', 'お菓子'],
-              ['/img/hcf_retort.png', 'レトルト商品'],
+            headline: '食品',
+            listImages: [
+              '/img/hcf_rice.png',
+              '/img/hcf_vegetable.png',
+              '/img/hcf_snack.png',
+              '/img/hcf_retort.png',
             ],
+            listTexts: [['お米'], ['野菜'], ['お菓子'], ['レトルト商品']],
             info: '肉・魚・缶詰・乾物・麺類・インスタント・調味料・食用油・飲料・ベビーフード・離乳食など',
           },
           {
             headline: '日用品',
-            listItems: [
-              ['/img/hcf_toiletpaper.png', 'トイレットペーパー'],
-              ['/img/hcf_detergent.png', '洗剤'],
-              ['/img/hcf_diaper.png', 'おむつ'],
-              ['/img/hcf_sanitary.png', '衛生用品'],
+            listImages: [
+              '/img/hcf_toiletpaper.png',
+              '/img/hcf_detergent.png',
+              '/img/hcf_diaper.png',
+              '/img/hcf_sanitary.png',
             ],
+            listTexts: [['トイレット', 'ペーパー'], ['洗剤'], ['おむつ'], ['衛生用品']],
             info: '生理用品・石鹸・文房具や学用品など',
           },
         ]
       : [
           {
-            headline: '食料品',
-            listItems: [
-              ['/img/hcf_rice.png', 'お米'],
-              ['/img/hcf_vegetable.png', '野菜'],
-              ['/img/hcf_snack.png', 'お菓子'],
-              ['/img/hcf_retort.png', 'レトルト商品'],
+            headline: '食品',
+            listImages: [
+              '/img/hcf_rice.png',
+              '/img/hcf_vegetable.png',
+              '/img/hcf_snack.png',
+              '/img/hcf_retort.png',
             ],
+            listTexts: [['お米'], ['野菜'], ['お菓子'], ['レトルト商品']],
             info: '肉・魚・缶詰・乾物・麺類・インスタント・調味料・食用油・飲料・ベビーフード・離乳食など',
           },
           {
             headline: '日用品',
-            listItems: [
-              ['/img/hcf_toiletpaper.png', 'トイレットペーパー'],
-              ['/img/hcf_detergent.png', '洗剤'],
-              ['/img/hcf_diaper.png', 'おむつ'],
-              ['/img/hcf_sanitary.png', '衛生用品'],
+            listImages: [
+              '/img/hcf_toiletpaper.png',
+              '/img/hcf_detergent.png',
+              '/img/hcf_diaper.png',
+              '/img/hcf_sanitary.png',
             ],
+            listTexts: [['トイレット', 'ペーパー'], ['洗剤'], ['おむつ'], ['衛生用品']],
             info: '生理用品・石鹸・文房具や学用品など',
           },
         ]
@@ -121,7 +131,8 @@ export default function GoodsExample({ side }: { side: 'provider' | 'recipient' 
             <li key={index} className=''>
               <CircleContents
                 headline={note.headline}
-                listItems={note.listItems}
+                listImages={note.listImages}
+                listTexts={note.listTexts}
                 info={note.info}
                 bgColor={bgColor}
                 bgPaleColor={bgPaleColor}
@@ -142,7 +153,7 @@ export default function GoodsExample({ side }: { side: 'provider' | 'recipient' 
           illustAspcet,
         )}
       >
-        <Image src={illustImage} fill alt='' />
+        <Image src={illustImage} fill alt='' className='animate-mybounce' />
       </div>
     </div>
   )

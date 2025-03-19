@@ -26,7 +26,7 @@ export default function ProviderFlow() {
       <div className='relative bg-my-palered'>
         <EntryFlow side='provider' />
         <div className='absolute -top-sp-5 right-sp-5 z-10 aspect-square w-[60px] lg:-top-pc-5 lg:right-pc-6 lg:w-[80px]'>
-          <Image src='/img/hcf_okuruillust_2.png' fill alt='' />
+          <Image src='/img/hcf_okuruillust_2.png' fill alt='animate-myspinb' />
         </div>
       </div>
 
