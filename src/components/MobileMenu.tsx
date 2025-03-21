@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import { menus } from '@/consts/menus'
 
-export default function MobileMenu() {
+export default function MobileMenu({ closeMenu }: { closeMenu: () => void }) {
   return (
     <div
       className='absolute inset-8 overflow-auto rounded-sp border-4 border-black bg-white shadow-lg md:rounded-pc'
@@ -19,7 +19,7 @@ export default function MobileMenu() {
           {menus.map((menu, index) => (
             <li key={index} className='flex items-start justify-center'>
               <Image src={menu.mg_href} alt='image' width={24} height={24} />
-              <Link href={menu.href} className='ml-sp-3'>
+              <Link href={menu.href} className='ml-sp-3' onClick={closeMenu}>
                 {menu.label}
               </Link>
             </li>

@@ -7,7 +7,7 @@ import { Message } from '@/types/Message'
 
 export const GetMessagesByPosition = async (position: string) => {
   // 受給者と提供者を2対1の割合で件数取得してみる
-  const limit = position === POSITION_RECIPIENT ? 8 : 4
+  const limit = position === POSITION_RECIPIENT ? 100 : 50
 
   let message: Message[] = []
   ;(
