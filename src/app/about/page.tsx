@@ -7,25 +7,23 @@ import Section from '@/components/Section'
 const AboutPage = () => {
   return (
     <>
-      <>
-        <Headline
-          headline='このサイトに'
-          headlineTail='ついて'
-          tailColor='text-my-dark'
-          image='/img/hcf_heroillust_3.png'
-        />
-        <div className='relative z-10 mx-auto max-w-[1200px]'>
-          <Section>
-            <AboutOwner />
-          </Section>
-          <Section>
-            <AboutOrganizations />
-          </Section>
-          <Section>
-            <AboutNotes />
-          </Section>
-        </div>
-      </>
+      <Headline
+        headline='このサイトに'
+        headlineTail='ついて'
+        tailColor='text-my-dark'
+        image='/img/hcf_heroillust_3.png'
+      />
+      <div className='relative z-10 mx-auto max-w-[1200px]'>
+        <Section>
+          <AboutOwner />
+        </Section>
+        <Section>
+          <AboutOrganizations />
+        </Section>
+        <Section>
+          <AboutNotes />
+        </Section>
+      </div>
     </>
   )
 }

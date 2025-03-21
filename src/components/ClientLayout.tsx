@@ -28,6 +28,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       <Link
         href='/'
         className='fixed z-50 size-[96px] rounded-r-full rounded-bl-full bg-white p-sp-3 lg:hidden'
+        onClick={() => setIsMenuOpen(false)}
       >
         <Image src='/img/logo.png' width={64} height={64} alt='' />
       </Link>
@@ -49,7 +50,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       {/* Mobile menu */}
       {isMenuOpen && (
         <div id='mobile-menu' className='z-40 flex h-lvh  backdrop-blur-sm lg:hidden'>
-          <MobileMenu />
+          <MobileMenu closeMenu={() => setIsMenuOpen(false)} />
         </div>
       )}
 
