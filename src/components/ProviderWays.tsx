@@ -40,7 +40,7 @@ const Internet = () => {
         <div className='flex justify-center'>
           <Button
             texts={['スマートサプライ']}
-            href='https://hofu.communityfridge.jp/personal-form/?fbclid=IwAR0BV0L4h1tvkVPkdDtuqYRxeUaww-m2DEc6DrYVvrac_RkAZV57HxN4Prc'
+            href='https://smart-supply.org/projects/communityfridge/613813fb4f5b0e000e98b679?fbclid=IwAR30TbELz3usjc1MHwwwIOdcNVJfmJIq18C7lbsaiZm1XqspXkHU6iEc4SI'
             side='provider'
             isExternal={true}
           />
