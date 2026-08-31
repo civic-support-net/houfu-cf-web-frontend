@@ -9,6 +9,7 @@
     "start": "next start",
     "enableWebFrameworks": "firebase experiments:enable webframeworks",
     "lint": "next lint --dir src",
+    "test": "vitest run",
     "lint:fix": "next lint --dir src --fix",
     "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'"
   },
@@ -42,7 +43,8 @@
     "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-tailwindcss": "^3.8.2",
     "prettier": "^2.8.4",
-    "prettier-plugin-tailwindcss": "^0.2.2"
+    "prettier-plugin-tailwindcss": "^0.2.2",
+    "vitest": "^4.1.11"
   },
   "resolutions": {
     "@types/react": "^18.3.1"
