@@ -1,6 +1,7 @@
 import Image from 'next/image'
 
-import Carousel, { Flag } from '@/components/Carousel'
+import Carousel from '@/components/Carousel'
+import { mixMessagesToFlags } from '@/lib/flags'
 import { Message } from '@/types/Message'
 
 // 2パターンの背景色の順番を用意
@@ -54,45 +55,4 @@ export default function TopHero({
       </div>
     </div>
   )
-}
-
-function mixMessagesToFlags(
-  rMsgs: Message[],
-  pMsgs: Message[],
-  rTcs: string[],
-  pTcs: string[],
-): Flag[] {
-  const flags: Flag[] = []
-
-  // recipient2つprovider1つの順で旗を追加していく
-  let index = 0
-  let indexR = 0
-  let indexP = 0
-  while (indexR < rMsgs.length && indexP < pMsgs.length) {
-    let flag
-    if (index % 3 === 0 || index % 3 === 1) {
-      // recipient
-      const textColor = rTcs[indexR % rTcs.length]
-      flag = {
-        imageUrl: rMsgs[indexR].imageUrl,
-        textColor,
-        isInvertImage: textColor.includes('pale') ? false : true,
-      }
-      indexR++
-    } else {
-      // provider
-      const textColor = pTcs[indexP % pTcs.length]
-      flag = {
-        imageUrl: pMsgs[indexP].imageUrl,
-        textColor,
-        isInvertImage: textColor.includes('pale') ? false : true,
-      }
-      indexP++
-    }
-
-    flags.push(flag)
-    index++
-  }
-
-  return flags
 }
